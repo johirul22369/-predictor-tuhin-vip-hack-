@@ -54,14 +54,14 @@
             50% { transform: translateY(-3px); }
         }
 
-        @keyframes iconFiveBladeSpin {
+        @keyframes leafChakraSpin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
 
-        @keyframes orbSwirlSpin {
+        @keyframes numberChakraSpin {
             0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            100% { transform: rotate(-360deg); }
         }
 
         @keyframes rgbAuraFlow {
@@ -91,13 +91,13 @@
             }
         }
 
-        /* ৫টি পাক সহ ফ্লোটিং আইকন */
+        /* গাছের পাতার চক্র সহ ফ্লোটিং আইকন */
         #floating-icon-btn {
             position: fixed;
             top: 84px;
             right: 36px;
-            width: 58px;
-            height: 58px;
+            width: 62px;
+            height: 62px;
             border-radius: 50%;
             cursor: grab;
             z-index: 9999;
@@ -109,15 +109,15 @@
             animation: gentleFloat 3.6s ease-in-out infinite;
         }
 
-        .icon-five-blades {
+        .icon-leaf-chakra {
             position: absolute;
-            inset: -3px;
-            width: calc(100% + 6px);
-            height: calc(100% + 6px);
+            inset: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
             pointer-events: none;
             z-index: 1;
-            animation: iconFiveBladeSpin 7.5s linear infinite;
-            filter: drop-shadow(0 0 7px rgba(250, 204, 21, 0.65));
+            animation: leafChakraSpin 8s linear infinite;
+            filter: drop-shadow(0 0 7px rgba(74, 222, 128, 0.65));
         }
 
         .icon-avatar-core {
@@ -127,7 +127,7 @@
             height: 40px;
             border-radius: 50%;
             border: 2px solid #fef08a;
-            box-shadow: 0 0 0 2px #10b981, 0 6px 14px rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 0 2px #16a34a, 0 6px 14px rgba(0, 0, 0, 0.92);
             overflow: hidden;
             background: #042f2e;
             display: flex;
@@ -228,7 +228,7 @@
             font-weight: 900;
         }
 
-        /* ছোট ও কমপ্যাক্ট পপআপ */
+        /* ছোট ও বোল্ড পপআপ */
         .overlay-box {
             position: fixed;
             top: 84px;
@@ -275,6 +275,10 @@
             border: 1px solid rgba(74, 222, 128, 0.42);
             cursor: grab;
             touch-action: none;
+        }
+
+        .top-menu-bar:active {
+            cursor: grabbing;
         }
 
         .menu-brand-info {
@@ -415,7 +419,7 @@
 
         .signal-board {
             display: grid;
-            grid-template-columns: 0.92fr 1.2fr 0.92fr;
+            grid-template-columns: 0.92fr 1.22fr 0.92fr;
             gap: 3.5px;
             align-items: stretch;
         }
@@ -510,44 +514,38 @@
             box-shadow: 0 0 6px #4ade80;
         }
 
-        .orb-swirl-stage {
+        /* পপআপের নাম্বারের ব্যাকগ্রাউন্ডে ঘূর্ণায়মান চক্র */
+        .orb-chakra-stage {
             position: relative;
-            width: 36px;
-            height: 36px;
+            width: 42px;
+            height: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .orb-swirl-ring {
+        .orb-bg-chakra {
             position: absolute;
             inset: 0;
-            border-radius: 50%;
-            background: conic-gradient(
-                from 0deg,
-                #ff2a85,
-                #fde047,
-                #22c55e,
-                #00f0ff,
-                #a855f7,
-                #ff2a85
-            );
-            -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3.5px), #000 calc(100% - 2.8px));
-            mask: radial-gradient(farthest-side, transparent calc(100% - 3.5px), #000 calc(100% - 2.8px));
-            animation: orbSwirlSpin 2.4s linear infinite;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            animation: numberChakraSpin 4.2s linear infinite;
+            filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.55));
         }
 
         .num-orb {
             position: relative;
             z-index: 2;
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             border: 1.5px solid #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 900;
             color: #ffffff;
         }
@@ -639,23 +637,8 @@
         .b-violet-green { background: linear-gradient(135deg, #a855f7 50%, #22c55e 50%); }
         .b-violet-red { background: linear-gradient(135deg, #a855f7 50%, #ef4444 50%); }
 
-        .bottom-actions-group {
+        .bottom-support-bar {
             margin-top: 4.5px;
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-        }
-
-        .icon-link-action-btn {
-            width: 100%;
-            padding: 3.5px 6px;
-            border-radius: 8px;
-            border: 1px solid rgba(250, 204, 21, 0.55);
-            background: rgba(15, 23, 42, 0.92);
-            color: #fde047;
-            font-size: 5.8px;
-            font-weight: 900;
-            cursor: pointer;
         }
 
         .support-contact-link {
@@ -692,15 +675,19 @@
 
     <iframe id="game-iframe" src="https://www.dkwin.world/#/register?invitationCode=12215125183" loading="lazy"></iframe>
 
-    <!-- ৫টি পাক সহ ফ্লোটিং আইকন -->
-    <div id="floating-icon-btn" title="Tap: Open | Double-Tap / Hold: Quick Link">
-        <svg class="icon-five-blades" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="40" cy="40" r="35" stroke="rgba(253, 224, 71, 0.45)" stroke-width="1.2" stroke-dasharray="5 4" />
-            <path d="M40 16C34 5 24 3 19 9C24 15 31 18 40 16Z" fill="#22c55e" stroke="#fef08a" stroke-width="0.9" />
-            <path d="M62 32C73 29 79 21 76 14C69 16 63 22 62 32Z" fill="#fde047" stroke="#ffffff" stroke-width="0.9" />
-            <path d="M54 58C61 68 70 71 75 66C71 59 64 55 54 58Z" fill="#ec4899" stroke="#fef08a" stroke-width="0.9" />
-            <path d="M26 58C19 68 10 71 5 66C9 59 16 55 26 58Z" fill="#00f0ff" stroke="#ffffff" stroke-width="0.9" />
-            <path d="M18 32C7 29 1 21 4 14C11 16 17 22 18 32Z" fill="#a855f7" stroke="#fef08a" stroke-width="0.9" />
+    <!-- গাছের পাতার চক্র সহ ফ্লোটিং আইকন -->
+    <div id="floating-icon-btn">
+        <svg class="icon-leaf-chakra" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="35" stroke="rgba(134, 239, 172, 0.45)" stroke-width="1" stroke-dasharray="3 3" />
+            <!-- ৮টি গাছের পাতার চক্র -->
+            <path d="M40 3C35 10 35 17 40 22C45 17 45 10 40 3Z" fill="#22c55e" stroke="#bbf7d0" stroke-width="0.7"/>
+            <path d="M66.2 13.8C57.5 14.5 52.5 19.5 52.8 27.2C60.5 27.5 65.5 22.5 66.2 13.8Z" fill="#16a34a" stroke="#86efac" stroke-width="0.7"/>
+            <path d="M77 40C70 35 63 35 58 40C63 45 70 45 77 40Z" fill="#4ade80" stroke="#dcfce7" stroke-width="0.7"/>
+            <path d="M66.2 66.2C65.5 57.5 60.5 52.5 52.8 52.8C52.5 60.5 57.5 65.5 66.2 66.2Z" fill="#15803d" stroke="#86efac" stroke-width="0.7"/>
+            <path d="M40 77C45 70 45 63 40 58C35 63 35 70 40 77Z" fill="#22c55e" stroke="#bbf7d0" stroke-width="0.7"/>
+            <path d="M13.8 66.2C22.5 65.5 27.5 60.5 27.2 52.8C19.5 52.5 14.5 57.5 13.8 66.2Z" fill="#16a34a" stroke="#86efac" stroke-width="0.7"/>
+            <path d="M3 40C10 45 17 45 22 40C17 35 10 35 3 40Z" fill="#4ade80" stroke="#dcfce7" stroke-width="0.7"/>
+            <path d="M13.8 13.8C14.5 22.5 19.5 27.5 27.2 27.2C27.5 19.5 22.5 14.5 13.8 13.8Z" fill="#15803d" stroke="#86efac" stroke-width="0.7"/>
         </svg>
         <div class="icon-avatar-core">
             <img src="https://cdn.imageurlgenerator.com/uploads/5f242846-c36b-4437-8bbd-8fab060a831d.jpg" alt="Tuhin VIP Icon" />
@@ -771,10 +758,20 @@
                         <span class="live-dot"></span>
                         <span id="period-num">Loading...</span>
                     </div>
-                    <div class="orb-swirl-stage">
-                        <div class="orb-swirl-ring"></div>
+
+                    <!-- নাম্বারের ব্যাকগ্রাউন্ডে ঘূর্ণায়মান চক্র -->
+                    <div class="orb-chakra-stage">
+                        <svg class="orb-bg-chakra" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="30" cy="30" r="26" stroke="#00f0ff" stroke-width="1.3" stroke-dasharray="6 4"/>
+                            <circle cx="30" cy="30" r="21" stroke="#fde047" stroke-width="1" stroke-dasharray="2 3"/>
+                            <polygon points="30,2 32.5,7 27.5,7" fill="#ff2a85"/>
+                            <polygon points="58,30 53,32.5 53,27.5" fill="#4ade80"/>
+                            <polygon points="30,58 27.5,53 32.5,53" fill="#fde047"/>
+                            <polygon points="2,30 7,27.5 7,32.5" fill="#00f0ff"/>
+                        </svg>
                         <div class="num-orb orb-green text-3d" id="main-orb"><span id="main-orb-text">-</span></div>
                     </div>
+
                     <div class="timer-txt text-3d" id="timer-display">30s</div>
                 </div>
 
@@ -801,10 +798,7 @@
                 <div class="balls-row" id="recent-wheels"></div>
             </div>
 
-            <div class="bottom-actions-group">
-                <button type="button" class="icon-link-action-btn" onclick="IconLinkModule.openCurrentPlatform()">
-                    ⚡ আইকন লিংক ওপেন করুন
-                </button>
+            <div class="bottom-support-bar">
                 <a href="https://t.me/Tuhin0027" target="_blank" rel="noopener noreferrer" class="support-contact-link">
                     💬 কোনো সমস্যা হলে যোগাযোগ করুন
                 </a>
@@ -817,7 +811,6 @@
     <script>
         const CONFIG = {
             accessPass: "Tuhinviphack",
-            supportUrl: "https://t.me/Tuhin0027",
             platforms: {
                 DKWIN: {
                     name: "DK WIN",
@@ -855,7 +848,6 @@
             losses: 0
         };
 
-        /* ১. ফিমেল ভয়েস মডিউল */
         const VoiceModule = (() => {
             const queue = [];
             let speaking = false;
@@ -951,34 +943,6 @@
             return { say, toggle, syncButton };
         })();
 
-        /* ২. আইকন লিংক মডিউল */
-        const IconLinkModule = (() => {
-            function getActiveUrl() {
-                return CONFIG.platforms[AppState.platform]?.url || CONFIG.platforms.DKWIN.url;
-            }
-
-            function openCurrentPlatform() {
-                const url = getActiveUrl();
-                document.getElementById("game-iframe").src = url;
-                window.open(url, "_blank", "noopener,noreferrer");
-                VoiceModule.say("আইকন লিংক ওপেন করা হয়েছে।");
-            }
-
-            function onSingleTap() {
-                if (AppState.unlocked) {
-                    UIModule.showPopup();
-                    SignalModule.start();
-                    VoiceModule.say("ভিআইপি প্যানেল চালু হয়েছে।");
-                } else {
-                    document.getElementById("error-msg").style.display = "none";
-                    document.getElementById("auth-overlay").style.display = "block";
-                }
-            }
-
-            return { openCurrentPlatform, onSingleTap };
-        })();
-
-        /* ৩. প্ল্যাটফর্ম ও ইউআই মডিউল */
         const PlatformModule = (() => {
             function refreshSubtitle() {
                 const pName = CONFIG.platforms[AppState.platform]?.name || "DK WIN";
@@ -1015,8 +979,19 @@
                 VoiceModule.say("প্যানেল হাইড করা হলো।");
             }
 
-            function bindDrag(targetEl, handleEl, onSingleTap, onDoubleTap) {
-                let down = false, moved = false, sx = 0, sy = 0, oLeft = 0, oTop = 0, lastTap = 0;
+            function onIconClick() {
+                if (AppState.unlocked) {
+                    showPopup();
+                    SignalModule.start();
+                    VoiceModule.say("ভিআইপি প্যানেল চালু হয়েছে।");
+                } else {
+                    document.getElementById("error-msg").style.display = "none";
+                    document.getElementById("auth-overlay").style.display = "block";
+                }
+            }
+
+            function bindDrag(targetEl, handleEl, onTap) {
+                let down = false, moved = false, sx = 0, sy = 0, oLeft = 0, oTop = 0;
 
                 function start(x, y) {
                     const rect = targetEl.getBoundingClientRect();
@@ -1046,15 +1021,7 @@
                 function end() {
                     if (!down) return;
                     down = false;
-                    if (moved) return;
-                    const now = Date.now();
-                    if (typeof onDoubleTap === "function" && now - lastTap < 320) {
-                        lastTap = 0;
-                        onDoubleTap();
-                    } else {
-                        lastTap = now;
-                        if (typeof onSingleTap === "function") onSingleTap();
-                    }
+                    if (!moved && typeof onTap === "function") onTap();
                 }
 
                 handleEl.addEventListener("touchstart", (e) => {
@@ -1085,10 +1052,9 @@
                 });
             }
 
-            return { showPopup, hidePopup, bindDrag };
+            return { showPopup, hidePopup, onIconClick, bindDrag };
         })();
 
-        /* ৪. অথ মডিউল */
         const AuthModule = (() => {
             function verify() {
                 const val = document.getElementById("pass-input").value.trim();
@@ -1109,7 +1075,6 @@
             return { verify };
         })();
 
-        /* ৫. সিগন্যাল ও পিরিয়ড মডিউল */
         const SignalModule = (() => {
             function mixHash(seed) {
                 let x = seed >>> 0;
@@ -1316,7 +1281,6 @@
             return { tick, start, recordWin, recordLoss, copyPeriod };
         })();
 
-        /* ইনিশিয়ালাইজেশন */
         VoiceModule.syncButton();
         PlatformModule.refreshSubtitle();
 
@@ -1341,13 +1305,11 @@
         UIModule.bindDrag(
             document.getElementById("floating-icon-btn"),
             document.getElementById("floating-icon-btn"),
-            IconLinkModule.onSingleTap,
-            IconLinkModule.openCurrentPlatform
+            UIModule.onIconClick
         );
         UIModule.bindDrag(
             document.getElementById("main-content"),
             document.getElementById("main-content-header"),
-            null,
             null
         );
     </script>
