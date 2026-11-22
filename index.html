@@ -281,7 +281,7 @@
             position: fixed;
             top: 96px;
             left: 68px;
-            width: 226px;
+            width: 228px;
             max-width: calc(100vw - 136px);
             display: none;
             z-index: 9999;
@@ -423,19 +423,19 @@
         .header-controls {
             display: flex;
             align-items: center;
-            gap: 2.5px;
+            gap: 2px;
         }
 
         .voice-toggle-btn {
-            font-size: 6px;
-            padding: 2px 4.5px;
+            font-size: 5.8px;
+            padding: 2px 4px;
             border-radius: 5px;
-            border: 1px solid rgba(251, 113, 133, 0.85);
-            background: linear-gradient(135deg, #f43f5e, #be123c);
+            border: 1px solid rgba(244, 114, 182, 0.9);
+            background: linear-gradient(135deg, #ec4899, #be185d);
             color: #ffffff;
             cursor: pointer;
             text-shadow: none;
-            box-shadow: 0 0 8px rgba(244, 63, 94, 0.5);
+            box-shadow: 0 0 8px rgba(236, 72, 153, 0.55);
         }
 
         .voice-toggle-btn.is-off {
@@ -455,12 +455,12 @@
             cursor: pointer;
         }
 
-        /* BD WIN & DK WIN প্ল্যাটফর্ম সুইচার */
+        /* DK WIN & BD WIN সুইচার + হাইপারলিংক রো */
         .platform-switcher {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4px;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             background: rgba(2, 6, 14, 0.95);
             padding: 2.5px;
             border-radius: 9px;
@@ -486,6 +486,40 @@
             border-color: #ffffff;
             text-shadow: none;
             box-shadow: 0 0 12px rgba(74, 222, 128, 0.65);
+        }
+
+        .hyperlink-strip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4px;
+            margin-bottom: 5px;
+            padding: 2.5px 5px;
+            border-radius: 8px;
+            background: rgba(6, 24, 29, 0.9);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            font-size: 6.2px;
+        }
+
+        .direct-hyperlink {
+            color: #7dd3fc;
+            text-decoration: underline;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .voice-demo-btn {
+            background: linear-gradient(135deg, #f472b6, #db2777);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 1.5px 5px;
+            font-size: 5.8px;
+            font-weight: 800;
+            cursor: pointer;
+            flex-shrink: 0;
         }
 
         .market-tabs {
@@ -1042,18 +1076,24 @@
             <div class="badge-left text-3d">3D<br />VIP</div>
             <div class="brand-center">
                 <div class="brand-main text-3d">Tuhin vip hack</div>
-                <div class="brand-sub text-3d" id="mode-subtitle">@Tuhin0027 • 30S</div>
+                <div class="brand-sub text-3d" id="mode-subtitle">@Tuhin0027 • DK WIN • 30S</div>
             </div>
             <div class="header-controls">
-                <button type="button" class="voice-toggle-btn text-3d" id="voice-toggle-btn" onclick="toggleVoice()" title="Bangla Female Voice ON/OFF">👩 ON</button>
+                <button type="button" class="voice-toggle-btn text-3d" id="voice-toggle-btn" onclick="toggleVoice()" title="Female Voice ON/OFF">👩 ON</button>
                 <button type="button" class="hide-btn text-3d" onclick="hidePopup()">HIDE</button>
             </div>
         </div>
 
-        <!-- DK WIN এবং BD WIN সুইচার -->
+        <!-- DK WIN এবং BD WIN সুইচ -->
         <div class="platform-switcher">
-            <button type="button" class="platform-btn text-3d active" id="btn-dkwin" onclick="switchPlatform('DKWIN')">DK WIN</button>
-            <button type="button" class="platform-btn text-3d" id="btn-bdwin" onclick="switchPlatform('BDWIN')">BD WIN</button>
+            <button type="button" class="platform-btn text-3d active" id="btn-dkwin" onclick="switchPlatform('DKWIN')">⇄ DK WIN</button>
+            <button type="button" class="platform-btn text-3d" id="btn-bdwin" onclick="switchPlatform('BDWIN')">⇄ BD WIN</button>
+        </div>
+
+        <!-- হাইপারলিংক ও ফিমেল ভয়েস ডেমো -->
+        <div class="hyperlink-strip">
+            <a href="https://www.dkwin.world/#/register?invitationCode=12215125183" target="_blank" rel="noopener noreferrer" class="direct-hyperlink" id="active-platform-link">🔗 Open DK Win Link</a>
+            <button type="button" class="voice-demo-btn" onclick="speakFemaleBangla('সবাই এখানে একটা বিগ ট্রেড করো!')">👩 Voice</button>
         </div>
 
         <div class="market-tabs">
@@ -1116,7 +1156,7 @@
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-752-.244-1.349-.374-1.297-.789.027-.216.324-.437.893-.663 3.498-1.524 5.83-2.529 6.996-3.014 3.333-1.386 4.025-1.627 4.479-1.635.099-.002.321.023.465.14.12.098.153.228.166.32.013.092.028.301.012.463z" fill="#052e16"/>
                 </svg>
-                @Tuhin0027 VIP
+                @Tuhin0027 TELEGRAM LINK
             </a>
         </div>
     </div>
@@ -1128,12 +1168,14 @@
             DKWIN: {
                 name: "DK WIN",
                 bn: "ডিকে উইন",
+                labelLink: "🔗 Open DK Win Link",
                 url: "https://www.dkwin.world/#/register?invitationCode=12215125183",
                 saltMix: 0x11111111
             },
             BDWIN: {
                 name: "BD WIN",
                 bn: "বিডি উইন",
+                labelLink: "🔗 Open BD Win Link",
                 url: "https://8bdwin24.com/register?inviteCode=9LBSM7N&from=web",
                 saltMix: 0x22222222
             }
@@ -1163,6 +1205,7 @@
 
         updateVoiceButtonUI();
         updateSubtitleLabel();
+        updateHyperlinkUI();
 
         document.getElementById("pass-input").addEventListener("keydown", (e) => {
             if (e.key === "Enter") checkPassword();
@@ -1190,6 +1233,15 @@
             document.getElementById("mode-subtitle").innerText = `@Tuhin0027 • ${pName} • ${mLabel}`;
         }
 
+        function updateHyperlinkUI() {
+            const p = PLATFORMS[currentPlatform] || PLATFORMS.DKWIN;
+            const linkEl = document.getElementById("active-platform-link");
+            if (linkEl) {
+                linkEl.href = p.url;
+                linkEl.textContent = p.labelLink;
+            }
+        }
+
         function switchPlatform(platformKey) {
             if (!PLATFORMS[platformKey]) return;
             currentPlatform = platformKey;
@@ -1200,6 +1252,7 @@
             const iframe = document.getElementById("game-iframe");
             iframe.src = PLATFORMS[platformKey].url;
 
+            updateHyperlinkUI();
             updateSubtitleLabel();
             cachedPeriod = "";
             lastEvaluatedPeriod = "";
@@ -1238,18 +1291,21 @@
         function pickFemaleBanglaVoice() {
             if (!("speechSynthesis" in window)) return null;
             const voices = window.speechSynthesis.getVoices() || [];
-            const maleKeywords = /\bmale\b|\bman\b|\bboy\b|rishi|prabhat|amit|arjun|david|mark|alex|daniel/i;
-            const femaleKeywords = /female|woman|girl|tanisha|bashkar|nabila|priya|lekha|aditi|raveena|sangeeta|kalpana|zira|samantha|victoria|google.*bn|microsoft.*tanisha/i;
+            const malePattern = /\bmale\b|\bman\b|\bboy\b|rishi|prabhat|amit|arjun|david|mark|alex|daniel|george|ryan|thomas|eric|brian/i;
+            const femalePattern = /female|woman|girl|lady|tanisha|bashkar|nabila|priya|lekha|aditi|raveena|sangeeta|kalpana|zira|samantha|victoria|moira|fiona|veena|google.*(female|hindi|bn|en-gb|en-us)|microsoft.*(tanisha|aria|jenny|zira)/i;
 
-            const nonMaleVoices = voices.filter((v) => !maleKeywords.test(v.name));
-            const banglaFemale = nonMaleVoices.find((v) => (/bn/i.test(v.lang) || /bangla|bengali/i.test(v.name)) && femaleKeywords.test(v.name));
-            if (banglaFemale) return banglaFemale;
+            const safeVoices = voices.filter((v) => !malePattern.test(v.name));
 
-            const banglaNonMale = nonMaleVoices.find((v) => /bn/i.test(v.lang) || /bangla|bengali/i.test(v.name));
-            if (banglaNonMale) return banglaNonMale;
+            const bnFemale = safeVoices.find((v) => (/bn/i.test(v.lang) || /bangla|bengali/i.test(v.name)) && femalePattern.test(v.name));
+            if (bnFemale) return bnFemale;
 
-            const anyFemale = nonMaleVoices.find((v) => femaleKeywords.test(v.name));
-            return anyFemale || nonMaleVoices[0] || null;
+            const anyFemale = safeVoices.find((v) => femalePattern.test(v.name));
+            if (anyFemale) return anyFemale;
+
+            const bnVoice = safeVoices.find((v) => /bn/i.test(v.lang) || /bangla|bengali/i.test(v.name));
+            if (bnVoice) return bnVoice;
+
+            return safeVoices[0] || null;
         }
 
         function speakFemaleBangla(text, onDone) {
@@ -1265,8 +1321,8 @@
                     utter.voice = chosenVoice;
                 }
                 utter.lang = "bn-BD";
-                utter.pitch = 1.32;
-                utter.rate = 1.03;
+                utter.pitch = 1.45;
+                utter.rate = 0.98;
                 utter.volume = 1;
                 if (typeof onDone === "function") {
                     utter.onend = onDone;
