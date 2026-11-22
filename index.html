@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Tuhin vip hack - @Tuhin0027</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap');
 
         * {
             box-sizing: border-box;
@@ -38,133 +38,72 @@
             font-family: 'Chakra Petch', sans-serif;
             font-weight: 700;
             text-shadow:
-                0 1px 0 #091326,
-                0 2px 0 #050a14,
-                0 3px 6px rgba(0, 0, 0, 0.95),
-                0 0 10px rgba(250, 204, 21, 0.4);
+                0 1px 0 #071120,
+                0 2px 5px rgba(0, 0, 0, 0.9);
         }
 
-        @keyframes eagleSlowFloat {
-            0%, 100% {
-                margin-top: 0px;
-                margin-left: 0px;
-            }
-            50% {
-                margin-top: -5px;
-                margin-left: 2px;
-            }
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-4px); }
         }
 
-        @keyframes leafSwayLeft {
-            0%, 100% { transform: rotate(-5deg) scale(1); }
-            50% { transform: rotate(6deg) scale(1.04); }
+        @keyframes slowBgFanSpin {
+            0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+            50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.04); }
+            100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
         }
 
-        @keyframes leafSwayRight {
-            0%, 100% { transform: rotate(5deg) scale(1); }
-            50% { transform: rotate(-6deg) scale(1.04); }
+        @keyframes vineBreezeLeft {
+            0%, 100% { transform: rotate(-2deg) translateY(0); }
+            50% { transform: rotate(2.5deg) translateY(-1.5px); }
+        }
+
+        @keyframes vineBreezeRight {
+            0%, 100% { transform: rotate(2deg) translateY(0); }
+            50% { transform: rotate(-2.5deg) translateY(-1.5px); }
         }
 
         @keyframes rgbBorderFlow {
             0% {
                 border-color: #ff2a85;
-                box-shadow: 0 0 14px rgba(255, 42, 133, 0.7), inset 0 0 10px rgba(255, 42, 133, 0.35);
+                box-shadow: 0 0 12px rgba(255, 42, 133, 0.65), inset 0 0 8px rgba(255, 42, 133, 0.25);
             }
             33% {
                 border-color: #00f0ff;
-                box-shadow: 0 0 14px rgba(0, 240, 255, 0.7), inset 0 0 10px rgba(0, 240, 255, 0.35);
+                box-shadow: 0 0 12px rgba(0, 240, 255, 0.65), inset 0 0 8px rgba(0, 240, 255, 0.25);
             }
             66% {
                 border-color: #4ade80;
-                box-shadow: 0 0 14px rgba(74, 222, 128, 0.7), inset 0 0 10px rgba(74, 222, 128, 0.35);
+                box-shadow: 0 0 12px rgba(74, 222, 128, 0.65), inset 0 0 8px rgba(74, 222, 128, 0.25);
             }
             100% {
                 border-color: #facc15;
-                box-shadow: 0 0 14px rgba(250, 204, 21, 0.7), inset 0 0 10px rgba(250, 204, 21, 0.35);
+                box-shadow: 0 0 12px rgba(250, 204, 21, 0.65), inset 0 0 8px rgba(250, 204, 21, 0.25);
             }
         }
 
-        .wing-pair {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .wing-3d {
-            position: absolute;
-            top: 50%;
-            filter:
-                drop-shadow(0 8px 16px rgba(0, 0, 0, 0.96))
-                drop-shadow(0 0 16px rgba(250, 204, 21, 0.55));
-        }
-
-        .wing-left {
-            right: 100%;
-            margin-right: -4px;
-            transform-origin: 95% 48%;
-            animation: eagleFlapLeft 3.4s ease-in-out infinite;
-        }
-
-        .wing-right {
-            left: 100%;
-            margin-left: -4px;
-            transform-origin: 5% 48%;
-            animation: eagleFlapRight 3.4s ease-in-out infinite;
-        }
-
-        @keyframes eagleFlapLeft {
-            0%, 100% { transform: translateY(-50%) rotate(-8deg) scale(1); }
-            50%      { transform: translateY(-56%) rotate(16deg) scale(1.04, 0.97); }
-        }
-
-        @keyframes eagleFlapRight {
-            0%, 100% { transform: translateY(-50%) rotate(8deg) scale(1); }
-            50%      { transform: translateY(-56%) rotate(-16deg) scale(1.04, 0.97); }
-        }
-
-        /* ফ্লোটিং আইকন + পাখা */
+        /* ফ্লোটিং আইকন */
         #floating-icon-btn {
             position: fixed;
             top: 88px;
-            right: 54px;
-            width: 48px;
-            height: 48px;
+            right: 48px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             border: 2.5px solid #facc15;
             box-shadow:
-                0 0 0 2px #f43f5e,
-                0 10px 24px rgba(0, 0, 0, 0.95),
-                0 0 22px rgba(250, 204, 21, 0.8),
-                inset 0 2px 6px rgba(255, 255, 255, 0.45);
+                0 0 0 2px #10b981,
+                0 12px 24px rgba(0, 0, 0, 0.92),
+                0 0 18px rgba(250, 204, 21, 0.65);
             cursor: grab;
             z-index: 9999;
-            overflow: visible;
-            touch-action: none;
-            background: radial-gradient(circle at 30% 25%, #065f46, #042f2e 70%, #020617 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: eagleSlowFloat 4.2s ease-in-out infinite;
-        }
-
-        #floating-icon-btn:active {
-            cursor: grabbing;
-            transform: scale(0.95);
-        }
-
-        .icon-circle-clip {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
             overflow: hidden;
+            touch-action: none;
+            background: #042f2e;
             display: flex;
             align-items: center;
             justify-content: center;
+            animation: gentleFloat 3.6s ease-in-out infinite;
         }
 
         #floating-icon-btn img {
@@ -174,64 +113,58 @@
             pointer-events: none;
         }
 
-        /* পাসওয়ার্ড পপআপ */
+        /* পাসওয়ার্ড কার্ড */
         #auth-overlay {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 246px;
-            background: linear-gradient(155deg, rgba(6, 78, 59, 0.98) 0%, rgba(15, 23, 42, 0.99) 55%, rgba(3, 7, 16, 1) 100%);
-            border: 1.5px solid rgba(250, 204, 21, 0.92);
-            border-radius: 18px;
+            width: 244px;
+            background: linear-gradient(160deg, #062822 0%, #091324 58%, #04070e 100%);
+            border: 1.5px solid rgba(74, 222, 128, 0.85);
+            border-radius: 20px;
             box-shadow:
-                0 22px 44px rgba(0, 0, 0, 0.95),
-                0 0 26px rgba(16, 185, 129, 0.35),
-                inset 0 1px 1px rgba(255, 255, 255, 0.3);
-            padding: 14px;
+                0 22px 46px rgba(0, 0, 0, 0.95),
+                0 0 24px rgba(16, 185, 129, 0.35);
+            padding: 15px 14px;
             display: none;
             z-index: 10000;
             text-align: center;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(14px);
         }
 
-        .access-vip-badge {
+        .auth-badge {
             display: inline-block;
-            font-size: 9px;
+            font-size: 8.5px;
             font-weight: 900;
-            letter-spacing: 1.2px;
-            color: #042f2e;
-            background: linear-gradient(90deg, #4ade80, #fde047, #38bdf8);
-            padding: 2px 9px;
+            letter-spacing: 1.1px;
+            color: #052e16;
+            background: linear-gradient(90deg, #4ade80, #fde047);
+            padding: 2.5px 10px;
             border-radius: 999px;
             margin-bottom: 6px;
             text-transform: uppercase;
-            box-shadow: 0 0 12px rgba(74, 222, 128, 0.55);
         }
 
         .auth-title {
-            font-size: 12.5px;
-            color: #fffbeb;
-            text-shadow:
-                0 0 8px rgba(250, 204, 21, 0.95),
-                0 2px 4px rgba(0, 0, 0, 1);
+            font-size: 13px;
+            color: #fef9c3;
             margin-bottom: 2px;
-            letter-spacing: 0.5px;
         }
 
         .auth-userid {
             font-size: 9px;
             color: #6ee7b7;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 9px;
         }
 
         .auth-input {
             width: 100%;
-            padding: 7px 9px;
-            background: rgba(3, 8, 18, 0.94);
-            border: 1px solid rgba(52, 211, 153, 0.78);
-            border-radius: 8px;
+            padding: 7.5px 10px;
+            background: rgba(2, 6, 15, 0.94);
+            border: 1px solid rgba(74, 222, 128, 0.65);
+            border-radius: 10px;
             color: #ffffff;
             font-size: 11px;
             text-align: center;
@@ -247,25 +180,26 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
-            font-size: 9px;
+            font-size: 8.8px;
             color: #cbd5e1;
-            margin-bottom: 9px;
+            margin-bottom: 10px;
             cursor: pointer;
             font-weight: 600;
         }
 
-        .auth-btn {
+        .access-vip-btn {
             width: 100%;
-            padding: 7px;
-            background: linear-gradient(135deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+            padding: 8px;
+            background: linear-gradient(135deg, #22c55e 0%, #facc15 100%);
             border: none;
-            border-radius: 8px;
-            color: #050912;
+            border-radius: 10px;
+            color: #04150c;
             font-size: 10.5px;
+            font-weight: 900;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 0.7px;
-            box-shadow: 0 4px 14px rgba(250, 204, 21, 0.45);
+            letter-spacing: 0.9px;
+            box-shadow: 0 5px 15px rgba(34, 197, 94, 0.4);
         }
 
         #error-msg {
@@ -276,232 +210,204 @@
             font-weight: 700;
         }
 
-        /* হ্যাক পপআপ + পাখা + সবুজ পাতা */
+        /* একদম নতুন পপআপ ডিজাইন */
         .overlay-box {
             position: fixed;
-            top: 96px;
-            left: 68px;
-            width: 228px;
-            max-width: calc(100vw - 136px);
+            top: 84px;
+            left: 56px;
+            width: 236px;
+            max-width: calc(100vw - 112px);
             display: none;
             z-index: 9999;
-            background:
-                radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.36) 0%, transparent 58%),
-                radial-gradient(circle at 100% 100%, rgba(245, 158, 11, 0.24) 0%, transparent 55%),
-                linear-gradient(165deg, #0b2524 0%, #09111e 50%, #04070e 100%);
-            border-radius: 20px;
-            padding: 7.5px;
+            background: linear-gradient(165deg, rgba(7, 36, 30, 0.96) 0%, rgba(10, 18, 32, 0.98) 55%, rgba(4, 7, 14, 0.99) 100%);
+            border-radius: 24px;
+            padding: 9px;
+            border: 1.5px solid rgba(74, 222, 128, 0.8);
             box-shadow:
-                0 22px 44px rgba(0, 0, 0, 0.96),
-                0 0 24px rgba(16, 185, 129, 0.4),
-                0 0 14px rgba(250, 204, 21, 0.28),
-                inset 0 1px 1.5px rgba(255, 255, 255, 0.34);
-            border: 1.5px solid rgba(74, 222, 128, 0.85);
-            backdrop-filter: blur(12px);
-            animation: eagleSlowFloat 4.2s ease-in-out infinite;
-        }
-
-        .side-leaves {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 5;
+                0 24px 48px rgba(0, 0, 0, 0.95),
+                0 0 26px rgba(16, 185, 129, 0.32);
+            backdrop-filter: blur(14px);
             overflow: visible;
         }
 
-        .leaf-left-top {
+        /* পপআপের ব্যাকগ্রাউন্ডে হালকা ঘূর্ণায়মান পাখা */
+        .popup-bg-fan-wrap {
             position: absolute;
-            top: 10px;
-            left: -13px;
-            transform-origin: right center;
-            animation: leafSwayLeft 3.2s ease-in-out infinite;
-            filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.65));
+            inset: 0;
+            border-radius: 24px;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
         }
 
-        .leaf-left-mid {
-            position: absolute;
-            top: 52%;
-            left: -14px;
-            transform-origin: right center;
-            animation: leafSwayLeft 3.7s ease-in-out infinite;
-            filter: drop-shadow(0 2px 6px rgba(34, 197, 94, 0.65));
-        }
-
-        .leaf-left-bot {
-            position: absolute;
-            bottom: 14px;
-            left: -12px;
-            transform-origin: right center;
-            animation: leafSwayLeft 2.9s ease-in-out infinite;
-            filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.65));
-        }
-
-        .leaf-right-top {
-            position: absolute;
-            top: 10px;
-            right: -13px;
-            transform-origin: left center;
-            animation: leafSwayRight 3.3s ease-in-out infinite;
-            filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.65));
-        }
-
-        .leaf-right-mid {
+        .popup-bg-fan {
             position: absolute;
             top: 52%;
-            right: -14px;
-            transform-origin: left center;
-            animation: leafSwayRight 3.6s ease-in-out infinite;
-            filter: drop-shadow(0 2px 6px rgba(34, 197, 94, 0.65));
+            left: 50%;
+            width: 190px;
+            height: 190px;
+            opacity: 0.13;
+            animation: slowBgFanSpin 14s linear infinite;
+            filter: drop-shadow(0 0 12px rgba(74, 222, 128, 0.45));
         }
 
-        .leaf-right-bot {
+        /* বাম ও ডান পাশে ঘন গাছের ডাল ও পাতার থোকা */
+        .foliage-left {
             position: absolute;
-            bottom: 14px;
-            right: -12px;
-            transform-origin: left center;
-            animation: leafSwayRight 3.0s ease-in-out infinite;
-            filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.65));
+            top: 8px;
+            left: -17px;
+            width: 24px;
+            height: calc(100% - 16px);
+            pointer-events: none;
+            z-index: 6;
+            transform-origin: right center;
+            animation: vineBreezeLeft 4s ease-in-out infinite;
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.75));
         }
 
-        .popup-header {
+        .foliage-right {
+            position: absolute;
+            top: 8px;
+            right: -17px;
+            width: 24px;
+            height: calc(100% - 16px);
+            pointer-events: none;
+            z-index: 6;
+            transform-origin: left center;
+            animation: vineBreezeRight 4.2s ease-in-out infinite;
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.75));
+        }
+
+        .popup-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* টপ মেনু বার */
+        .top-menu-bar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 3px;
-            margin-bottom: 5px;
+            gap: 4px;
+            padding: 4px 6px;
+            margin-bottom: 6px;
+            border-radius: 14px;
+            background: rgba(3, 12, 14, 0.88);
+            border: 1px solid rgba(74, 222, 128, 0.35);
             cursor: grab;
             touch-action: none;
-            padding: 2px 3px 4px;
-            border-bottom: 1px solid rgba(74, 222, 128, 0.4);
         }
 
-        .popup-header:active {
+        .top-menu-bar:active {
             cursor: grabbing;
         }
 
-        .badge-left {
-            background: linear-gradient(135deg, #22c55e 0%, #fbbf24 55%, #fef08a 100%);
-            color: #052e16;
-            font-size: 6.2px;
-            padding: 2px 4.5px;
-            border-radius: 6px;
-            line-height: 1.05;
-            text-transform: uppercase;
-            pointer-events: none;
-            text-shadow: none;
-            box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+        .menu-brand-info {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
         }
 
-        .brand-center {
-            text-align: center;
-            flex: 1;
-            pointer-events: none;
-        }
-
-        .brand-main {
-            font-style: italic;
+        .menu-title {
             font-size: 10px;
-            letter-spacing: 0.4px;
-            color: #fffbeb;
-            -webkit-text-fill-color: #fffbeb;
-            -webkit-text-stroke: 0.35px #064e3b;
-            text-shadow:
-                0 0 6px rgba(74, 222, 128, 0.9),
-                0 0 14px rgba(250, 204, 21, 0.8),
-                0 2px 4px rgba(0, 0, 0, 1);
-            line-height: 1.12;
+            font-style: italic;
+            color: #fef08a;
+            line-height: 1.1;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .brand-sub {
+        .menu-sub {
             font-size: 6px;
             color: #6ee7b7;
-            letter-spacing: 0.3px;
-            margin-top: 1px;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .header-controls {
+        .menu-actions {
             display: flex;
             align-items: center;
-            gap: 2px;
+            gap: 3px;
+            flex-shrink: 0;
         }
 
-        .voice-toggle-btn {
-            font-size: 5.8px;
-            padding: 2px 4px;
-            border-radius: 5px;
-            border: 1px solid rgba(244, 114, 182, 0.9);
+        .menu-pill-btn {
+            font-size: 6px;
+            font-weight: 800;
+            padding: 2.5px 5px;
+            border-radius: 7px;
+            border: 1px solid rgba(244, 114, 182, 0.75);
             background: linear-gradient(135deg, #ec4899, #be185d);
             color: #ffffff;
             cursor: pointer;
-            text-shadow: none;
-            box-shadow: 0 0 8px rgba(236, 72, 153, 0.55);
         }
 
-        .voice-toggle-btn.is-off {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
+        .menu-pill-btn.is-muted {
+            background: #1e293b;
             color: #94a3b8;
-            border-color: rgba(148, 163, 184, 0.45);
-            box-shadow: none;
+            border-color: rgba(148, 163, 184, 0.4);
         }
 
-        .hide-btn {
-            background: linear-gradient(180deg, #134e4a, #042f2e);
-            color: #ecfdf5;
-            border: 1px solid rgba(52, 211, 153, 0.55);
-            padding: 2px 4.5px;
-            border-radius: 5px;
+        .menu-hide-btn {
             font-size: 6px;
+            font-weight: 800;
+            padding: 2.5px 5px;
+            border-radius: 7px;
+            border: 1px solid rgba(52, 211, 153, 0.55);
+            background: #064e3b;
+            color: #ecfdf5;
             cursor: pointer;
         }
 
-        /* DK WIN & BD WIN সুইচার + হাইপারলিংক রো */
-        .platform-switcher {
+        /* DK WIN & BD WIN সুইচ বার */
+        .platform-switch-bar {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4px;
-            margin-bottom: 4px;
-            background: rgba(2, 6, 14, 0.95);
-            padding: 2.5px;
-            border-radius: 9px;
-            border: 1px solid rgba(74, 222, 128, 0.45);
+            gap: 5px;
+            margin-bottom: 5px;
+            padding: 3px;
+            border-radius: 12px;
+            background: rgba(2, 8, 14, 0.92);
+            border: 1px solid rgba(74, 222, 128, 0.4);
         }
 
-        .platform-btn {
-            font-size: 7px;
-            padding: 3.5px 4px;
-            border-radius: 6.5px;
+        .plat-switch-btn {
+            padding: 4px 5px;
+            border-radius: 9px;
             border: 1px solid transparent;
             background: rgba(15, 23, 42, 0.9);
             color: #cbd5e1;
+            font-size: 7px;
             cursor: pointer;
-            text-align: center;
             text-transform: uppercase;
-            letter-spacing: 0.4px;
         }
 
-        .platform-btn.active {
-            background: linear-gradient(135deg, #22c55e 0%, #facc15 55%, #38bdf8 100%);
-            color: #041214;
+        .plat-switch-btn.active {
+            background: linear-gradient(135deg, #22c55e 0%, #fde047 100%);
+            color: #052e16;
             border-color: #ffffff;
             text-shadow: none;
-            box-shadow: 0 0 12px rgba(74, 222, 128, 0.65);
+            box-shadow: 0 0 12px rgba(74, 222, 128, 0.55);
         }
 
-        .hyperlink-strip {
+        /* হাইপারলিংক বার */
+        .link-bar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 4px;
+            gap: 5px;
+            padding: 3px 7px;
             margin-bottom: 5px;
-            padding: 2.5px 5px;
-            border-radius: 8px;
-            background: rgba(6, 24, 29, 0.9);
+            border-radius: 10px;
+            background: rgba(6, 26, 28, 0.88);
             border: 1px solid rgba(56, 189, 248, 0.35);
-            font-size: 6.2px;
+            font-size: 6.3px;
         }
 
-        .direct-hyperlink {
+        .hyper-link {
             color: #7dd3fc;
             text-decoration: underline;
             font-weight: 700;
@@ -510,448 +416,260 @@
             text-overflow: ellipsis;
         }
 
-        .voice-demo-btn {
-            background: linear-gradient(135deg, #f472b6, #db2777);
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            padding: 1.5px 5px;
-            font-size: 5.8px;
+        .hyper-tg {
+            color: #fde047;
+            text-decoration: underline;
             font-weight: 800;
-            cursor: pointer;
             flex-shrink: 0;
         }
 
-        .market-tabs {
+        /* টাইম ট্যাব */
+        .time-tabs {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2.5px;
+            gap: 3px;
             margin-bottom: 5px;
-            background: rgba(2, 6, 14, 0.95);
-            padding: 2px;
-            border-radius: 9px;
-            border: 1px solid rgba(52, 211, 153, 0.35);
+            padding: 2.5px;
+            border-radius: 11px;
+            background: rgba(2, 8, 14, 0.92);
+            border: 1px solid rgba(52, 211, 153, 0.32);
         }
 
-        .market-btn {
-            font-size: 6.8px;
-            padding: 2.5px 1px;
-            border-radius: 6px;
+        .time-tab-btn {
+            padding: 2.5px 2px;
+            border-radius: 8px;
             border: 1px solid transparent;
-            background: rgba(15, 23, 42, 0.88);
+            background: rgba(15, 23, 42, 0.85);
             color: #cbd5e1;
+            font-size: 6.8px;
             cursor: pointer;
-            text-align: center;
         }
 
-        .market-btn.active {
-            background: linear-gradient(135deg, #10b981 0%, #f59e0b 100%);
-            color: #050912;
+        .time-tab-btn.active {
+            background: linear-gradient(135deg, #10b981, #eab308);
+            color: #05110a;
             border-color: #fef08a;
             text-shadow: none;
-            box-shadow: 0 0 10px rgba(16, 185, 129, 0.55);
         }
 
-        .ai-call-banner {
-            margin-bottom: 5px;
-            padding: 3.5px 6px;
-            border-radius: 9px;
-            background: linear-gradient(90deg, rgba(16, 185, 129, 0.25), rgba(245, 158, 11, 0.25));
-            border: 1px solid rgba(250, 204, 21, 0.52);
+        /* ভয়েস কল ব্যানার */
+        .call-banner {
+            padding: 4px 7px;
+            margin-bottom: 6px;
+            border-radius: 11px;
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.24), rgba(234, 179, 8, 0.24));
+            border: 1px solid rgba(250, 204, 21, 0.5);
             font-size: 7.2px;
             font-weight: 800;
-            color: #fef08a;
+            color: #fef9c3;
             text-align: center;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            box-shadow: 0 0 12px rgba(250, 204, 21, 0.16);
         }
 
-        .pred-grid {
+        /* সিগন্যাল গ্রিড + RGB SMALL ও BIG */
+        .signal-board {
             display: grid;
-            grid-template-columns: 0.9fr 1.32fr 0.9fr;
-            gap: 4px;
+            grid-template-columns: 0.92fr 1.28fr 0.92fr;
+            gap: 4.5px;
             align-items: stretch;
-            position: relative;
         }
 
-        /* BIG এবং SMALL-এ RGB লাইট */
-        .side-panel {
-            border-radius: 12px;
-            padding: 5px 3px;
+        .rgb-card {
+            border-radius: 14px;
+            padding: 6px 3px;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             border: 1.5px solid #ff2a85;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
             animation: rgbBorderFlow 2.6s linear infinite;
             transition: transform 0.2s ease;
         }
 
-        .panel-small {
-            background: linear-gradient(170deg, rgba(20, 184, 166, 0.45) 0%, rgba(17, 94, 89, 0.92) 60%, rgba(4, 47, 46, 0.98) 100%);
+        .rgb-small {
+            background: linear-gradient(175deg, rgba(13, 148, 136, 0.45), rgba(4, 47, 46, 0.96));
         }
 
-        .panel-big {
-            background: linear-gradient(170deg, rgba(245, 158, 11, 0.45) 0%, rgba(146, 64, 14, 0.92) 60%, rgba(69, 26, 3, 0.98) 100%);
+        .rgb-big {
+            background: linear-gradient(175deg, rgba(217, 119, 6, 0.45), rgba(69, 26, 3, 0.96));
             animation-delay: -1.3s;
         }
 
-        .side-panel.is-predicted {
-            transform: translateY(-1px) scale(1.03);
+        .rgb-card.is-active {
+            transform: scale(1.03);
         }
 
-        .side-panel > div {
-            position: relative;
-            z-index: 2;
-        }
-
-        .panel-title {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 11px;
+        .rgb-label {
+            font-size: 10.5px;
             font-weight: 900;
-            letter-spacing: 0.5px;
-            line-height: 1.1;
-            transform: perspective(180px) rotateX(10deg);
             color: #ffffff;
-            text-shadow:
-                0 1px 0 #06131a,
-                0 2px 4px rgba(0, 0, 0, 0.95),
-                0 0 10px rgba(0, 240, 255, 0.75);
+            letter-spacing: 0.5px;
         }
 
-        .panel-range {
-            font-size: 6.8px;
+        .rgb-sub {
+            font-size: 6.5px;
             color: #e2e8f0;
-            opacity: 0.92;
-            margin-top: 1.5px;
+            margin-top: 1px;
         }
 
-        .panel-tag {
+        .rgb-tag {
             margin-top: 4px;
             font-size: 5.8px;
-            padding: 2px 2px;
-            border-radius: 4.5px;
+            padding: 2px;
+            border-radius: 5px;
             background: rgba(15, 23, 42, 0.92);
             color: #94a3b8;
-            border: 1px solid rgba(148, 163, 184, 0.15);
         }
 
-        .panel-tag.active-tag {
-            background: linear-gradient(135deg, #fde047 0%, #22c55e 50%, #38bdf8 100%);
+        .rgb-tag.active {
+            background: linear-gradient(135deg, #fde047, #22c55e);
             color: #052e16;
-            border-color: #ffffff;
             text-shadow: none;
-            box-shadow: 0 0 10px rgba(74, 222, 128, 0.75);
         }
 
-        .center-panel {
-            background:
-                radial-gradient(circle at 50% 42%, rgba(52, 211, 153, 0.14) 0%, transparent 68%),
-                linear-gradient(180deg, rgba(9, 32, 38, 0.98) 0%, rgba(4, 9, 18, 0.99) 100%);
-            border: 1px solid rgba(52, 211, 153, 0.65);
-            border-radius: 12px;
-            padding: 4px 3.5px;
+        .center-orb-card {
+            border-radius: 14px;
+            padding: 5px 4px;
             text-align: center;
+            background: linear-gradient(180deg, rgba(8, 30, 34, 0.96), rgba(3, 8, 16, 0.99));
+            border: 1px solid rgba(74, 222, 128, 0.6);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            position: relative;
-            z-index: 1;
+            gap: 2px;
         }
 
-        .period-row {
+        .period-pill {
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 2.5px;
-            background: rgba(15, 23, 42, 0.94);
+            gap: 3px;
             padding: 1.5px 4px;
-            border-radius: 4.5px;
-            width: 100%;
-            border: 1px solid rgba(52, 211, 153, 0.25);
-        }
-
-        .period-display {
-            font-size: 6px;
-            color: #f8fafc;
+            border-radius: 6px;
+            background: rgba(15, 23, 42, 0.92);
+            border: 1px solid rgba(74, 222, 128, 0.25);
+            font-size: 5.8px;
             cursor: pointer;
-            text-decoration: underline;
-            text-decoration-style: dotted;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         .live-dot {
             width: 4.5px;
             height: 4.5px;
-            background-color: #34d399;
             border-radius: 50%;
-            box-shadow: 0 0 6px #34d399, 0 0 10px #4ade80;
-            flex-shrink: 0;
-            animation: liveBlink 1.2s ease-in-out infinite;
+            background: #4ade80;
+            box-shadow: 0 0 7px #4ade80;
         }
 
-        @keyframes liveBlink {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.45; transform: scale(0.82); }
-        }
-
-        .football-orb-wrap {
-            position: relative;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 1.5px 0;
-        }
-
-        .red-white-rack-ring {
-            position: absolute;
-            inset: 0;
+        .num-orb {
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
-            background: repeating-conic-gradient(
-                from 0deg,
-                #ef4444 0deg 22.5deg,
-                #ffffff 22.5deg 45deg
-            );
-            box-shadow:
-                0 0 12px rgba(239, 68, 68, 0.7),
-                0 0 16px rgba(255, 255, 255, 0.35),
-                0 6px 12px rgba(0, 0, 0, 0.85);
-            animation: rackSpinSlow 5s linear infinite;
-            -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4.5px), #000 calc(100% - 3.8px));
-            mask: radial-gradient(farthest-side, transparent calc(100% - 4.5px), #000 calc(100% - 3.8px));
-        }
-
-        @keyframes rackSpinSlow {
-            0%   { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .glow-orb {
-            position: relative;
-            font-family: 'Chakra Petch', sans-serif;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14.5px;
-            font-weight: 700;
-            color: #ffffff;
-            text-shadow:
-                0 1px 2px rgba(0, 0, 0, 1),
-                0 2px 0 #090d16,
-                0 0 8px rgba(0, 0, 0, 0.95);
             border: 1.5px solid #ffffff;
-            overflow: hidden;
-            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            color: #ffffff;
+            margin: 1px 0;
         }
 
-        .glow-orb::before {
-            content: "";
-            position: absolute;
-            inset: -2px;
-            border-radius: 50%;
-            background:
-                repeating-conic-gradient(
-                    from 15deg,
-                    rgba(255, 255, 255, 0.25) 0deg 14deg,
-                    transparent 14deg 60deg
-                ),
-                radial-gradient(circle at 50% 50%, transparent 32%, rgba(255, 255, 255, 0.36) 33.5%, transparent 35.5%),
-                radial-gradient(circle at 28% 24%, rgba(255, 255, 255, 0.45), transparent 55%);
-            pointer-events: none;
-            z-index: 1;
-        }
+        .orb-green { background: radial-gradient(circle at 30% 25%, #86efac, #16a34a 65%, #052e16 100%); box-shadow: 0 0 12px rgba(34, 197, 94, 0.75); }
+        .orb-red { background: radial-gradient(circle at 30% 25%, #fca5a5, #dc2626 65%, #450a0a 100%); box-shadow: 0 0 12px rgba(239, 68, 68, 0.75); }
+        .orb-violet { background: radial-gradient(circle at 30% 25%, #e9d5ff, #9333ea 65%, #2e1065 100%); box-shadow: 0 0 12px rgba(168, 85, 247, 0.75); }
 
-        .glow-orb span {
-            position: relative;
-            z-index: 2;
-        }
-
-        .orb-green {
-            background: radial-gradient(circle at 30% 22%, #86efac 0%, #22c55e 45%, #15803d 78%, #052e16 100%);
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.85), 0 0 14px rgba(34, 197, 94, 0.85), inset 0 2px 5px rgba(255, 255, 255, 0.45);
-        }
-
-        .orb-red {
-            background: radial-gradient(circle at 30% 22%, #fca5a5 0%, #ef4444 45%, #b91c1c 78%, #450a0a 100%);
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.85), 0 0 14px rgba(239, 68, 68, 0.88), inset 0 2px 5px rgba(255, 255, 255, 0.45);
-        }
-
-        .orb-violet {
-            background: radial-gradient(circle at 30% 22%, #e9d5ff 0%, #a855f7 45%, #7e22ce 78%, #2e1065 100%);
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.85), 0 0 14px rgba(168, 85, 247, 0.88), inset 0 2px 5px rgba(255, 255, 255, 0.45);
-        }
-
-        .timer-pill {
+        .timer-txt {
             font-size: 6px;
             color: #fde047;
-            background: linear-gradient(90deg, rgba(16, 185, 129, 0.22), rgba(245, 158, 11, 0.22));
-            border: 1px solid rgba(250, 204, 21, 0.45);
             padding: 1.5px 5px;
             border-radius: 999px;
-            margin-top: 1px;
-            white-space: nowrap;
+            background: rgba(250, 204, 21, 0.14);
+            border: 1px solid rgba(250, 204, 21, 0.4);
         }
 
-        .winloss-bar {
-            margin-top: 5px;
+        .wl-row {
+            margin-top: 6px;
             display: grid;
-            grid-template-columns: 1fr 1.1fr 1fr;
-            gap: 3px;
+            grid-template-columns: 1fr 1.15fr 1fr;
+            gap: 4px;
             align-items: center;
         }
 
         .wl-btn {
             font-size: 6.2px;
-            padding: 3px 2px;
-            border-radius: 6px;
-            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 3px;
+            border-radius: 7px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             cursor: pointer;
-            text-transform: uppercase;
             text-shadow: none;
         }
 
-        .btn-win {
-            background: linear-gradient(135deg, #34d399, #059669);
-            color: #022c22;
-        }
+        .wl-win { background: linear-gradient(135deg, #34d399, #059669); color: #022c22; }
+        .wl-loss { background: linear-gradient(135deg, #fb7185, #be123c); color: #ffffff; }
 
-        .btn-loss {
-            background: linear-gradient(135deg, #fb7185, #be123c);
-            color: #ffffff;
-        }
-
-        .wl-status {
+        .wl-score {
             font-size: 6px;
             text-align: center;
-            padding: 2.5px 2px;
-            border-radius: 6px;
+            padding: 2.5px;
+            border-radius: 7px;
             background: rgba(15, 23, 42, 0.92);
-            border: 1px solid rgba(52, 211, 153, 0.32);
+            border: 1px solid rgba(74, 222, 128, 0.3);
             color: #fde047;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
-        .recent-box {
-            margin-top: 5px;
-            background: linear-gradient(180deg, rgba(6, 24, 29, 0.96), rgba(3, 8, 17, 0.98));
-            border: 1px solid rgba(52, 211, 153, 0.32);
-            border-radius: 9px;
-            padding: 4.5px;
+        .history-strip {
+            margin-top: 6px;
+            padding: 5px;
+            border-radius: 11px;
+            background: rgba(4, 14, 18, 0.94);
+            border: 1px solid rgba(74, 222, 128, 0.3);
         }
 
-        .recent-head {
+        .history-meta {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             font-size: 6px;
+            margin-bottom: 3.5px;
             color: #e2e8f0;
-            margin-bottom: 3px;
         }
 
-        .conf-badge {
-            color: #34d399;
-        }
-
-        .wheel-strip {
+        .balls-row {
             display: grid;
             grid-template-columns: repeat(10, 1fr);
             gap: 2px;
-            align-items: center;
         }
 
-        .color-wheel {
-            position: relative;
-            font-family: 'Chakra Petch', sans-serif;
-            width: 15.5px;
-            height: 15.5px;
+        .mini-ball {
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
+            border: 1px solid #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 6.8px;
-            font-weight: 700;
             color: #ffffff;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95);
-            border: 1.5px solid #ffffff;
-            box-shadow:
-                0 0 0 1px #ef4444,
-                0 2px 6px rgba(0, 0, 0, 0.8);
-            overflow: hidden;
         }
 
-        .color-wheel::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            background: repeating-conic-gradient(
-                from 0deg,
-                rgba(255, 255, 255, 0.25) 0deg 12deg,
-                transparent 12deg 72deg
-            );
-            pointer-events: none;
-        }
-
-        .color-wheel span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .w-green { background: radial-gradient(circle at 32% 28%, #4ade80, #16a34a 65%, #052e16 100%); }
-        .w-red { background: radial-gradient(circle at 32% 28%, #f87171, #dc2626 65%, #450a0a 100%); }
-        .w-violet-green { background: conic-gradient(#a855f7 0deg 180deg, #22c55e 180deg 360deg); }
-        .w-violet-red { background: conic-gradient(#a855f7 0deg 180deg, #ef4444 180deg 360deg); }
-
-        .bottom-action-bar {
-            margin-top: 5px;
-            width: 100%;
-        }
-
-        .telegram-join-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #22c55e 0%, #fbbf24 55%, #16a34a 100%);
-            color: #052e16;
-            border: 1px solid #fef08a;
-            border-radius: 9px;
-            padding: 5px 7px;
-            font-size: 7px;
-            text-decoration: none;
-            letter-spacing: 0.45px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            text-transform: uppercase;
-            text-shadow: none;
-            box-shadow: 0 4px 14px rgba(34, 197, 94, 0.42);
-        }
+        .b-green { background: #16a34a; }
+        .b-red { background: #dc2626; }
+        .b-violet-green { background: linear-gradient(135deg, #a855f7 50%, #22c55e 50%); }
+        .b-violet-red { background: linear-gradient(135deg, #a855f7 50%, #ef4444 50%); }
 
         #copy-toast {
             position: fixed;
             bottom: 14px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, #34d399, #059669);
-            color: #022c22;
+            background: #22c55e;
+            color: #052e16;
             font-size: 9px;
             font-weight: 800;
-            padding: 3.5px 9px;
-            border-radius: 6px;
+            padding: 4px 10px;
+            border-radius: 8px;
             display: none;
             z-index: 10002;
         }
@@ -961,203 +679,148 @@
 
     <iframe id="game-iframe" src="https://www.dkwin.world/#/register?invitationCode=12215125183" loading="lazy"></iframe>
 
-    <!-- ফ্লোটিং আইকন + সুন্দর পাখা -->
+    <!-- ফ্লোটিং আইকন -->
     <div id="floating-icon-btn">
-        <div class="wing-pair">
-            <svg class="wing-3d wing-left" width="56" height="60" viewBox="0 0 110 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="eagleIconL" x1="104" y1="18" x2="8" y2="104" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#fffbeb"/>
-                        <stop offset="35%" stop-color="#facc15"/>
-                        <stop offset="72%" stop-color="#34d399"/>
-                        <stop offset="100%" stop-color="#064e3b"/>
-                    </linearGradient>
-                </defs>
-                <path d="M104 46C76 16 42 8 8 14C20 26 28 38 30 50C16 53 7 61 4 72C19 70 33 65 44 56C37 71 35 86 38 100C52 89 65 76 74 62C69 78 68 94 71 110C85 92 97 70 104 46Z" fill="url(#eagleIconL)" stroke="#fef08a" stroke-width="2.2"/>
-                <path d="M96 48C70 26 42 20 16 23" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                <path d="M90 62C64 48 38 46 16 54" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-            <svg class="wing-3d wing-right" width="56" height="60" viewBox="0 0 110 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="eagleIconR" x1="6" y1="18" x2="102" y2="104" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#fffbeb"/>
-                        <stop offset="35%" stop-color="#facc15"/>
-                        <stop offset="72%" stop-color="#34d399"/>
-                        <stop offset="100%" stop-color="#064e3b"/>
-                    </linearGradient>
-                </defs>
-                <path d="M6 46C34 16 68 8 102 14C90 26 82 38 80 50C94 53 103 61 106 72C91 70 77 65 66 56C73 71 75 86 72 100C58 89 45 76 36 62C41 78 42 94 39 110C25 92 13 70 6 46Z" fill="url(#eagleIconR)" stroke="#fef08a" stroke-width="2.2"/>
-                <path d="M14 48C40 26 68 20 94 23" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                <path d="M20 62C46 48 72 46 94 54" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-        </div>
-        <div class="icon-circle-clip">
-            <img src="https://cdn.imageurlgenerator.com/uploads/5f242846-c36b-4437-8bbd-8fab060a831d.jpg" alt="Tuhin VIP Icon" />
-        </div>
+        <img src="https://cdn.imageurlgenerator.com/uploads/5f242846-c36b-4437-8bbd-8fab060a831d.jpg" alt="Tuhin VIP Icon" />
     </div>
 
     <!-- পাসওয়ার্ড পপআপ -->
     <div id="auth-overlay">
-        <div class="access-vip-badge">ACCESS VIP HACK</div>
+        <div class="auth-badge">ACCESS VIP HACK</div>
         <div class="auth-title text-3d">🔐 Tuhin vip hack</div>
         <div class="auth-userid">@Tuhin0027</div>
         <input type="password" id="pass-input" class="auth-input" placeholder="Enter Password" />
         <label class="remember-row">
             <input type="checkbox" id="remember-pass" /> Remember Password
         </label>
-        <button type="button" class="auth-btn text-3d" onclick="checkPassword()">Submit</button>
+        <button type="button" class="access-vip-btn" onclick="checkPassword()">ACCESS VIP</button>
         <div id="error-msg">Wrong Password!</div>
     </div>
 
-    <!-- হ্যাক পপআপ + সুন্দর পাখা + সবুজ পাতা -->
+    <!-- নতুন হ্যাক পপআপ -->
     <div class="overlay-box" id="main-content">
-        <div class="side-leaves">
-            <!-- বাম পাশের সবুজ পাতা -->
-            <svg class="leaf-left-top" width="18" height="14" viewBox="0 0 24 18" fill="none">
-                <path d="M22 9C16 2 7 2 2 9C7 16 16 16 22 9Z" fill="#22c55e" stroke="#86efac" stroke-width="1.4"/>
-                <path d="M22 9H4" stroke="#dcfce7" stroke-width="1.2" stroke-linecap="round"/>
-            </svg>
-            <svg class="leaf-left-mid" width="20" height="15" viewBox="0 0 24 18" fill="none">
-                <path d="M22 9C16 2 7 2 2 9C7 16 16 16 22 9Z" fill="#16a34a" stroke="#4ade80" stroke-width="1.4"/>
-                <path d="M22 9H4" stroke="#bbf7d0" stroke-width="1.2" stroke-linecap="round"/>
-            </svg>
-            <svg class="leaf-left-bot" width="18" height="14" viewBox="0 0 24 18" fill="none">
-                <path d="M22 9C16 2 7 2 2 9C7 16 16 16 22 9Z" fill="#22c55e" stroke="#86efac" stroke-width="1.4"/>
-                <path d="M22 9H4" stroke="#dcfce7" stroke-width="1.2" stroke-linecap="round"/>
-            </svg>
-
-            <!-- ডান পাশের সবুজ পাতা -->
-            <svg class="leaf-right-top" width="18" height="14" viewBox="0 0 24 18" fill="none">
-                <path d="M2 9C8 2 17 2 22 9C17 16 8 16 2 9Z" fill="#22c55e" stroke="#86efac" stroke-width="1.4"/>
-                <path d="M2 9H20" stroke="#dcfce7" stroke-width="1.2" stroke-linecap="round"/>
-            </svg>
-            <svg class="leaf-right-mid" width="20" height="15" viewBox="0 0 24 18" fill="none">
-                <path d="M2 9C8 2 17 2 22 9C17 16 8 16 2 9Z" fill="#16a34a" stroke="#4ade80" stroke-width="1.4"/>
-                <path d="M2 9H20" stroke="#bbf7d0" stroke-width="1.2" stroke-linecap="round"/>
-            </svg>
-            <svg class="leaf-right-bot" width="18" height="14" viewBox="0 0 24 18" fill="none">
-                <path d="M2 9C8 2 17 2 22 9C17 16 8 16 2 9Z" fill="#22c55e" stroke="#86efac" stroke-width="1.4"/>
-                <path d="M2 9H20" stroke="#dcfce7" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- ব্যাকগ্রাউন্ডে হালকা ঘূর্ণায়মান পাখা -->
+        <div class="popup-bg-fan-wrap">
+            <svg class="popup-bg-fan" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="80" cy="80" r="14" fill="#fde047" />
+                <path d="M80 66C66 32 34 18 14 26C28 46 36 62 66 74Z" fill="#4ade80" />
+                <path d="M94 80C128 66 142 34 134 14C114 28 98 36 86 66Z" fill="#fde047" />
+                <path d="M80 94C94 128 126 142 146 134C132 114 124 98 94 86Z" fill="#34d399" />
+                <path d="M66 80C32 94 18 126 26 146C46 132 62 124 74 94Z" fill="#facc15" />
             </svg>
         </div>
 
-        <div class="wing-pair">
-            <svg class="wing-3d wing-left" width="70" height="146" viewBox="0 0 115 190" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="eaglePopL" x1="110" y1="22" x2="8" y2="168" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#fffbeb"/>
-                        <stop offset="32%" stop-color="#facc15"/>
-                        <stop offset="68%" stop-color="#34d399"/>
-                        <stop offset="100%" stop-color="#064e3b"/>
-                    </linearGradient>
-                </defs>
-                <path d="M110 68C78 24 40 10 6 16C20 34 29 52 32 70C15 74 6 86 3 102C20 98 37 91 51 79C42 100 40 121 44 142C60 126 75 109 86 91C79 115 78 139 82 164C96 136 105 104 110 68Z" fill="url(#eaglePopL)" stroke="#fef08a" stroke-width="2.4"/>
-                <path d="M100 72C72 42 40 32 14 34" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M94 92C66 72 38 69 14 78" stroke="#fde047" stroke-width="2" stroke-linecap="round"/>
-                <path d="M88 114C62 102 38 102 18 112" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-            <svg class="wing-3d wing-right" width="70" height="146" viewBox="0 0 115 190" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="eaglePopR" x1="5" y1="22" x2="107" y2="168" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#fffbeb"/>
-                        <stop offset="32%" stop-color="#facc15"/>
-                        <stop offset="68%" stop-color="#34d399"/>
-                        <stop offset="100%" stop-color="#064e3b"/>
-                    </linearGradient>
-                </defs>
-                <path d="M5 68C37 24 75 10 109 16C95 34 86 52 83 70C100 74 109 86 112 102C95 98 78 91 64 79C73 100 75 121 71 142C55 126 40 109 29 91C36 115 37 139 33 164C19 136 10 104 5 68Z" fill="url(#eaglePopR)" stroke="#fef08a" stroke-width="2.4"/>
-                <path d="M15 72C43 42 75 32 101 34" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M21 92C49 72 77 69 101 78" stroke="#fde047" stroke-width="2" stroke-linecap="round"/>
-                <path d="M27 114C53 102 77 102 97 112" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-        </div>
+        <!-- বাম পাশে ঘন সবুজ গাছের লতা ও পাতার থোকা -->
+        <svg class="foliage-left" viewBox="0 0 28 240" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 8C16 58 14 120 18 180C19 202 22 220 25 234" stroke="#15803d" stroke-width="2.4" stroke-linecap="round" />
+            <!-- পাতার থোকা ১ -->
+            <path d="M19 26C10 18 3 22 2 30C9 33 15 31 19 26Z" fill="#22c55e" stroke="#86efac" stroke-width="0.9" />
+            <path d="M18 36C9 34 4 41 6 48C13 46 17 42 18 36Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9" />
+            <path d="M17 48C8 50 5 58 9 64C15 60 17 55 17 48Z" fill="#4ade80" stroke="#bbf7d0" stroke-width="0.8" />
+            <!-- পাতার থোকা ২ -->
+            <path d="M16 88C7 80 1 85 1 93C8 96 13 94 16 88Z" fill="#16a34a" stroke="#86efac" stroke-width="0.9" />
+            <path d="M16 100C7 99 3 106 6 113C12 110 15 106 16 100Z" fill="#22c55e" stroke="#4ade80" stroke-width="0.9" />
+            <path d="M16 113C8 116 5 124 9 129C14 125 16 120 16 113Z" fill="#15803d" stroke="#86efac" stroke-width="0.8" />
+            <!-- পাতার থোকা ৩ -->
+            <path d="M18 156C9 148 3 153 3 161C10 164 15 162 18 156Z" fill="#22c55e" stroke="#86efac" stroke-width="0.9" />
+            <path d="M19 169C10 168 6 175 9 182C15 179 18 175 19 169Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9" />
+            <path d="M21 183C12 186 9 194 14 199C19 195 21 190 21 183Z" fill="#4ade80" stroke="#bbf7d0" stroke-width="0.8" />
+        </svg>
 
-        <div class="popup-header" id="main-content-header">
-            <div class="badge-left text-3d">3D<br />VIP</div>
-            <div class="brand-center">
-                <div class="brand-main text-3d">Tuhin vip hack</div>
-                <div class="brand-sub text-3d" id="mode-subtitle">@Tuhin0027 • DK WIN • 30S</div>
-            </div>
-            <div class="header-controls">
-                <button type="button" class="voice-toggle-btn text-3d" id="voice-toggle-btn" onclick="toggleVoice()" title="Female Voice ON/OFF">👩 ON</button>
-                <button type="button" class="hide-btn text-3d" onclick="hidePopup()">HIDE</button>
-            </div>
-        </div>
+        <!-- ডান পাশে ঘন সবুজ গাছের লতা ও পাতার থোকা -->
+        <svg class="foliage-right" viewBox="0 0 28 240" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 8C12 58 14 120 10 180C9 202 6 220 3 234" stroke="#15803d" stroke-width="2.4" stroke-linecap="round" />
+            <!-- পাতার থোকা ১ -->
+            <path d="M9 26C18 18 25 22 26 30C19 33 13 31 9 26Z" fill="#22c55e" stroke="#86efac" stroke-width="0.9" />
+            <path d="M10 36C19 34 24 41 22 48C15 46 11 42 10 36Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9" />
+            <path d="M11 48C20 50 23 58 19 64C13 60 11 55 11 48Z" fill="#4ade80" stroke="#bbf7d0" stroke-width="0.8" />
+            <!-- পাতার থোকা ২ -->
+            <path d="M12 88C21 80 27 85 27 93C20 96 15 94 12 88Z" fill="#16a34a" stroke="#86efac" stroke-width="0.9" />
+            <path d="M12 100C21 99 25 106 22 113C16 110 13 106 12 100Z" fill="#22c55e" stroke="#4ade80" stroke-width="0.9" />
+            <path d="M12 113C20 116 23 124 19 129C14 125 12 120 12 113Z" fill="#15803d" stroke="#86efac" stroke-width="0.8" />
+            <!-- পাতার থোকা ৩ -->
+            <path d="M10 156C19 148 25 153 25 161C18 164 13 162 10 156Z" fill="#22c55e" stroke="#86efac" stroke-width="0.9" />
+            <path d="M9 169C18 168 22 175 19 182C13 179 10 175 9 169Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9" />
+            <path d="M7 183C16 186 19 194 14 199C9 195 7 190 7 183Z" fill="#4ade80" stroke="#bbf7d0" stroke-width="0.8" />
+        </svg>
 
-        <!-- DK WIN এবং BD WIN সুইচ -->
-        <div class="platform-switcher">
-            <button type="button" class="platform-btn text-3d active" id="btn-dkwin" onclick="switchPlatform('DKWIN')">⇄ DK WIN</button>
-            <button type="button" class="platform-btn text-3d" id="btn-bdwin" onclick="switchPlatform('BDWIN')">⇄ BD WIN</button>
-        </div>
-
-        <!-- হাইপারলিংক ও ফিমেল ভয়েস ডেমো -->
-        <div class="hyperlink-strip">
-            <a href="https://www.dkwin.world/#/register?invitationCode=12215125183" target="_blank" rel="noopener noreferrer" class="direct-hyperlink" id="active-platform-link">🔗 Open DK Win Link</a>
-            <button type="button" class="voice-demo-btn" onclick="speakFemaleBangla('সবাই এখানে একটা বিগ ট্রেড করো!')">👩 Voice</button>
-        </div>
-
-        <div class="market-tabs">
-            <button type="button" class="market-btn text-3d active" data-market="30S">30S</button>
-            <button type="button" class="market-btn text-3d" data-market="1M">1M</button>
-            <button type="button" class="market-btn text-3d" data-market="3M">3M</button>
-            <button type="button" class="market-btn text-3d" data-market="5M">5M</button>
-        </div>
-
-        <div class="ai-call-banner" id="ai-call-banner">👩 সবাই এখানে একটা বিগ ট্রেড করো!</div>
-
-        <div class="pred-grid">
-            <div class="side-panel panel-small" id="small-panel">
-                <div>
-                    <div class="panel-title">SMALL</div>
-                    <div class="panel-range text-3d">0 - 4</div>
+        <div class="popup-inner">
+            <!-- মেনু বার -->
+            <div class="top-menu-bar" id="main-content-header">
+                <div class="menu-brand-info">
+                    <div class="menu-title text-3d">Tuhin vip hack</div>
+                    <div class="menu-sub" id="mode-subtitle">@Tuhin0027 • DK WIN • 30S</div>
                 </div>
-                <div class="panel-tag text-3d" id="small-tag">STANDBY</div>
+                <div class="menu-actions">
+                    <button type="button" class="menu-pill-btn" id="voice-toggle-btn" onclick="onMenuVoiceClick()">👩 VOICE</button>
+                    <button type="button" class="menu-hide-btn" onclick="onMenuHideClick()">HIDE</button>
+                </div>
             </div>
 
-            <div class="center-panel">
-                <div class="period-row">
-                    <div class="period-display text-3d" id="period-num" onclick="copyPeriodNumber()" title="Click to Copy Period">Loading...</div>
-                    <div class="live-dot"></div>
+            <!-- DK WIN ও BD WIN সুইচ -->
+            <div class="platform-switch-bar">
+                <button type="button" class="plat-switch-btn text-3d active" id="btn-dkwin" onclick="switchPlatform('DKWIN')">⇄ DK WIN</button>
+                <button type="button" class="plat-switch-btn text-3d" id="btn-bdwin" onclick="switchPlatform('BDWIN')">⇄ BD WIN</button>
+            </div>
+
+            <!-- হাইপারলিংক -->
+            <div class="link-bar">
+                <a href="https://www.dkwin.world/#/register?invitationCode=12215125183" target="_blank" rel="noopener noreferrer" class="hyper-link" id="active-platform-link">🔗 DK Win Register Link</a>
+                <a href="https://t.me/Tuhin0027" target="_blank" rel="noopener noreferrer" class="hyper-tg">@Tuhin0027</a>
+            </div>
+
+            <!-- মার্কেট টাইম মেনু -->
+            <div class="time-tabs">
+                <button type="button" class="time-tab-btn text-3d active" data-market="30S">30S</button>
+                <button type="button" class="time-tab-btn text-3d" data-market="1M">1M</button>
+                <button type="button" class="time-tab-btn text-3d" data-market="3M">3M</button>
+                <button type="button" class="time-tab-btn text-3d" data-market="5M">5M</button>
+            </div>
+
+            <!-- ভয়েস অ্যানাউন্সমেন্ট ব্যানার -->
+            <div class="call-banner" id="ai-call-banner">👩 সবাই এখানে একটা বিগ ট্রেড করো!</div>
+
+            <!-- সিগন্যাল বোর্ড -->
+            <div class="signal-board">
+                <div class="rgb-card rgb-small" id="small-panel">
+                    <div>
+                        <div class="rgb-label text-3d">SMALL</div>
+                        <div class="rgb-sub">0 - 4</div>
+                    </div>
+                    <div class="rgb-tag text-3d" id="small-tag">WAIT</div>
                 </div>
 
-                <div class="football-orb-wrap">
-                    <div class="red-white-rack-ring"></div>
-                    <div class="glow-orb orb-green" id="main-orb"><span id="main-orb-text">-</span></div>
+                <div class="center-orb-card">
+                    <div class="period-pill" onclick="copyPeriodNumber()" title="Copy Period">
+                        <span class="live-dot"></span>
+                        <span id="period-num">Loading...</span>
+                    </div>
+                    <div class="num-orb orb-green text-3d" id="main-orb"><span id="main-orb-text">-</span></div>
+                    <div class="timer-txt text-3d" id="timer-display">30s</div>
                 </div>
 
-                <div class="timer-pill text-3d" id="timer-display">NEXT IN 30s</div>
-            </div>
-
-            <div class="side-panel panel-big" id="big-panel">
-                <div>
-                    <div class="panel-title">BIG</div>
-                    <div class="panel-range text-3d">5 - 9</div>
+                <div class="rgb-card rgb-big" id="big-panel">
+                    <div>
+                        <div class="rgb-label text-3d">BIG</div>
+                        <div class="rgb-sub">5 - 9</div>
+                    </div>
+                    <div class="rgb-tag text-3d" id="big-tag">WAIT</div>
                 </div>
-                <div class="panel-tag text-3d" id="big-tag">STANDBY</div>
             </div>
-        </div>
 
-        <div class="winloss-bar">
-            <button type="button" class="wl-btn btn-win text-3d" onclick="triggerWinResult()">🏆 WIN</button>
-            <div class="wl-status text-3d" id="wl-status">W: 0 | L: 0</div>
-            <button type="button" class="wl-btn btn-loss text-3d" onclick="triggerLossResult()">❌ LOSS</button>
-        </div>
-
-        <div class="recent-box">
-            <div class="recent-head text-3d">
-                <span id="color-label">GREEN</span>
-                <span class="conf-badge" id="conf-label">CONF 88%</span>
+            <div class="wl-row">
+                <button type="button" class="wl-btn wl-win text-3d" onclick="triggerWinResult()">🏆 WIN</button>
+                <div class="wl-score text-3d" id="wl-status">W: 0 | L: 0</div>
+                <button type="button" class="wl-btn wl-loss text-3d" onclick="triggerLossResult()">❌ LOSS</button>
             </div>
-            <div class="wheel-strip" id="recent-wheels"></div>
-        </div>
 
-        <div class="bottom-action-bar">
-            <a href="https://t.me/Tuhin0027" target="_blank" rel="noopener noreferrer" class="telegram-join-btn text-3d">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-752-.244-1.349-.374-1.297-.789.027-.216.324-.437.893-.663 3.498-1.524 5.83-2.529 6.996-3.014 3.333-1.386 4.025-1.627 4.479-1.635.099-.002.321.023.465.14.12.098.153.228.166.32.013.092.028.301.012.463z" fill="#052e16"/>
-                </svg>
-                @Tuhin0027 TELEGRAM LINK
-            </a>
+            <div class="history-strip">
+                <div class="history-meta text-3d">
+                    <span id="color-label">GREEN</span>
+                    <span id="conf-label" style="color:#4ade80;">CONF 88%</span>
+                </div>
+                <div class="balls-row" id="recent-wheels"></div>
+            </div>
         </div>
     </div>
 
@@ -1168,14 +831,14 @@
             DKWIN: {
                 name: "DK WIN",
                 bn: "ডিকে উইন",
-                labelLink: "🔗 Open DK Win Link",
+                linkText: "🔗 DK Win Register Link",
                 url: "https://www.dkwin.world/#/register?invitationCode=12215125183",
                 saltMix: 0x11111111
             },
             BDWIN: {
                 name: "BD WIN",
                 bn: "বিডি উইন",
-                labelLink: "🔗 Open BD Win Link",
+                linkText: "🔗 BD Win Register Link",
                 url: "https://8bdwin24.com/register?inviteCode=9LBSM7N&from=web",
                 saltMix: 0x22222222
             }
@@ -1202,6 +865,7 @@
         let signalTimerStarted = false;
         let winCount = 0;
         let lossCount = 0;
+        let audioCtx = null;
 
         updateVoiceButtonUI();
         updateSubtitleLabel();
@@ -1211,9 +875,9 @@
             if (e.key === "Enter") checkPassword();
         });
 
-        document.querySelectorAll(".market-btn").forEach((btn) => {
+        document.querySelectorAll(".time-tab-btn").forEach((btn) => {
             btn.addEventListener("click", () => {
-                document.querySelectorAll(".market-btn").forEach((b) => b.classList.remove("active"));
+                document.querySelectorAll(".time-tab-btn").forEach((b) => b.classList.remove("active"));
                 btn.classList.add("active");
                 currentMarket = btn.dataset.market;
                 updateSubtitleLabel();
@@ -1221,9 +885,7 @@
                 lastEvaluatedPeriod = "";
                 previousPrediction = null;
                 updateSignalLogic();
-                if (voiceEnabled) {
-                    speakFemaleBangla(`${MARKETS[currentMarket].bnName} মার্কেট চালু হয়েছে।`);
-                }
+                playMenuVoice(`${MARKETS[currentMarket].bnName} মার্কেট সিলেক্ট হয়েছে।`);
             });
         });
 
@@ -1238,7 +900,7 @@
             const linkEl = document.getElementById("active-platform-link");
             if (linkEl) {
                 linkEl.href = p.url;
-                linkEl.textContent = p.labelLink;
+                linkEl.textContent = p.linkText;
             }
         }
 
@@ -1249,80 +911,114 @@
             document.getElementById("btn-dkwin").classList.toggle("active", platformKey === "DKWIN");
             document.getElementById("btn-bdwin").classList.toggle("active", platformKey === "BDWIN");
 
-            const iframe = document.getElementById("game-iframe");
-            iframe.src = PLATFORMS[platformKey].url;
-
+            document.getElementById("game-iframe").src = PLATFORMS[platformKey].url;
             updateHyperlinkUI();
             updateSubtitleLabel();
+
             cachedPeriod = "";
             lastEvaluatedPeriod = "";
             previousPrediction = null;
             updateSignalLogic();
 
-            if (voiceEnabled) {
-                speakFemaleBangla(`${PLATFORMS[platformKey].bn} পেজে সুইচ করা হয়েছে।`);
-            }
+            playMenuVoice(`${PLATFORMS[platformKey].bn} পেজে যাওয়া হচ্ছে।`);
         }
 
         function updateVoiceButtonUI() {
             const btn = document.getElementById("voice-toggle-btn");
             if (!btn) return;
             if (voiceEnabled) {
-                btn.textContent = "👩 ON";
-                btn.classList.remove("is-off");
+                btn.textContent = "👩 VOICE";
+                btn.classList.remove("is-muted");
             } else {
-                btn.textContent = "🔇 OFF";
-                btn.classList.add("is-off");
+                btn.textContent = "🔇 MUTE";
+                btn.classList.add("is-muted");
             }
         }
 
-        function toggleVoice() {
+        function onMenuVoiceClick() {
             voiceEnabled = !voiceEnabled;
             localStorage.setItem("tuhin_female_voice_enabled", String(voiceEnabled));
             updateVoiceButtonUI();
 
-            if (!voiceEnabled && "speechSynthesis" in window) {
-                window.speechSynthesis.cancel();
-            } else if (voiceEnabled) {
-                speakFemaleBangla("ফিমেল ভয়েস চালু করা হয়েছে।");
+            if (!voiceEnabled) {
+                if ("speechSynthesis" in window) {
+                    window.speechSynthesis.cancel();
+                }
+            } else {
+                playMenuVoice("সবাই এখানে একটা বিগ ট্রেড করো!");
             }
         }
 
-        function pickFemaleBanglaVoice() {
+        function onMenuHideClick() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('floating-icon-btn').style.display = 'flex';
+            playMenuVoice("প্যানেল হাইড করা হলো।");
+        }
+
+        function playSoftFemaleChime() {
+            if (!voiceEnabled) return;
+            try {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContextClass) return;
+                if (!audioCtx) audioCtx = new AudioContextClass();
+                if (audioCtx.state === "suspended") {
+                    audioCtx.resume();
+                }
+                const now = audioCtx.currentTime;
+                const notes = [659.25, 880];
+                notes.forEach((freq, idx) => {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = "sine";
+                    osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+                    gain.gain.setValueAtTime(0.001, now + idx * 0.08);
+                    gain.gain.exponentialRampToValueAtTime(0.05, now + idx * 0.08 + 0.02);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.08 + 0.16);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start(now + idx * 0.08);
+                    osc.stop(now + idx * 0.08 + 0.17);
+                });
+            } catch (_) {}
+        }
+
+        function pickFemaleVoice() {
             if (!("speechSynthesis" in window)) return null;
             const voices = window.speechSynthesis.getVoices() || [];
             const malePattern = /\bmale\b|\bman\b|\bboy\b|rishi|prabhat|amit|arjun|david|mark|alex|daniel|george|ryan|thomas|eric|brian/i;
-            const femalePattern = /female|woman|girl|lady|tanisha|bashkar|nabila|priya|lekha|aditi|raveena|sangeeta|kalpana|zira|samantha|victoria|moira|fiona|veena|google.*(female|hindi|bn|en-gb|en-us)|microsoft.*(tanisha|aria|jenny|zira)/i;
+            const femalePattern = /female|woman|girl|lady|tanisha|bashkar|nabila|priya|lekha|aditi|raveena|sangeeta|kalpana|zira|samantha|victoria|moira|fiona|veena|aria|jenny|google.*(female|hindi|bn)|microsoft.*(tanisha|aria|jenny|zira)/i;
 
-            const safeVoices = voices.filter((v) => !malePattern.test(v.name));
-
-            const bnFemale = safeVoices.find((v) => (/bn/i.test(v.lang) || /bangla|bengali/i.test(v.name)) && femalePattern.test(v.name));
+            const nonMale = voices.filter((v) => !malePattern.test(v.name));
+            const bnFemale = nonMale.find((v) => (/bn/i.test(v.lang) || /bangla|bengali/i.test(v.name)) && femalePattern.test(v.name));
             if (bnFemale) return bnFemale;
 
-            const anyFemale = safeVoices.find((v) => femalePattern.test(v.name));
+            const anyFemale = nonMale.find((v) => femalePattern.test(v.name));
             if (anyFemale) return anyFemale;
 
-            const bnVoice = safeVoices.find((v) => /bn/i.test(v.lang) || /bangla|bengali/i.test(v.name));
+            const bnVoice = nonMale.find((v) => /bn/i.test(v.lang) || /bangla|bengali/i.test(v.name));
             if (bnVoice) return bnVoice;
 
-            return safeVoices[0] || null;
+            return nonMale[0] || null;
         }
 
-        function speakFemaleBangla(text, onDone) {
-            if (!voiceEnabled || !("speechSynthesis" in window) || !text) {
+        function playMenuVoice(text, onDone) {
+            if (!voiceEnabled || !text) {
+                if (typeof onDone === "function") onDone();
+                return;
+            }
+            playSoftFemaleChime();
+            if (!("speechSynthesis" in window)) {
                 if (typeof onDone === "function") onDone();
                 return;
             }
             try {
                 window.speechSynthesis.cancel();
                 const utter = new SpeechSynthesisUtterance(text);
-                const chosenVoice = pickFemaleBanglaVoice();
-                if (chosenVoice) {
-                    utter.voice = chosenVoice;
-                }
+                const chosen = pickFemaleVoice();
+                if (chosen) utter.voice = chosen;
                 utter.lang = "bn-BD";
-                utter.pitch = 1.45;
-                utter.rate = 0.98;
+                utter.pitch = 1.48;
+                utter.rate = 0.96;
                 utter.volume = 1;
                 if (typeof onDone === "function") {
                     utter.onend = onDone;
@@ -1335,24 +1031,24 @@
         }
 
         function getTradeCallSentence(pred) {
-            if (pred.type === "BIG") {
-                return "সবাই এখানে একটা বিগ ট্রেড করো!";
-            }
-            return "সবাই এখানে একটা স্মল ট্রেড করো!";
+            return pred.type === "BIG"
+                ? "সবাই এখানে একটা বিগ ট্রেড করো!"
+                : "সবাই এখানে একটা স্মল ট্রেড করো!";
         }
 
         function triggerWinResult() {
             winCount++;
             document.getElementById("wl-status").textContent = `W: ${winCount} | L: ${lossCount}`;
             document.getElementById("ai-call-banner").textContent = "👩 অভিনন্দন! এই ট্রেড উইন হয়েছে!";
-            speakFemaleBangla("অভিনন্দন! এই ট্রেড উইন হয়েছে!");
+            playMenuVoice("অভিনন্দন! এই ট্রেড উইন হয়েছে!");
         }
 
         function triggerLossResult() {
             lossCount++;
+            document.getElementById("wl-status").textContent = `W: ${winCount} | L: 0`;
             document.getElementById("wl-status").textContent = `W: ${winCount} | L: ${lossCount}`;
             document.getElementById("ai-call-banner").textContent = "👩 দুঃখিত, এই ট্রেড লস হয়েছে!";
-            speakFemaleBangla("দুঃখিত, এই ট্রেড লস হয়েছে!");
+            playMenuVoice("দুঃখিত, এই ট্রেড লস হয়েছে!");
         }
 
         function getEffectiveSalt(cfg) {
@@ -1364,8 +1060,7 @@
             const salt = getEffectiveSalt(cfg);
             const outcomeHash = mixHash((dateSeed ^ Math.imul(slotNum, salt) ^ 0x517CC1B7) >>> 0);
             const actualIsBig = (outcomeHash % 100) >= 50;
-            const predictedIsBig = prevPred.type === "BIG";
-            return predictedIsBig === actualIsBig;
+            return (prevPred.type === "BIG") === actualIsBig;
         }
 
         function announcePeriodUpdateBangla(pred, prevOutcomeText) {
@@ -1376,13 +1071,13 @@
             if (!voiceEnabled) return;
 
             if (prevOutcomeText) {
-                speakFemaleBangla(prevOutcomeText, () => {
+                playMenuVoice(prevOutcomeText, () => {
                     setTimeout(() => {
-                        speakFemaleBangla(`${callText} নম্বর ${numBn}।`);
+                        playMenuVoice(`${callText} নম্বর ${numBn}।`);
                     }, 350);
                 });
             } else {
-                speakFemaleBangla(`${callText} নম্বর ${numBn}।`);
+                playMenuVoice(`${callText} নম্বর ${numBn}।`);
             }
         }
 
@@ -1391,9 +1086,7 @@
                 document.getElementById('main-content').style.display = 'block';
                 document.getElementById('floating-icon-btn').style.display = 'none';
                 startPeriodGenerator();
-                if (voiceEnabled) {
-                    speakFemaleBangla("তুহিন ভিআইপি হ্যাক প্যানেল ওপেন হয়েছে।");
-                }
+                playMenuVoice("তুহিন ভিআইপি হ্যাক প্যানেল চালু হয়েছে।");
             } else {
                 document.getElementById('error-msg').style.display = 'none';
                 document.getElementById('auth-overlay').style.display = 'block';
@@ -1414,20 +1107,10 @@
                 document.getElementById('main-content').style.display = 'block';
                 document.getElementById('floating-icon-btn').style.display = 'none';
                 startPeriodGenerator();
-                if (voiceEnabled) {
-                    speakFemaleBangla("স্বাগতম! প্যানেল আনলক হয়েছে।");
-                }
+                playMenuVoice("স্বাগতম! ভিআইপি প্যানেল আনলক হয়েছে।");
             } else {
                 document.getElementById('error-msg').style.display = 'block';
                 document.getElementById('pass-input').value = "";
-            }
-        }
-
-        function hidePopup() {
-            document.getElementById('main-content').style.display = 'none';
-            document.getElementById('floating-icon-btn').style.display = 'flex';
-            if (voiceEnabled) {
-                speakFemaleBangla("প্যানেল হাইড করা হলো।");
             }
         }
 
@@ -1445,12 +1128,8 @@
                 navigator.clipboard.writeText(periodText).then(() => {
                     const toast = document.getElementById('copy-toast');
                     toast.style.display = 'block';
-                    setTimeout(() => {
-                        toast.style.display = 'none';
-                    }, 1200);
-                    if (voiceEnabled) {
-                        speakFemaleBangla("পিরিয়ড নম্বর কপি হয়েছে।");
-                    }
+                    setTimeout(() => { toast.style.display = 'none'; }, 1200);
+                    playMenuVoice("পিরিয়ড নম্বর কপি হয়েছে।");
                 }).catch(() => {});
             }
         }
@@ -1476,16 +1155,10 @@
         }
 
         function getColorMeta(num) {
-            if (num === 0) {
-                return { orbClass: "orb-violet", wheelClass: "w-violet-red", colorName: "VIOLET+RED" };
-            }
-            if (num === 5) {
-                return { orbClass: "orb-violet", wheelClass: "w-violet-green", colorName: "VIOLET+GRN" };
-            }
-            if ([1, 3, 7, 9].includes(num)) {
-                return { orbClass: "orb-green", wheelClass: "w-green", colorName: "GREEN" };
-            }
-            return { orbClass: "orb-red", wheelClass: "w-red", colorName: "RED" };
+            if (num === 0) return { orbClass: "orb-violet", ballClass: "b-violet-red", colorName: "VIOLET+RED" };
+            if (num === 5) return { orbClass: "orb-violet", ballClass: "b-violet-green", colorName: "VIOLET+GRN" };
+            if ([1, 3, 7, 9].includes(num)) return { orbClass: "orb-green", ballClass: "b-green", colorName: "GREEN" };
+            return { orbClass: "orb-red", ballClass: "b-red", colorName: "RED" };
         }
 
         function evaluateSlot(slotNum, cfg, dateSeed) {
@@ -1503,7 +1176,6 @@
                 const pHash = mixHash((dateSeed ^ Math.imul(prevIdx, salt)) >>> 0);
                 const pIsBig = (pHash % 100) >= 49;
                 if (pIsBig) bigCount++;
-
                 if (lookback === 1) {
                     prevStreakType = pIsBig ? "BIG" : "SMALL";
                     streakCount = 1;
@@ -1513,43 +1185,30 @@
             }
 
             let bigScore = h1 % 100;
-
-            if (prevStreakType === "BIG" && streakCount >= 3) {
-                bigScore -= 18;
-            } else if (prevStreakType === "SMALL" && streakCount >= 3) {
-                bigScore += 18;
-            }
+            if (prevStreakType === "BIG" && streakCount >= 3) bigScore -= 18;
+            else if (prevStreakType === "SMALL" && streakCount >= 3) bigScore += 18;
 
             if (bigCount >= 4) bigScore -= 10;
             if (bigCount <= 1) bigScore += 10;
 
             const type = bigScore >= 50 ? "BIG" : "SMALL";
-
-            const poolSmall = [0, 1, 2, 3, 4];
-            const poolBig = [5, 6, 7, 8, 9];
-            const pool = type === "BIG" ? poolBig : poolSmall;
-
+            const pool = type === "BIG" ? [5, 6, 7, 8, 9] : [0, 1, 2, 3, 4];
             let pickIdx = h2 % pool.length;
             let num = pool[pickIdx];
 
             if (slotNum > 1) {
                 const prevNum = evaluateSlotRawNum(slotNum - 1, cfg, dateSeed);
-                if (num === prevNum) {
-                    num = pool[(pickIdx + 1) % pool.length];
-                }
+                if (num === prevNum) num = pool[(pickIdx + 1) % pool.length];
             }
 
             const delta = Math.abs(bigScore - 50);
             const confidence = Math.min(94, Math.max(76, 78 + Math.floor(delta * 0.65) + (h2 % 6)));
-            const meta = getColorMeta(num);
-
-            return { type, num, confidence, ...meta };
+            return { type, num, confidence, ...getColorMeta(num) };
         }
 
         function evaluateSlotRawNum(slotNum, cfg, dateSeed) {
             const salt = getEffectiveSalt(cfg);
-            const baseSeed = (dateSeed ^ Math.imul(slotNum, salt)) >>> 0;
-            const h1 = mixHash(baseSeed);
+            const h1 = mixHash((dateSeed ^ Math.imul(slotNum, salt)) >>> 0);
             const h2 = mixHash(h1 ^ (slotNum * 2654435761));
             const type = (h1 % 100) >= 50 ? "BIG" : "SMALL";
             const pool = type === "BIG" ? [5, 6, 7, 8, 9] : [0, 1, 2, 3, 4];
@@ -1562,10 +1221,9 @@
             for (let i = 9; i >= 0; i--) {
                 const idx = Math.max(1, periodIndexToday - i);
                 const sig = evaluateSlot(idx, cfg, dateSeed);
-
                 const el = document.createElement('div');
-                el.className = `color-wheel ${sig.wheelClass}`;
-                el.innerHTML = `<span>${sig.num}</span>`;
+                el.className = `mini-ball text-3d ${sig.ballClass}`;
+                el.textContent = String(sig.num);
                 container.appendChild(el);
             }
         }
@@ -1583,7 +1241,7 @@
             const fullPeriod = `${dateStr}1000${formattedIndex}`;
 
             document.getElementById('period-num').innerText = fullPeriod;
-            document.getElementById('timer-display').innerText = `NEXT IN ${String(timeLeft).padStart(2, '0')}s`;
+            document.getElementById('timer-display').innerText = `${String(timeLeft).padStart(2, '0')}s`;
 
             let periodJustChanged = false;
             let outcomeSentence = "";
@@ -1617,39 +1275,39 @@
 
             if (elapsed <= 2) {
                 orbText.innerText = "...";
-                orb.className = "glow-orb orb-violet";
+                orb.className = "num-orb orb-violet text-3d";
                 document.getElementById('color-label').innerText = "SCANNING";
                 confLabel.innerText = "SYNC...";
                 document.getElementById("ai-call-banner").textContent = outcomeSentence
                     ? `👩 ${outcomeSentence}`
-                    : "👩 সিগন্যাল স্ক্যান হচ্ছে, একটু অপেক্ষা করো...";
-                smallPanel.classList.remove('is-predicted');
-                bigPanel.classList.remove('is-predicted');
+                    : "👩 সিগন্যাল স্ক্যান হচ্ছে...";
+                smallPanel.classList.remove('is-active');
+                bigPanel.classList.remove('is-active');
                 smallTag.innerText = "WAIT";
                 bigTag.innerText = "WAIT";
-                smallTag.className = "panel-tag text-3d";
-                bigTag.className = "panel-tag text-3d";
+                smallTag.className = "rgb-tag text-3d";
+                bigTag.className = "rgb-tag text-3d";
             } else {
                 orbText.innerText = String(cachedPrediction.num);
-                orb.className = `glow-orb ${cachedPrediction.orbClass}`;
+                orb.className = `num-orb ${cachedPrediction.orbClass} text-3d`;
                 document.getElementById('color-label').innerText = cachedPrediction.colorName;
                 confLabel.innerText = `CONF ${cachedPrediction.confidence}%`;
                 document.getElementById("ai-call-banner").textContent = `👩 ${getTradeCallSentence(cachedPrediction)}`;
 
                 if (cachedPrediction.type === "BIG") {
-                    bigPanel.classList.add('is-predicted');
-                    smallPanel.classList.remove('is-predicted');
-                    bigTag.innerText = "PREDICTED";
-                    bigTag.className = "panel-tag text-3d active-tag";
+                    bigPanel.classList.add('is-active');
+                    smallPanel.classList.remove('is-active');
+                    bigTag.innerText = "ACTIVE";
+                    bigTag.className = "rgb-tag text-3d active";
                     smallTag.innerText = "SKIP";
-                    smallTag.className = "panel-tag text-3d";
+                    smallTag.className = "rgb-tag text-3d";
                 } else {
-                    smallPanel.classList.add('is-predicted');
-                    bigPanel.classList.remove('is-predicted');
-                    smallTag.innerText = "PREDICTED";
-                    smallTag.className = "panel-tag text-3d active-tag";
+                    smallPanel.classList.add('is-active');
+                    bigPanel.classList.remove('is-active');
+                    smallTag.innerText = "ACTIVE";
+                    smallTag.className = "rgb-tag text-3d active";
                     bigTag.innerText = "SKIP";
-                    bigTag.className = "panel-tag text-3d";
+                    bigTag.className = "rgb-tag text-3d";
                 }
             }
 
@@ -1663,7 +1321,7 @@
 
         if ("speechSynthesis" in window) {
             window.speechSynthesis.onvoiceschanged = () => {
-                pickFemaleBanglaVoice();
+                pickFemaleVoice();
             };
         }
 
@@ -1671,9 +1329,7 @@
         makeDraggable(document.getElementById("main-content"), document.getElementById("main-content-header"), null);
 
         function makeDraggable(targetEl, handleEl, onTap) {
-            let isDown = false;
-            let moved = false;
-            let startX = 0, startY = 0, origLeft = 0, origTop = 0;
+            let isDown = false, moved = false, startX = 0, startY = 0, origLeft = 0, origTop = 0;
 
             function onStart(x, y) {
                 const rect = targetEl.getBoundingClientRect();
@@ -1692,8 +1348,7 @@
 
             function onMove(x, y) {
                 if (!isDown) return;
-                const dx = x - startX;
-                const dy = y - startY;
+                const dx = x - startX, dy = y - startY;
                 if (Math.hypot(dx, dy) > 6) moved = true;
                 const maxLeft = Math.max(4, window.innerWidth - targetEl.offsetWidth - 4);
                 const maxTop = Math.max(4, window.innerHeight - targetEl.offsetHeight - 4);
@@ -1724,7 +1379,6 @@
             handleEl.addEventListener("mousedown", (e) => {
                 if (e.button !== 0 || e.target.closest("button") || e.target.closest("a") || e.target.closest("input")) return;
                 onStart(e.clientX, e.clientY);
-
                 function mm(ev) { onMove(ev.clientX, ev.clientY); }
                 function mu() {
                     document.removeEventListener("mousemove", mm);
