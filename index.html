@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Tuhin vip hack - @Tuhin0027</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Chakra+Petch:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap');
 
         * {
             box-sizing: border-box;
@@ -39,7 +39,13 @@
             font-weight: 700;
             text-shadow:
                 0 1px 0 #071120,
-                0 2px 5px rgba(0, 0, 0, 0.9);
+                0 2px 5px rgba(0, 0, 0, 0.95);
+        }
+
+        .gorgeous-font {
+            font-family: 'Cinzel Decorative', cursive;
+            font-weight: 900;
+            letter-spacing: 0.8px;
         }
 
         @keyframes gentleFloat {
@@ -49,36 +55,31 @@
 
         @keyframes slowBgFanSpin {
             0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
-            50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.04); }
+            50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.06); }
             100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
         }
 
-        @keyframes vineBreezeLeft {
-            0%, 100% { transform: rotate(-2deg) translateY(0); }
-            50% { transform: rotate(2.5deg) translateY(-1.5px); }
-        }
-
-        @keyframes vineBreezeRight {
-            0%, 100% { transform: rotate(2deg) translateY(0); }
-            50% { transform: rotate(-2.5deg) translateY(-1.5px); }
+        @keyframes leafClusterPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.04) rotate(1.8deg); }
         }
 
         @keyframes rgbBorderFlow {
             0% {
                 border-color: #ff2a85;
-                box-shadow: 0 0 12px rgba(255, 42, 133, 0.65), inset 0 0 8px rgba(255, 42, 133, 0.25);
+                box-shadow: 0 0 14px rgba(255, 42, 133, 0.8), inset 0 0 10px rgba(255, 42, 133, 0.35);
             }
             33% {
                 border-color: #00f0ff;
-                box-shadow: 0 0 12px rgba(0, 240, 255, 0.65), inset 0 0 8px rgba(0, 240, 255, 0.25);
+                box-shadow: 0 0 14px rgba(0, 240, 255, 0.8), inset 0 0 10px rgba(0, 240, 255, 0.35);
             }
             66% {
                 border-color: #4ade80;
-                box-shadow: 0 0 12px rgba(74, 222, 128, 0.65), inset 0 0 8px rgba(74, 222, 128, 0.25);
+                box-shadow: 0 0 14px rgba(74, 222, 128, 0.8), inset 0 0 10px rgba(74, 222, 128, 0.35);
             }
             100% {
                 border-color: #facc15;
-                box-shadow: 0 0 12px rgba(250, 204, 21, 0.65), inset 0 0 8px rgba(250, 204, 21, 0.25);
+                box-shadow: 0 0 14px rgba(250, 204, 21, 0.8), inset 0 0 10px rgba(250, 204, 21, 0.35);
             }
         }
 
@@ -119,14 +120,14 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 244px;
-            background: linear-gradient(160deg, #062822 0%, #091324 58%, #04070e 100%);
-            border: 1.5px solid rgba(74, 222, 128, 0.85);
-            border-radius: 20px;
+            width: 252px;
+            background: linear-gradient(155deg, #052e23 0%, #091529 55%, #04070f 100%);
+            border: 1.5px solid #facc15;
+            border-radius: 22px;
             box-shadow:
-                0 22px 46px rgba(0, 0, 0, 0.95),
-                0 0 24px rgba(16, 185, 129, 0.35);
-            padding: 15px 14px;
+                0 24px 48px rgba(0, 0, 0, 0.96),
+                0 0 28px rgba(74, 222, 128, 0.4);
+            padding: 16px 14px;
             display: none;
             z-index: 10000;
             text-align: center;
@@ -139,31 +140,33 @@
             font-weight: 900;
             letter-spacing: 1.1px;
             color: #052e16;
-            background: linear-gradient(90deg, #4ade80, #fde047);
+            background: linear-gradient(90deg, #4ade80, #fde047, #38bdf8);
             padding: 2.5px 10px;
             border-radius: 999px;
-            margin-bottom: 6px;
+            margin-bottom: 7px;
             text-transform: uppercase;
         }
 
         .auth-title {
-            font-size: 13px;
-            color: #fef9c3;
-            margin-bottom: 2px;
+            font-size: 12px;
+            color: #fef08a;
+            margin-bottom: 3px;
         }
 
-        .auth-userid {
-            font-size: 9px;
-            color: #6ee7b7;
-            font-weight: 700;
-            margin-bottom: 9px;
+        .auth-userid-link {
+            display: inline-block;
+            font-size: 9.5px;
+            color: #5eead4;
+            font-weight: 800;
+            text-decoration: underline;
+            margin-bottom: 10px;
         }
 
         .auth-input {
             width: 100%;
             padding: 7.5px 10px;
-            background: rgba(2, 6, 15, 0.94);
-            border: 1px solid rgba(74, 222, 128, 0.65);
+            background: rgba(2, 6, 15, 0.95);
+            border: 1px solid rgba(74, 222, 128, 0.75);
             border-radius: 10px;
             color: #ffffff;
             font-size: 11px;
@@ -180,26 +183,24 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
-            font-size: 8.8px;
+            font-size: 9px;
             color: #cbd5e1;
-            margin-bottom: 10px;
+            margin-bottom: 11px;
             cursor: pointer;
             font-weight: 600;
         }
 
-        .access-vip-btn {
+        .unlock-vip-btn {
             width: 100%;
-            padding: 8px;
-            background: linear-gradient(135deg, #22c55e 0%, #facc15 100%);
-            border: none;
-            border-radius: 10px;
-            color: #04150c;
-            font-size: 10.5px;
-            font-weight: 900;
+            padding: 8.5px;
+            background: linear-gradient(135deg, #22c55e 0%, #facc15 55%, #ec4899 100%);
+            border: 1px solid #ffffff;
+            border-radius: 11px;
+            color: #04120c;
+            font-size: 9.5px;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 0.9px;
-            box-shadow: 0 5px 15px rgba(34, 197, 94, 0.4);
+            box-shadow: 0 5px 16px rgba(34, 197, 94, 0.45);
         }
 
         #error-msg {
@@ -210,27 +211,37 @@
             font-weight: 700;
         }
 
-        /* একদম নতুন পপআপ ডিজাইন */
+        /* গর্জিয়াস পপআপ + ব্যাকগ্রাউন্ডে ঘন পাতার ঢল */
         .overlay-box {
             position: fixed;
             top: 84px;
             left: 56px;
-            width: 236px;
+            width: 238px;
             max-width: calc(100vw - 112px);
             display: none;
             z-index: 9999;
-            background: linear-gradient(165deg, rgba(7, 36, 30, 0.96) 0%, rgba(10, 18, 32, 0.98) 55%, rgba(4, 7, 14, 0.99) 100%);
+            background: linear-gradient(165deg, rgba(6, 38, 28, 0.96) 0%, rgba(10, 19, 34, 0.98) 55%, rgba(4, 7, 14, 0.99) 100%);
             border-radius: 24px;
             padding: 9px;
-            border: 1.5px solid rgba(74, 222, 128, 0.8);
+            border: 1.5px solid rgba(74, 222, 128, 0.88);
             box-shadow:
-                0 24px 48px rgba(0, 0, 0, 0.95),
-                0 0 26px rgba(16, 185, 129, 0.32);
+                0 24px 48px rgba(0, 0, 0, 0.96),
+                0 0 30px rgba(34, 197, 94, 0.4);
             backdrop-filter: blur(14px);
             overflow: visible;
         }
 
-        /* পপআপের ব্যাকগ্রাউন্ডে হালকা ঘূর্ণায়মান পাখা */
+        /* পপআপের পেছনে ঘন পাতার ব্যাকড্রপ + হালকা ঘূর্ণায়মান পাখা */
+        .popup-leaf-backdrop {
+            position: absolute;
+            inset: -12px -16px;
+            border-radius: 28px;
+            pointer-events: none;
+            z-index: -1;
+            overflow: visible;
+            animation: leafClusterPulse 4.5s ease-in-out infinite;
+        }
+
         .popup-bg-fan-wrap {
             position: absolute;
             inset: 0;
@@ -244,38 +255,11 @@
             position: absolute;
             top: 52%;
             left: 50%;
-            width: 190px;
-            height: 190px;
-            opacity: 0.13;
+            width: 196px;
+            height: 196px;
+            opacity: 0.14;
             animation: slowBgFanSpin 14s linear infinite;
-            filter: drop-shadow(0 0 12px rgba(74, 222, 128, 0.45));
-        }
-
-        /* বাম ও ডান পাশে ঘন গাছের ডাল ও পাতার থোকা */
-        .foliage-left {
-            position: absolute;
-            top: 8px;
-            left: -17px;
-            width: 24px;
-            height: calc(100% - 16px);
-            pointer-events: none;
-            z-index: 6;
-            transform-origin: right center;
-            animation: vineBreezeLeft 4s ease-in-out infinite;
-            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.75));
-        }
-
-        .foliage-right {
-            position: absolute;
-            top: 8px;
-            right: -17px;
-            width: 24px;
-            height: calc(100% - 16px);
-            pointer-events: none;
-            z-index: 6;
-            transform-origin: left center;
-            animation: vineBreezeRight 4.2s ease-in-out infinite;
-            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.75));
+            filter: drop-shadow(0 0 12px rgba(74, 222, 128, 0.5));
         }
 
         .popup-inner {
@@ -292,8 +276,8 @@
             padding: 4px 6px;
             margin-bottom: 6px;
             border-radius: 14px;
-            background: rgba(3, 12, 14, 0.88);
-            border: 1px solid rgba(74, 222, 128, 0.35);
+            background: rgba(3, 12, 14, 0.9);
+            border: 1px solid rgba(74, 222, 128, 0.4);
             cursor: grab;
             touch-action: none;
         }
@@ -309,10 +293,10 @@
         }
 
         .menu-title {
-            font-size: 10px;
+            font-size: 9.5px;
             font-style: italic;
             color: #fef08a;
-            line-height: 1.1;
+            line-height: 1.15;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -322,9 +306,18 @@
             font-size: 6px;
             color: #6ee7b7;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 3px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        .user-hyperlink {
+            color: #fde047;
+            text-decoration: underline;
+            font-weight: 800;
         }
 
         .menu-actions {
@@ -339,7 +332,7 @@
             font-weight: 800;
             padding: 2.5px 5px;
             border-radius: 7px;
-            border: 1px solid rgba(244, 114, 182, 0.75);
+            border: 1px solid rgba(244, 114, 182, 0.85);
             background: linear-gradient(135deg, #ec4899, #be185d);
             color: #ffffff;
             cursor: pointer;
@@ -356,7 +349,7 @@
             font-weight: 800;
             padding: 2.5px 5px;
             border-radius: 7px;
-            border: 1px solid rgba(52, 211, 153, 0.55);
+            border: 1px solid rgba(52, 211, 153, 0.6);
             background: #064e3b;
             color: #ecfdf5;
             cursor: pointer;
@@ -371,7 +364,7 @@
             padding: 3px;
             border-radius: 12px;
             background: rgba(2, 8, 14, 0.92);
-            border: 1px solid rgba(74, 222, 128, 0.4);
+            border: 1px solid rgba(74, 222, 128, 0.45);
         }
 
         .plat-switch-btn {
@@ -390,7 +383,7 @@
             color: #052e16;
             border-color: #ffffff;
             text-shadow: none;
-            box-shadow: 0 0 12px rgba(74, 222, 128, 0.55);
+            box-shadow: 0 0 12px rgba(74, 222, 128, 0.6);
         }
 
         /* হাইপারলিংক বার */
@@ -402,8 +395,8 @@
             padding: 3px 7px;
             margin-bottom: 5px;
             border-radius: 10px;
-            background: rgba(6, 26, 28, 0.88);
-            border: 1px solid rgba(56, 189, 248, 0.35);
+            background: rgba(6, 26, 28, 0.9);
+            border: 1px solid rgba(56, 189, 248, 0.38);
             font-size: 6.3px;
         }
 
@@ -432,7 +425,7 @@
             padding: 2.5px;
             border-radius: 11px;
             background: rgba(2, 8, 14, 0.92);
-            border: 1px solid rgba(52, 211, 153, 0.32);
+            border: 1px solid rgba(52, 211, 153, 0.35);
         }
 
         .time-tab-btn {
@@ -457,8 +450,8 @@
             padding: 4px 7px;
             margin-bottom: 6px;
             border-radius: 11px;
-            background: linear-gradient(90deg, rgba(16, 185, 129, 0.24), rgba(234, 179, 8, 0.24));
-            border: 1px solid rgba(250, 204, 21, 0.5);
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.25), rgba(234, 179, 8, 0.25));
+            border: 1px solid rgba(250, 204, 21, 0.55);
             font-size: 7.2px;
             font-weight: 800;
             color: #fef9c3;
@@ -468,10 +461,10 @@
             text-overflow: ellipsis;
         }
 
-        /* সিগন্যাল গ্রিড + RGB SMALL ও BIG */
+        /* সিগন্যাল বোর্ড: বামে BIG, মাঝে ORB, ডানে SMALL */
         .signal-board {
             display: grid;
-            grid-template-columns: 0.92fr 1.28fr 0.92fr;
+            grid-template-columns: 0.94fr 1.24fr 0.94fr;
             gap: 4.5px;
             align-items: stretch;
         }
@@ -484,21 +477,21 @@
             flex-direction: column;
             justify-content: space-between;
             border: 1.5px solid #ff2a85;
-            animation: rgbBorderFlow 2.6s linear infinite;
+            animation: rgbBorderFlow 2.4s linear infinite;
             transition: transform 0.2s ease;
         }
 
-        .rgb-small {
-            background: linear-gradient(175deg, rgba(13, 148, 136, 0.45), rgba(4, 47, 46, 0.96));
+        .rgb-big {
+            background: linear-gradient(175deg, rgba(217, 119, 6, 0.48), rgba(69, 26, 3, 0.96));
         }
 
-        .rgb-big {
-            background: linear-gradient(175deg, rgba(217, 119, 6, 0.45), rgba(69, 26, 3, 0.96));
-            animation-delay: -1.3s;
+        .rgb-small {
+            background: linear-gradient(175deg, rgba(13, 148, 136, 0.48), rgba(4, 47, 46, 0.96));
+            animation-delay: -1.2s;
         }
 
         .rgb-card.is-active {
-            transform: scale(1.03);
+            transform: scale(1.04);
         }
 
         .rgb-label {
@@ -534,7 +527,7 @@
             padding: 5px 4px;
             text-align: center;
             background: linear-gradient(180deg, rgba(8, 30, 34, 0.96), rgba(3, 8, 16, 0.99));
-            border: 1px solid rgba(74, 222, 128, 0.6);
+            border: 1px solid rgba(74, 222, 128, 0.65);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -551,7 +544,7 @@
             padding: 1.5px 4px;
             border-radius: 6px;
             background: rgba(15, 23, 42, 0.92);
-            border: 1px solid rgba(74, 222, 128, 0.25);
+            border: 1px solid rgba(74, 222, 128, 0.28);
             font-size: 5.8px;
             cursor: pointer;
         }
@@ -625,7 +618,7 @@
             padding: 5px;
             border-radius: 11px;
             background: rgba(4, 14, 18, 0.94);
-            border: 1px solid rgba(74, 222, 128, 0.3);
+            border: 1px solid rgba(74, 222, 128, 0.32);
         }
 
         .history-meta {
@@ -684,21 +677,58 @@
         <img src="https://cdn.imageurlgenerator.com/uploads/5f242846-c36b-4437-8bbd-8fab060a831d.jpg" alt="Tuhin VIP Icon" />
     </div>
 
-    <!-- পাসওয়ার্ড পপআপ -->
+    <!-- পাসওয়ার্ড কার্ড -->
     <div id="auth-overlay">
         <div class="auth-badge">ACCESS VIP HACK</div>
-        <div class="auth-title text-3d">🔐 Tuhin vip hack</div>
-        <div class="auth-userid">@Tuhin0027</div>
+        <div class="auth-title gorgeous-font">Tuhin vip hack</div>
+        <a href="https://t.me/Tuhin0027" target="_blank" rel="noopener noreferrer" class="auth-userid-link">@Tuhin0027</a>
         <input type="password" id="pass-input" class="auth-input" placeholder="Enter Password" />
         <label class="remember-row">
             <input type="checkbox" id="remember-pass" /> Remember Password
         </label>
-        <button type="button" class="access-vip-btn" onclick="checkPassword()">ACCESS VIP</button>
+        <button type="button" class="unlock-vip-btn gorgeous-font" onclick="checkPassword()">UNLOCK VIP</button>
         <div id="error-msg">Wrong Password!</div>
     </div>
 
-    <!-- নতুন হ্যাক পপআপ -->
+    <!-- গর্জিয়াস হ্যাক পপআপ -->
     <div class="overlay-box" id="main-content">
+        <!-- পপআপের পেছন সাইডে ঘন পাতার ব্যাকড্রপ -->
+        <svg class="popup-leaf-backdrop" viewBox="0 0 280 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- বাম পাশে ঘন পাতার স্তর -->
+            <path d="M24 20C10 10 2 20 4 32C14 34 21 29 24 20Z" fill="#15803d" stroke="#86efac" stroke-width="0.9"/>
+            <path d="M22 38C7 32 0 44 4 56C14 55 20 48 22 38Z" fill="#22c55e" stroke="#bbf7d0" stroke-width="0.9"/>
+            <path d="M20 60C5 58 0 70 6 82C15 79 19 71 20 60Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9"/>
+            <path d="M18 85C3 86 0 100 7 110C16 106 18 96 18 85Z" fill="#22c55e" stroke="#86efac" stroke-width="0.9"/>
+            <path d="M18 112C3 115 1 130 9 139C17 134 18 124 18 112Z" fill="#15803d" stroke="#86efac" stroke-width="0.9"/>
+            <path d="M18 140C4 145 2 160 10 168C17 162 18 152 18 140Z" fill="#4ade80" stroke="#dcfce7" stroke-width="0.9"/>
+            <path d="M19 168C5 174 4 189 12 197C18 190 19 180 19 168Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9"/>
+            <path d="M21 196C7 203 7 218 15 225C20 218 21 208 21 196Z" fill="#22c55e" stroke="#86efac" stroke-width="0.9"/>
+            <path d="M24 224C11 232 12 247 20 253C24 245 24 235 24 224Z" fill="#15803d" stroke="#86efac" stroke-width="0.9"/>
+            <path d="M28 250C16 259 18 273 26 278C29 270 29 260 28 250Z" fill="#22c55e" stroke="#bbf7d0" stroke-width="0.9"/>
+            <path d="M36 274C26 284 29 296 38 299C40 290 39 282 36 274Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9"/>
+
+            <!-- ডান পাশে ঘন পাতার স্তর -->
+            <path d="M256 20C270 10 278 20 276 32C266 34 259 29 256 20Z" fill="#15803d" stroke="#86efac" stroke-width="0.9"/>
+            <path d="M258 38C273 32 280 44 276 56C266 55 260 48 258 38Z" fill="#22c55e" stroke="#bbf7d0" stroke-width="0.9"/>
+            <path d="M260 60C275 58 280 70 274 82C265 79 261 71 260 60Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9"/>
+            <path d="M262 85C277 86 280 100 273 110C264 106 262 96 262 85Z" fill="#22c55e" stroke="#86efac" stroke-width="0.9"/>
+            <path d="M262 112C277 115 279 130 271 139C263 134 262 124 262 112Z" fill="#15803d" stroke="#86efac" stroke-width="0.9"/>
+            <path d="M262 140C276 145 278 160 270 168C263 162 262 152 262 140Z" fill="#4ade80" stroke="#dcfce7" stroke-width="0.9"/>
+            <path d="M261 168C275 174 276 189 268 197C262 190 261 180 261 168Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9"/>
+            <path d="M259 196C273 203 273 218 265 225C260 218 259 208 259 196Z" fill="#22c55e" stroke="#86efac" stroke-width="0.9"/>
+            <path d="M256 224C269 232 268 247 260 253C256 245 256 235 256 224Z" fill="#15803d" stroke="#86efac" stroke-width="0.9"/>
+            <path d="M252 250C264 259 262 273 254 278C251 270 251 260 252 250Z" fill="#22c55e" stroke="#bbf7d0" stroke-width="0.9"/>
+            <path d="M244 274C254 284 251 296 242 299C240 290 241 282 244 274Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9"/>
+
+            <!-- ওপরে ও নিচে ঘন পাতার বর্ডার -->
+            <path d="M62 6C68 -4 82 -4 88 6C80 12 70 12 62 6Z" fill="#22c55e" stroke="#86efac" stroke-width="0.8"/>
+            <path d="M126 5C132 -5 148 -5 154 5C146 11 134 11 126 5Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.8"/>
+            <path d="M190 6C196 -4 210 -4 216 6C208 12 198 12 190 6Z" fill="#22c55e" stroke="#86efac" stroke-width="0.8"/>
+            <path d="M66 302C72 312 86 312 92 302C84 296 74 296 66 302Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.8"/>
+            <path d="M128 303C134 313 148 313 154 303C146 297 136 297 128 303Z" fill="#22c55e" stroke="#86efac" stroke-width="0.8"/>
+            <path d="M190 302C196 312 210 312 216 302C208 296 198 296 190 302Z" fill="#15803d" stroke="#86efac" stroke-width="0.8"/>
+        </svg>
+
         <!-- ব্যাকগ্রাউন্ডে হালকা ঘূর্ণায়মান পাখা -->
         <div class="popup-bg-fan-wrap">
             <svg class="popup-bg-fan" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -710,46 +740,15 @@
             </svg>
         </div>
 
-        <!-- বাম পাশে ঘন সবুজ গাছের লতা ও পাতার থোকা -->
-        <svg class="foliage-left" viewBox="0 0 28 240" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 8C16 58 14 120 18 180C19 202 22 220 25 234" stroke="#15803d" stroke-width="2.4" stroke-linecap="round" />
-            <!-- পাতার থোকা ১ -->
-            <path d="M19 26C10 18 3 22 2 30C9 33 15 31 19 26Z" fill="#22c55e" stroke="#86efac" stroke-width="0.9" />
-            <path d="M18 36C9 34 4 41 6 48C13 46 17 42 18 36Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9" />
-            <path d="M17 48C8 50 5 58 9 64C15 60 17 55 17 48Z" fill="#4ade80" stroke="#bbf7d0" stroke-width="0.8" />
-            <!-- পাতার থোকা ২ -->
-            <path d="M16 88C7 80 1 85 1 93C8 96 13 94 16 88Z" fill="#16a34a" stroke="#86efac" stroke-width="0.9" />
-            <path d="M16 100C7 99 3 106 6 113C12 110 15 106 16 100Z" fill="#22c55e" stroke="#4ade80" stroke-width="0.9" />
-            <path d="M16 113C8 116 5 124 9 129C14 125 16 120 16 113Z" fill="#15803d" stroke="#86efac" stroke-width="0.8" />
-            <!-- পাতার থোকা ৩ -->
-            <path d="M18 156C9 148 3 153 3 161C10 164 15 162 18 156Z" fill="#22c55e" stroke="#86efac" stroke-width="0.9" />
-            <path d="M19 169C10 168 6 175 9 182C15 179 18 175 19 169Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9" />
-            <path d="M21 183C12 186 9 194 14 199C19 195 21 190 21 183Z" fill="#4ade80" stroke="#bbf7d0" stroke-width="0.8" />
-        </svg>
-
-        <!-- ডান পাশে ঘন সবুজ গাছের লতা ও পাতার থোকা -->
-        <svg class="foliage-right" viewBox="0 0 28 240" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 8C12 58 14 120 10 180C9 202 6 220 3 234" stroke="#15803d" stroke-width="2.4" stroke-linecap="round" />
-            <!-- পাতার থোকা ১ -->
-            <path d="M9 26C18 18 25 22 26 30C19 33 13 31 9 26Z" fill="#22c55e" stroke="#86efac" stroke-width="0.9" />
-            <path d="M10 36C19 34 24 41 22 48C15 46 11 42 10 36Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9" />
-            <path d="M11 48C20 50 23 58 19 64C13 60 11 55 11 48Z" fill="#4ade80" stroke="#bbf7d0" stroke-width="0.8" />
-            <!-- পাতার থোকা ২ -->
-            <path d="M12 88C21 80 27 85 27 93C20 96 15 94 12 88Z" fill="#16a34a" stroke="#86efac" stroke-width="0.9" />
-            <path d="M12 100C21 99 25 106 22 113C16 110 13 106 12 100Z" fill="#22c55e" stroke="#4ade80" stroke-width="0.9" />
-            <path d="M12 113C20 116 23 124 19 129C14 125 12 120 12 113Z" fill="#15803d" stroke="#86efac" stroke-width="0.8" />
-            <!-- পাতার থোকা ৩ -->
-            <path d="M10 156C19 148 25 153 25 161C18 164 13 162 10 156Z" fill="#22c55e" stroke="#86efac" stroke-width="0.9" />
-            <path d="M9 169C18 168 22 175 19 182C13 179 10 175 9 169Z" fill="#16a34a" stroke="#4ade80" stroke-width="0.9" />
-            <path d="M7 183C16 186 19 194 14 199C9 195 7 190 7 183Z" fill="#4ade80" stroke="#bbf7d0" stroke-width="0.8" />
-        </svg>
-
         <div class="popup-inner">
             <!-- মেনু বার -->
             <div class="top-menu-bar" id="main-content-header">
                 <div class="menu-brand-info">
-                    <div class="menu-title text-3d">Tuhin vip hack</div>
-                    <div class="menu-sub" id="mode-subtitle">@Tuhin0027 • DK WIN • 30S</div>
+                    <div class="menu-title gorgeous-font">Tuhin vip hack</div>
+                    <div class="menu-sub">
+                        <a href="https://t.me/Tuhin0027" target="_blank" rel="noopener noreferrer" class="user-hyperlink">@Tuhin0027</a>
+                        <span id="mode-subtitle">• DK WIN • 30S</span>
+                    </div>
                 </div>
                 <div class="menu-actions">
                     <button type="button" class="menu-pill-btn" id="voice-toggle-btn" onclick="onMenuVoiceClick()">👩 VOICE</button>
@@ -766,7 +765,7 @@
             <!-- হাইপারলিংক -->
             <div class="link-bar">
                 <a href="https://www.dkwin.world/#/register?invitationCode=12215125183" target="_blank" rel="noopener noreferrer" class="hyper-link" id="active-platform-link">🔗 DK Win Register Link</a>
-                <a href="https://t.me/Tuhin0027" target="_blank" rel="noopener noreferrer" class="hyper-tg">@Tuhin0027</a>
+                <a href="https://t.me/Tuhin0027" target="_blank" rel="noopener noreferrer" class="hyper-tg">TG Link</a>
             </div>
 
             <!-- মার্কেট টাইম মেনু -->
@@ -777,17 +776,17 @@
                 <button type="button" class="time-tab-btn text-3d" data-market="5M">5M</button>
             </div>
 
-            <!-- ভয়েস অ্যানাউন্সমেন্ট ব্যানার -->
+            <!-- ভয়েস কল ব্যানার -->
             <div class="call-banner" id="ai-call-banner">👩 সবাই এখানে একটা বিগ ট্রেড করো!</div>
 
-            <!-- সিগন্যাল বোর্ড -->
+            <!-- সিগন্যাল বোর্ড: বামে BIG, মাঝে ORB, ডানে SMALL -->
             <div class="signal-board">
-                <div class="rgb-card rgb-small" id="small-panel">
+                <div class="rgb-card rgb-big" id="big-panel">
                     <div>
-                        <div class="rgb-label text-3d">SMALL</div>
-                        <div class="rgb-sub">0 - 4</div>
+                        <div class="rgb-label text-3d">BIG</div>
+                        <div class="rgb-sub">5 - 9</div>
                     </div>
-                    <div class="rgb-tag text-3d" id="small-tag">WAIT</div>
+                    <div class="rgb-tag text-3d" id="big-tag">WAIT</div>
                 </div>
 
                 <div class="center-orb-card">
@@ -799,12 +798,12 @@
                     <div class="timer-txt text-3d" id="timer-display">30s</div>
                 </div>
 
-                <div class="rgb-card rgb-big" id="big-panel">
+                <div class="rgb-card rgb-small" id="small-panel">
                     <div>
-                        <div class="rgb-label text-3d">BIG</div>
-                        <div class="rgb-sub">5 - 9</div>
+                        <div class="rgb-label text-3d">SMALL</div>
+                        <div class="rgb-sub">0 - 4</div>
                     </div>
-                    <div class="rgb-tag text-3d" id="big-tag">WAIT</div>
+                    <div class="rgb-tag text-3d" id="small-tag">WAIT</div>
                 </div>
             </div>
 
@@ -892,7 +891,7 @@
         function updateSubtitleLabel() {
             const pName = PLATFORMS[currentPlatform]?.name || "DK WIN";
             const mLabel = MARKETS[currentMarket]?.label || "30S";
-            document.getElementById("mode-subtitle").innerText = `@Tuhin0027 • ${pName} • ${mLabel}`;
+            document.getElementById("mode-subtitle").innerText = `• ${pName} • ${mLabel}`;
         }
 
         function updateHyperlinkUI() {
@@ -955,29 +954,56 @@
             playMenuVoice("প্যানেল হাইড করা হলো।");
         }
 
-        function playSoftFemaleChime() {
+        /* মেয়েলি কণ্ঠের স্বয়ংক্রিয় অডিও রেসপন্স (যেকোনো ব্রাউজার/ফোনে কাজ করে) */
+        function playFemaleVoiceSynth() {
             if (!voiceEnabled) return;
             try {
-                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-                if (!AudioContextClass) return;
-                if (!audioCtx) audioCtx = new AudioContextClass();
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                if (!AudioCtx) return;
+                if (!audioCtx) audioCtx = new AudioCtx();
                 if (audioCtx.state === "suspended") {
                     audioCtx.resume();
                 }
+
                 const now = audioCtx.currentTime;
-                const notes = [659.25, 880];
-                notes.forEach((freq, idx) => {
+                const syllables = [
+                    { f0: 390, f1: 440, dur: 0.11 },
+                    { f0: 460, f1: 410, dur: 0.12 },
+                    { f0: 520, f1: 475, dur: 0.13 },
+                    { f0: 485, f1: 540, dur: 0.14 }
+                ];
+
+                let offset = 0;
+                syllables.forEach((s) => {
                     const osc = audioCtx.createOscillator();
+                    const formant1 = audioCtx.createBiquadFilter();
+                    const formant2 = audioCtx.createBiquadFilter();
                     const gain = audioCtx.createGain();
-                    osc.type = "sine";
-                    osc.frequency.setValueAtTime(freq, now + idx * 0.08);
-                    gain.gain.setValueAtTime(0.001, now + idx * 0.08);
-                    gain.gain.exponentialRampToValueAtTime(0.05, now + idx * 0.08 + 0.02);
-                    gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.08 + 0.16);
-                    osc.connect(gain);
+
+                    osc.type = "sawtooth";
+                    osc.frequency.setValueAtTime(s.f0, now + offset);
+                    osc.frequency.linearRampToValueAtTime(s.f1, now + offset + s.dur);
+
+                    formant1.type = "bandpass";
+                    formant1.frequency.setValueAtTime(920, now + offset);
+                    formant1.Q.setValueAtTime(5, now + offset);
+
+                    formant2.type = "bandpass";
+                    formant2.frequency.setValueAtTime(2450, now + offset);
+                    formant2.Q.setValueAtTime(6, now + offset);
+
+                    gain.gain.setValueAtTime(0.001, now + offset);
+                    gain.gain.linearRampToValueAtTime(0.08, now + offset + 0.025);
+                    gain.gain.exponentialRampToValueAtTime(0.0008, now + offset + s.dur);
+
+                    osc.connect(formant1);
+                    formant1.connect(formant2);
+                    formant2.connect(gain);
                     gain.connect(audioCtx.destination);
-                    osc.start(now + idx * 0.08);
-                    osc.stop(now + idx * 0.08 + 0.17);
+
+                    osc.start(now + offset);
+                    osc.stop(now + offset + s.dur + 0.01);
+                    offset += s.dur + 0.025;
                 });
             } catch (_) {}
         }
@@ -1006,7 +1032,7 @@
                 if (typeof onDone === "function") onDone();
                 return;
             }
-            playSoftFemaleChime();
+            playFemaleVoiceSynth();
             if (!("speechSynthesis" in window)) {
                 if (typeof onDone === "function") onDone();
                 return;
@@ -1017,7 +1043,7 @@
                 const chosen = pickFemaleVoice();
                 if (chosen) utter.voice = chosen;
                 utter.lang = "bn-BD";
-                utter.pitch = 1.48;
+                utter.pitch = 1.52;
                 utter.rate = 0.96;
                 utter.volume = 1;
                 if (typeof onDone === "function") {
@@ -1045,7 +1071,6 @@
 
         function triggerLossResult() {
             lossCount++;
-            document.getElementById("wl-status").textContent = `W: ${winCount} | L: 0`;
             document.getElementById("wl-status").textContent = `W: ${winCount} | L: ${lossCount}`;
             document.getElementById("ai-call-banner").textContent = "👩 দুঃখিত, এই ট্রেড লস হয়েছে!";
             playMenuVoice("দুঃখিত, এই ট্রেড লস হয়েছে!");
