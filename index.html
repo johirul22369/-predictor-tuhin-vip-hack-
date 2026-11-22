@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
             user-select: none;
             -webkit-user-select: none;
             -webkit-tap-highlight-color: transparent;
@@ -45,12 +46,17 @@
         .gorgeous-font {
             font-family: 'Cinzel Decorative', cursive;
             font-weight: 900;
-            letter-spacing: 0.7px;
+            letter-spacing: 0.6px;
         }
 
         @keyframes gentleFloat {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-4px); }
+            50% { transform: translateY(-3px); }
+        }
+
+        @keyframes iconFiveBladeSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         @keyframes orbSwirlSpin {
@@ -62,55 +68,71 @@
             0% {
                 border-color: #ff2a85;
                 box-shadow:
-                    0 0 18px rgba(255, 42, 133, 0.78),
-                    0 0 28px rgba(0, 240, 255, 0.35),
-                    inset 0 0 12px rgba(255, 42, 133, 0.28);
+                    0 0 14px rgba(255, 42, 133, 0.75),
+                    inset 0 0 10px rgba(255, 42, 133, 0.25);
             }
             33% {
                 border-color: #00f0ff;
                 box-shadow:
-                    0 0 18px rgba(0, 240, 255, 0.78),
-                    0 0 28px rgba(74, 222, 128, 0.35),
-                    inset 0 0 12px rgba(0, 240, 255, 0.28);
+                    0 0 14px rgba(0, 240, 255, 0.75),
+                    inset 0 0 10px rgba(0, 240, 255, 0.25);
             }
             66% {
                 border-color: #4ade80;
                 box-shadow:
-                    0 0 18px rgba(74, 222, 128, 0.78),
-                    0 0 28px rgba(250, 204, 21, 0.35),
-                    inset 0 0 12px rgba(74, 222, 128, 0.28);
+                    0 0 14px rgba(74, 222, 128, 0.75),
+                    inset 0 0 10px rgba(74, 222, 128, 0.25);
             }
             100% {
                 border-color: #facc15;
                 box-shadow:
-                    0 0 18px rgba(250, 204, 21, 0.78),
-                    0 0 28px rgba(255, 42, 133, 0.35),
-                    inset 0 0 12px rgba(250, 204, 21, 0.28);
+                    0 0 14px rgba(250, 204, 21, 0.75),
+                    inset 0 0 10px rgba(250, 204, 21, 0.25);
             }
         }
 
-        /* ফ্লোটিং আইকন */
+        /* ৫টি পাক সহ ফ্লোটিং আইকন */
         #floating-icon-btn {
             position: fixed;
-            top: 88px;
-            right: 48px;
-            width: 50px;
-            height: 50px;
+            top: 84px;
+            right: 36px;
+            width: 58px;
+            height: 58px;
             border-radius: 50%;
-            border: 2.5px solid #facc15;
-            box-shadow:
-                0 0 0 2px #10b981,
-                0 12px 24px rgba(0, 0, 0, 0.92),
-                0 0 18px rgba(250, 204, 21, 0.65);
             cursor: grab;
             z-index: 9999;
-            overflow: hidden;
             touch-action: none;
-            background: #042f2e;
+            background: transparent;
             display: flex;
             align-items: center;
             justify-content: center;
             animation: gentleFloat 3.6s ease-in-out infinite;
+        }
+
+        .icon-five-blades {
+            position: absolute;
+            inset: -3px;
+            width: calc(100% + 6px);
+            height: calc(100% + 6px);
+            pointer-events: none;
+            z-index: 1;
+            animation: iconFiveBladeSpin 7.5s linear infinite;
+            filter: drop-shadow(0 0 7px rgba(250, 204, 21, 0.65));
+        }
+
+        .icon-avatar-core {
+            position: relative;
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #fef08a;
+            box-shadow: 0 0 0 2px #10b981, 0 6px 14px rgba(0, 0, 0, 0.9);
+            overflow: hidden;
+            background: #042f2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         #floating-icon-btn img {
@@ -120,20 +142,18 @@
             pointer-events: none;
         }
 
-        /* পাসওয়ার্ড কার্ড (ইউজার আইডি ছাড়া একদম ক্লিন) */
+        /* পাসওয়ার্ড কার্ড */
         #auth-overlay {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 248px;
+            width: 220px;
             background: linear-gradient(155deg, #052e23 0%, #091529 55%, #04070f 100%);
             border: 1.5px solid #facc15;
-            border-radius: 22px;
-            box-shadow:
-                0 24px 48px rgba(0, 0, 0, 0.96),
-                0 0 28px rgba(74, 222, 128, 0.4);
-            padding: 16px 14px;
+            border-radius: 18px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.96), 0 0 24px rgba(74, 222, 128, 0.35);
+            padding: 13px 12px;
             display: none;
             z-index: 10000;
             text-align: center;
@@ -142,35 +162,35 @@
 
         .auth-badge {
             display: inline-block;
-            font-size: 8.5px;
+            font-size: 8px;
             font-weight: 900;
-            letter-spacing: 1.1px;
+            letter-spacing: 1px;
             color: #052e16;
             background: linear-gradient(90deg, #4ade80, #fde047, #38bdf8);
-            padding: 2.5px 10px;
+            padding: 2px 9px;
             border-radius: 999px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             text-transform: uppercase;
         }
 
         .auth-title {
-            font-size: 12px;
+            font-size: 11px;
             color: #fef08a;
-            margin-bottom: 11px;
+            margin-bottom: 9px;
         }
 
         .auth-input {
             width: 100%;
-            padding: 7.5px 10px;
+            padding: 6.5px 8px;
             background: rgba(2, 6, 15, 0.95);
             border: 1px solid rgba(74, 222, 128, 0.75);
-            border-radius: 10px;
+            border-radius: 9px;
             color: #ffffff;
-            font-size: 11px;
+            font-size: 10.5px;
             text-align: center;
-            margin-bottom: 8px;
+            margin-bottom: 7px;
             outline: none;
-            font-weight: 700;
+            font-weight: 800;
             user-select: text;
             -webkit-user-select: text;
         }
@@ -180,41 +200,41 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
-            font-size: 9px;
-            color: #cbd5e1;
-            margin-bottom: 11px;
+            font-size: 8.5px;
+            color: #e2e8f0;
+            margin-bottom: 9px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 800;
         }
 
         .unlock-vip-btn {
             width: 100%;
-            padding: 8.5px;
+            padding: 7.5px;
             background: linear-gradient(135deg, #22c55e 0%, #facc15 55%, #ec4899 100%);
             border: 1px solid #ffffff;
-            border-radius: 11px;
+            border-radius: 10px;
             color: #04120c;
-            font-size: 9.5px;
+            font-size: 9px;
+            font-weight: 900;
             cursor: pointer;
             text-transform: uppercase;
-            box-shadow: 0 5px 16px rgba(34, 197, 94, 0.45);
         }
 
         #error-msg {
             color: #fb7185;
-            font-size: 9px;
-            margin-top: 6px;
+            font-size: 8.5px;
+            margin-top: 5px;
             display: none;
-            font-weight: 700;
+            font-weight: 900;
         }
 
-        /* রিয়েল গাছের পাতার শিরা-নকশা + RGB গ্লো পপআপ */
+        /* ছোট ও কমপ্যাক্ট পপআপ */
         .overlay-box {
             position: fixed;
             top: 84px;
-            left: 56px;
-            width: 238px;
-            max-width: calc(100vw - 112px);
+            left: 36px;
+            width: 196px;
+            max-width: calc(100vw - 72px);
             display: none;
             z-index: 9999;
             background:
@@ -222,21 +242,20 @@
                 radial-gradient(circle at 85% 20%, rgba(0, 240, 255, 0.22), transparent 45%),
                 radial-gradient(circle at 50% 88%, rgba(74, 222, 128, 0.24), transparent 52%),
                 linear-gradient(165deg, rgba(6, 34, 25, 0.97) 0%, rgba(9, 17, 30, 0.98) 55%, rgba(4, 7, 14, 0.99) 100%);
-            border-radius: 22px;
-            padding: 9px;
+            border-radius: 18px;
+            padding: 7px;
             border: 2px solid #ff2a85;
             animation: rgbAuraFlow 3.2s linear infinite;
             backdrop-filter: blur(14px);
             overflow: hidden;
         }
 
-        /* ব্যাকগ্রাউন্ডে রিয়েল গাছের পাতার শিরা-উপশিরার টেক্সচার */
         .real-leaf-vein-bg {
             position: absolute;
             inset: 0;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.26;
+            opacity: 0.25;
         }
 
         .popup-inner {
@@ -244,23 +263,18 @@
             z-index: 2;
         }
 
-        /* টপ মেনু বার */
         .top-menu-bar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 4px;
-            padding: 4px 6px;
-            margin-bottom: 6px;
-            border-radius: 13px;
+            gap: 3px;
+            padding: 3.5px 5px;
+            margin-bottom: 4.5px;
+            border-radius: 11px;
             background: rgba(3, 12, 14, 0.88);
             border: 1px solid rgba(74, 222, 128, 0.42);
             cursor: grab;
             touch-action: none;
-        }
-
-        .top-menu-bar:active {
-            cursor: grabbing;
         }
 
         .menu-brand-info {
@@ -270,19 +284,20 @@
         }
 
         .menu-title {
-            font-size: 9.5px;
+            font-size: 8px;
             font-style: italic;
+            font-weight: 900;
             color: #fef08a;
-            line-height: 1.15;
+            line-height: 1.1;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
         .menu-sub {
-            font-size: 6px;
+            font-size: 5.5px;
+            font-weight: 900;
             color: #6ee7b7;
-            font-weight: 700;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -291,15 +306,15 @@
         .menu-actions {
             display: flex;
             align-items: center;
-            gap: 3px;
+            gap: 2.5px;
             flex-shrink: 0;
         }
 
         .menu-pill-btn {
-            font-size: 6px;
-            font-weight: 800;
-            padding: 2.5px 5px;
-            border-radius: 7px;
+            font-size: 5.5px;
+            font-weight: 900;
+            padding: 2px 4.5px;
+            border-radius: 6px;
             border: 1px solid rgba(244, 114, 182, 0.85);
             background: linear-gradient(135deg, #ec4899, #be185d);
             color: #ffffff;
@@ -313,38 +328,38 @@
         }
 
         .menu-hide-btn {
-            font-size: 6px;
-            font-weight: 800;
-            padding: 2.5px 5px;
-            border-radius: 7px;
+            font-size: 5.5px;
+            font-weight: 900;
+            padding: 2px 4.5px;
+            border-radius: 6px;
             border: 1px solid rgba(52, 211, 153, 0.6);
             background: #064e3b;
             color: #ecfdf5;
             cursor: pointer;
         }
 
-        /* DK WIN ও BD WIN সুইচ বার (লিংকের কাজের নাম) */
         .platform-switch-bar {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5px;
-            margin-bottom: 5px;
-            padding: 3px;
-            border-radius: 12px;
+            gap: 4px;
+            margin-bottom: 4.5px;
+            padding: 2.5px;
+            border-radius: 10px;
             background: rgba(2, 8, 14, 0.92);
             border: 1px solid rgba(74, 222, 128, 0.45);
         }
 
         .plat-switch-btn {
-            padding: 4px 5px;
-            border-radius: 9px;
+            padding: 3px 4px;
+            border-radius: 8px;
             border: 1px solid transparent;
             background: rgba(15, 23, 42, 0.9);
-            color: #cbd5e1;
-            font-size: 6.6px;
+            color: #e2e8f0;
+            font-size: 5.8px;
+            font-weight: 900;
             cursor: pointer;
             text-align: center;
-            line-height: 1.25;
+            line-height: 1.2;
         }
 
         .plat-switch-btn.active {
@@ -352,28 +367,27 @@
             color: #052e16;
             border-color: #ffffff;
             text-shadow: none;
-            box-shadow: 0 0 12px rgba(74, 222, 128, 0.6);
         }
 
-        /* টাইম ট্যাব */
         .time-tabs {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 3px;
-            margin-bottom: 5px;
-            padding: 2.5px;
-            border-radius: 11px;
+            gap: 2.5px;
+            margin-bottom: 4.5px;
+            padding: 2px;
+            border-radius: 9px;
             background: rgba(2, 8, 14, 0.92);
             border: 1px solid rgba(52, 211, 153, 0.35);
         }
 
         .time-tab-btn {
-            padding: 2.5px 2px;
-            border-radius: 8px;
+            padding: 2px 1px;
+            border-radius: 7px;
             border: 1px solid transparent;
             background: rgba(15, 23, 42, 0.85);
-            color: #cbd5e1;
-            font-size: 6.8px;
+            color: #e2e8f0;
+            font-size: 6px;
+            font-weight: 900;
             cursor: pointer;
         }
 
@@ -384,15 +398,14 @@
             text-shadow: none;
         }
 
-        /* ভয়েস কল ব্যানার */
         .call-banner {
-            padding: 4px 7px;
-            margin-bottom: 6px;
-            border-radius: 11px;
+            padding: 3px 5px;
+            margin-bottom: 4.5px;
+            border-radius: 9px;
             background: linear-gradient(90deg, rgba(16, 185, 129, 0.25), rgba(234, 179, 8, 0.25));
             border: 1px solid rgba(250, 204, 21, 0.55);
-            font-size: 7.2px;
-            font-weight: 800;
+            font-size: 6.2px;
+            font-weight: 900;
             color: #fef9c3;
             text-align: center;
             white-space: nowrap;
@@ -400,17 +413,16 @@
             text-overflow: ellipsis;
         }
 
-        /* সিগন্যাল বোর্ড: বামে BIG, মাঝে ORB, ডানে SMALL */
         .signal-board {
             display: grid;
-            grid-template-columns: 0.94fr 1.24fr 0.94fr;
-            gap: 4.5px;
+            grid-template-columns: 0.92fr 1.2fr 0.92fr;
+            gap: 3.5px;
             align-items: stretch;
         }
 
         .rgb-card {
-            border-radius: 14px;
-            padding: 6px 3px;
+            border-radius: 11px;
+            padding: 4.5px 2px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -430,29 +442,30 @@
         }
 
         .rgb-card.is-active {
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
         .rgb-label {
-            font-size: 10.5px;
+            font-size: 8.8px;
             font-weight: 900;
             color: #ffffff;
-            letter-spacing: 0.5px;
         }
 
         .rgb-sub {
-            font-size: 6.5px;
-            color: #e2e8f0;
+            font-size: 5.6px;
+            font-weight: 800;
+            color: #f1f5f9;
             margin-top: 1px;
         }
 
         .rgb-tag {
-            margin-top: 4px;
-            font-size: 5.8px;
-            padding: 2px;
+            margin-top: 3px;
+            font-size: 5.2px;
+            font-weight: 900;
+            padding: 1.5px;
             border-radius: 5px;
             background: rgba(15, 23, 42, 0.92);
-            color: #94a3b8;
+            color: #cbd5e1;
         }
 
         .rgb-tag.active {
@@ -462,8 +475,8 @@
         }
 
         .center-orb-card {
-            border-radius: 14px;
-            padding: 5px 4px;
+            border-radius: 11px;
+            padding: 4px 3px;
             text-align: center;
             background: linear-gradient(180deg, rgba(8, 30, 34, 0.96), rgba(3, 8, 16, 0.99));
             border: 1px solid rgba(74, 222, 128, 0.65);
@@ -471,7 +484,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            gap: 2px;
+            gap: 1.5px;
         }
 
         .period-pill {
@@ -479,32 +492,31 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 3px;
-            padding: 1.5px 4px;
-            border-radius: 6px;
+            gap: 2.5px;
+            padding: 1px 3px;
+            border-radius: 5px;
             background: rgba(15, 23, 42, 0.92);
             border: 1px solid rgba(74, 222, 128, 0.28);
-            font-size: 5.8px;
+            font-size: 5px;
+            font-weight: 900;
             cursor: pointer;
         }
 
         .live-dot {
-            width: 4.5px;
-            height: 4.5px;
+            width: 4px;
+            height: 4px;
             border-radius: 50%;
             background: #4ade80;
-            box-shadow: 0 0 7px #4ade80;
+            box-shadow: 0 0 6px #4ade80;
         }
 
-        /* মাঝের নাম্বারের চারপাশে রঙিন ঘূর্ণি রিং */
         .orb-swirl-stage {
             position: relative;
-            width: 44px;
-            height: 44px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 1px 0;
         }
 
         .orb-swirl-ring {
@@ -520,51 +532,53 @@
                 #a855f7,
                 #ff2a85
             );
-            -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3.2px));
-            mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3.2px));
+            -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3.5px), #000 calc(100% - 2.8px));
+            mask: radial-gradient(farthest-side, transparent calc(100% - 3.5px), #000 calc(100% - 2.8px));
             animation: orbSwirlSpin 2.4s linear infinite;
-            box-shadow: 0 0 12px rgba(0, 240, 255, 0.55);
         }
 
         .num-orb {
             position: relative;
             z-index: 2;
-            width: 34px;
-            height: 34px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             border: 1.5px solid #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14.5px;
+            font-size: 12px;
+            font-weight: 900;
             color: #ffffff;
         }
 
-        .orb-green { background: radial-gradient(circle at 30% 25%, #86efac, #16a34a 65%, #052e16 100%); box-shadow: 0 0 12px rgba(34, 197, 94, 0.75); }
-        .orb-red { background: radial-gradient(circle at 30% 25%, #fca5a5, #dc2626 65%, #450a0a 100%); box-shadow: 0 0 12px rgba(239, 68, 68, 0.75); }
-        .orb-violet { background: radial-gradient(circle at 30% 25%, #e9d5ff, #9333ea 65%, #2e1065 100%); box-shadow: 0 0 12px rgba(168, 85, 247, 0.75); }
+        .orb-green { background: radial-gradient(circle at 30% 25%, #86efac, #16a34a 65%, #052e16 100%); }
+        .orb-red { background: radial-gradient(circle at 30% 25%, #fca5a5, #dc2626 65%, #450a0a 100%); }
+        .orb-violet { background: radial-gradient(circle at 30% 25%, #e9d5ff, #9333ea 65%, #2e1065 100%); }
 
         .timer-txt {
-            font-size: 6px;
+            font-size: 5.5px;
+            font-weight: 900;
             color: #fde047;
-            padding: 1.5px 5px;
+            padding: 1px 4px;
             border-radius: 999px;
             background: rgba(250, 204, 21, 0.14);
             border: 1px solid rgba(250, 204, 21, 0.4);
         }
 
         .wl-row {
-            margin-top: 6px;
+            margin-top: 4.5px;
             display: grid;
             grid-template-columns: 1fr 1.15fr 1fr;
-            gap: 4px;
+            gap: 3px;
             align-items: center;
         }
 
         .wl-btn {
-            font-size: 6.2px;
-            padding: 3px;
-            border-radius: 7px;
+            font-size: 5.5px;
+            font-weight: 900;
+            padding: 2.5px;
+            border-radius: 6px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             cursor: pointer;
             text-shadow: none;
@@ -574,19 +588,20 @@
         .wl-loss { background: linear-gradient(135deg, #fb7185, #be123c); color: #ffffff; }
 
         .wl-score {
-            font-size: 6px;
+            font-size: 5.4px;
+            font-weight: 900;
             text-align: center;
-            padding: 2.5px;
-            border-radius: 7px;
+            padding: 2px;
+            border-radius: 6px;
             background: rgba(15, 23, 42, 0.92);
             border: 1px solid rgba(74, 222, 128, 0.3);
             color: #fde047;
         }
 
         .history-strip {
-            margin-top: 6px;
-            padding: 5px;
-            border-radius: 11px;
+            margin-top: 4.5px;
+            padding: 4px;
+            border-radius: 9px;
             background: rgba(4, 14, 18, 0.94);
             border: 1px solid rgba(74, 222, 128, 0.32);
         }
@@ -594,26 +609,28 @@
         .history-meta {
             display: flex;
             justify-content: space-between;
-            font-size: 6px;
-            margin-bottom: 3.5px;
-            color: #e2e8f0;
+            font-size: 5.4px;
+            font-weight: 900;
+            margin-bottom: 3px;
+            color: #f1f5f9;
         }
 
         .balls-row {
             display: grid;
             grid-template-columns: repeat(10, 1fr);
-            gap: 2px;
+            gap: 1.5px;
         }
 
         .mini-ball {
-            width: 16px;
-            height: 16px;
+            width: 13px;
+            height: 13px;
             border-radius: 50%;
             border: 1px solid #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 6.8px;
+            font-size: 5.8px;
+            font-weight: 900;
             color: #ffffff;
         }
 
@@ -622,24 +639,37 @@
         .b-violet-green { background: linear-gradient(135deg, #a855f7 50%, #22c55e 50%); }
         .b-violet-red { background: linear-gradient(135deg, #a855f7 50%, #ef4444 50%); }
 
-        /* একদম নিচে যোগাযোগ লিংক (URL লুকানো) */
-        .bottom-support-bar {
-            margin-top: 6px;
-            text-align: center;
+        .bottom-actions-group {
+            margin-top: 4.5px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .icon-link-action-btn {
+            width: 100%;
+            padding: 3.5px 6px;
+            border-radius: 8px;
+            border: 1px solid rgba(250, 204, 21, 0.55);
+            background: rgba(15, 23, 42, 0.92);
+            color: #fde047;
+            font-size: 5.8px;
+            font-weight: 900;
+            cursor: pointer;
         }
 
         .support-contact-link {
-            display: inline-block;
+            display: block;
             width: 100%;
-            padding: 4.5px 8px;
-            border-radius: 10px;
-            background: linear-gradient(90deg, rgba(16, 185, 129, 0.25), rgba(0, 240, 255, 0.22), rgba(250, 204, 21, 0.25));
-            border: 1px solid rgba(74, 222, 128, 0.55);
+            padding: 3.8px 6px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.28), rgba(0, 240, 255, 0.24), rgba(250, 204, 21, 0.28));
+            border: 1px solid rgba(74, 222, 128, 0.6);
             color: #fef9c3;
-            font-size: 6.8px;
-            font-weight: 800;
+            font-size: 5.9px;
+            font-weight: 900;
             text-decoration: none;
-            letter-spacing: 0.2px;
+            text-align: center;
         }
 
         #copy-toast {
@@ -649,8 +679,8 @@
             transform: translateX(-50%);
             background: #22c55e;
             color: #052e16;
-            font-size: 9px;
-            font-weight: 800;
+            font-size: 8.5px;
+            font-weight: 900;
             padding: 4px 10px;
             border-radius: 8px;
             display: none;
@@ -662,12 +692,22 @@
 
     <iframe id="game-iframe" src="https://www.dkwin.world/#/register?invitationCode=12215125183" loading="lazy"></iframe>
 
-    <!-- ফ্লোটিং আইকন -->
-    <div id="floating-icon-btn">
-        <img src="https://cdn.imageurlgenerator.com/uploads/5f242846-c36b-4437-8bbd-8fab060a831d.jpg" alt="Tuhin VIP Icon" />
+    <!-- ৫টি পাক সহ ফ্লোটিং আইকন -->
+    <div id="floating-icon-btn" title="Tap: Open | Double-Tap / Hold: Quick Link">
+        <svg class="icon-five-blades" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="35" stroke="rgba(253, 224, 71, 0.45)" stroke-width="1.2" stroke-dasharray="5 4" />
+            <path d="M40 16C34 5 24 3 19 9C24 15 31 18 40 16Z" fill="#22c55e" stroke="#fef08a" stroke-width="0.9" />
+            <path d="M62 32C73 29 79 21 76 14C69 16 63 22 62 32Z" fill="#fde047" stroke="#ffffff" stroke-width="0.9" />
+            <path d="M54 58C61 68 70 71 75 66C71 59 64 55 54 58Z" fill="#ec4899" stroke="#fef08a" stroke-width="0.9" />
+            <path d="M26 58C19 68 10 71 5 66C9 59 16 55 26 58Z" fill="#00f0ff" stroke="#ffffff" stroke-width="0.9" />
+            <path d="M18 32C7 29 1 21 4 14C11 16 17 22 18 32Z" fill="#a855f7" stroke="#fef08a" stroke-width="0.9" />
+        </svg>
+        <div class="icon-avatar-core">
+            <img src="https://cdn.imageurlgenerator.com/uploads/5f242846-c36b-4437-8bbd-8fab060a831d.jpg" alt="Tuhin VIP Icon" />
+        </div>
     </div>
 
-    <!-- পাসওয়ার্ড কার্ড (ইউজার আইডি ছাড়া) -->
+    <!-- পাসওয়ার্ড কার্ড -->
     <div id="auth-overlay">
         <div class="auth-badge">ACCESS VIP HACK</div>
         <div class="auth-title gorgeous-font">Tuhin vip hack</div>
@@ -675,11 +715,11 @@
         <label class="remember-row">
             <input type="checkbox" id="remember-pass" /> Remember Password
         </label>
-        <button type="button" class="unlock-vip-btn gorgeous-font" onclick="checkPassword()">UNLOCK VIP</button>
+        <button type="button" class="unlock-vip-btn gorgeous-font" onclick="AuthModule.verify()">UNLOCK VIP</button>
         <div id="error-msg">Wrong Password!</div>
     </div>
 
-    <!-- রিয়েল গাছের পাতার শিরা-নকশা ও RGB গ্লো সহ হ্যাক পপআপ -->
+    <!-- ছোট ও বোল্ড পপআপ -->
     <div class="overlay-box" id="main-content">
         <svg class="real-leaf-vein-bg" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M120 12C68 38 30 92 26 160C22 228 62 280 120 308C178 280 218 228 214 160C210 92 172 38 120 12Z" stroke="#4ade80" stroke-width="1.4"/>
@@ -692,25 +732,22 @@
         </svg>
 
         <div class="popup-inner">
-            <!-- মেনু বার -->
             <div class="top-menu-bar" id="main-content-header">
                 <div class="menu-brand-info">
                     <div class="menu-title gorgeous-font">Tuhin vip hack</div>
                     <div class="menu-sub" id="mode-subtitle">DK WIN • 30S</div>
                 </div>
                 <div class="menu-actions">
-                    <button type="button" class="menu-pill-btn" id="voice-toggle-btn" onclick="onMenuVoiceClick()">👩 VOICE</button>
-                    <button type="button" class="menu-hide-btn" onclick="onMenuHideClick()">HIDE</button>
+                    <button type="button" class="menu-pill-btn" id="voice-toggle-btn" onclick="VoiceModule.toggle()">👩 VOICE</button>
+                    <button type="button" class="menu-hide-btn" onclick="UIModule.hidePopup()">HIDE</button>
                 </div>
             </div>
 
-            <!-- DK WIN ও BD WIN সুইচ (লিংকের নাম/কাজ) -->
             <div class="platform-switch-bar">
-                <button type="button" class="plat-switch-btn text-3d active" id="btn-dkwin" onclick="switchPlatform('DKWIN')">DK WIN সুইচ করুন</button>
-                <button type="button" class="plat-switch-btn text-3d" id="btn-bdwin" onclick="switchPlatform('BDWIN')">BD WIN সুইচ করুন</button>
+                <button type="button" class="plat-switch-btn text-3d active" id="btn-dkwin" onclick="PlatformModule.switchTo('DKWIN')">DK WIN সুইচ করুন</button>
+                <button type="button" class="plat-switch-btn text-3d" id="btn-bdwin" onclick="PlatformModule.switchTo('BDWIN')">BD WIN সুইচ করুন</button>
             </div>
 
-            <!-- মার্কেট টাইম মেনু -->
             <div class="time-tabs">
                 <button type="button" class="time-tab-btn text-3d active" data-market="30S">30S</button>
                 <button type="button" class="time-tab-btn text-3d" data-market="1M">1M</button>
@@ -718,10 +755,8 @@
                 <button type="button" class="time-tab-btn text-3d" data-market="5M">5M</button>
             </div>
 
-            <!-- ভয়েস কল ব্যানার -->
             <div class="call-banner" id="ai-call-banner">👩 সবাই এখানে একটা বিগ ট্রেড করো!</div>
 
-            <!-- সিগন্যাল বোর্ড: বামে BIG, মাঝে ORB, ডানে SMALL -->
             <div class="signal-board">
                 <div class="rgb-card rgb-big" id="big-panel">
                     <div>
@@ -732,7 +767,7 @@
                 </div>
 
                 <div class="center-orb-card">
-                    <div class="period-pill" onclick="copyPeriodNumber()" title="Copy Period">
+                    <div class="period-pill" onclick="SignalModule.copyPeriod()" title="Copy Period">
                         <span class="live-dot"></span>
                         <span id="period-num">Loading...</span>
                     </div>
@@ -753,9 +788,9 @@
             </div>
 
             <div class="wl-row">
-                <button type="button" class="wl-btn wl-win text-3d" onclick="triggerWinResult()">🏆 WIN</button>
+                <button type="button" class="wl-btn wl-win text-3d" onclick="SignalModule.recordWin()">🏆 WIN</button>
                 <div class="wl-score text-3d" id="wl-status">W: 0 | L: 0</div>
-                <button type="button" class="wl-btn wl-loss text-3d" onclick="triggerLossResult()">❌ LOSS</button>
+                <button type="button" class="wl-btn wl-loss text-3d" onclick="SignalModule.recordLoss()">❌ LOSS</button>
             </div>
 
             <div class="history-strip">
@@ -766,8 +801,10 @@
                 <div class="balls-row" id="recent-wheels"></div>
             </div>
 
-            <!-- নিচে যোগাযোগ লিংক (লিংক হাইড, কাজের নাম দেওয়া) -->
-            <div class="bottom-support-bar">
+            <div class="bottom-actions-group">
+                <button type="button" class="icon-link-action-btn" onclick="IconLinkModule.openCurrentPlatform()">
+                    ⚡ আইকন লিংক ওপেন করুন
+                </button>
                 <a href="https://t.me/Tuhin0027" target="_blank" rel="noopener noreferrer" class="support-contact-link">
                     💬 কোনো সমস্যা হলে যোগাযোগ করুন
                 </a>
@@ -778,521 +815,541 @@
     <div id="copy-toast">Copied!</div>
 
     <script>
-        const PLATFORMS = {
-            DKWIN: {
-                name: "DK WIN",
-                bn: "ডিকে উইন",
-                url: "https://www.dkwin.world/#/register?invitationCode=12215125183",
-                saltMix: 0x11111111
+        const CONFIG = {
+            accessPass: "Tuhinviphack",
+            supportUrl: "https://t.me/Tuhin0027",
+            platforms: {
+                DKWIN: {
+                    name: "DK WIN",
+                    bn: "ডিকে উইন",
+                    url: "https://www.dkwin.world/#/register?invitationCode=12215125183",
+                    saltMix: 0x11111111
+                },
+                BDWIN: {
+                    name: "BD WIN",
+                    bn: "বিডি উইন",
+                    url: "https://8bdwin24.com/register?inviteCode=9LBSM7N&from=web",
+                    saltMix: 0x22222222
+                }
             },
-            BDWIN: {
-                name: "BD WIN",
-                bn: "বিডি উইন",
-                url: "https://8bdwin24.com/register?inviteCode=9LBSM7N&from=web",
-                saltMix: 0x22222222
+            markets: {
+                "30S": { duration: 30,  offset: 50000, salt: 0x9E3779B9, label: "30S", bnName: "ত্রিশ সেকেন্ড" },
+                "1M":  { duration: 60,  offset: 20000, salt: 0x85EBCA6B, label: "1M",  bnName: "এক মিনিট" },
+                "3M":  { duration: 180, offset: 10000, salt: 0xC2B2AE35, label: "3M",  bnName: "তিন মিনিট" },
+                "5M":  { duration: 300, offset: 5000,  salt: 0x27D4EB2F, label: "5M",  bnName: "পাঁচ মিনিট" }
+            },
+            banglaDigits: ["শূন্য", "এক", "দুই", "তিন", "চার", "পাঁচ", "ছয়", "সাত", "আট", "নয়"]
+        };
+
+        const AppState = {
+            platform: "DKWIN",
+            market: "30S",
+            unlocked: localStorage.getItem("tuhin_vip_hack_unlocked") === "true",
+            voiceEnabled: localStorage.getItem("tuhin_female_voice_enabled") !== "false",
+            cachedPeriod: "",
+            lastAnnouncedPeriod: "",
+            prediction: { type: "BIG", num: 7, confidence: 86, colorName: "GREEN" },
+            prevPrediction: null,
+            timerStarted: false,
+            wins: 0,
+            losses: 0
+        };
+
+        /* ১. ফিমেল ভয়েস মডিউল */
+        const VoiceModule = (() => {
+            const queue = [];
+            let speaking = false;
+            let selectedVoice = null;
+
+            function pickVoice() {
+                if (!("speechSynthesis" in window)) return null;
+                const list = window.speechSynthesis.getVoices() || [];
+                if (!list.length) return null;
+
+                const maleRe = /\b(male|man|boy|rishi|prabhat|amit|arjun|david|mark|alex|daniel|george|ryan|thomas|eric|brian|fred|albert)\b/i;
+                const femaleRe = /(female|woman|girl|lady|tanisha|nabila|priya|lekha|aditi|raveena|sangeeta|kalpana|zira|samantha|victoria|moira|fiona|veena|aria|jenny|allison|ava|zoe|karen|tessa|google.*(female|hindi|bn)|microsoft.*(tanisha|aria|jenny|zira))/i;
+
+                const females = list.filter((v) => !maleRe.test(v.name) && femaleRe.test(v.name));
+                return (
+                    females.find((v) => /bn|bangla|bengali/i.test(v.lang) || /bn|bangla|bengali/i.test(v.name)) ||
+                    females.find((v) => /hi|en-in|en-gb|en-us/i.test(v.lang)) ||
+                    females[0] ||
+                    list.filter((v) => !maleRe.test(v.name))[0] ||
+                    null
+                );
             }
-        };
 
-        const MARKETS = {
-            "30S": { duration: 30,  offset: 50000, salt: 0x9E3779B9, label: "30S", bnName: "ত্রিশ সেকেন্ড" },
-            "1M":  { duration: 60,  offset: 20000, salt: 0x85EBCA6B, label: "1M",  bnName: "এক মিনিট" },
-            "3M":  { duration: 180, offset: 10000, salt: 0xC2B2AE35, label: "3M",  bnName: "তিন মিনিট" },
-            "5M":  { duration: 300, offset: 5000,  salt: 0x27D4EB2F, label: "5M",  bnName: "পাঁচ মিনিট" }
-        };
+            function drain() {
+                if (speaking || !AppState.voiceEnabled || !("speechSynthesis" in window)) return;
+                const text = queue.shift();
+                if (!text) return;
 
-        const BANGLA_DIGITS = ["শূন্য", "এক", "দুই", "তিন", "চার", "পাঁচ", "ছয়", "সাত", "আট", "নয়"];
-        const ACCESS_PASS = "Tuhinviphack";
+                speaking = true;
+                if (!selectedVoice) selectedVoice = pickVoice();
 
-        let currentPlatform = "DKWIN";
-        let currentMarket = "30S";
-        let isUnlocked = localStorage.getItem("tuhin_vip_hack_unlocked") === "true";
-        let voiceEnabled = localStorage.getItem("tuhin_female_voice_enabled") !== "false";
-        let cachedPeriod = "";
-        let lastEvaluatedPeriod = "";
-        let cachedPrediction = { type: "BIG", num: 7, confidence: 86, colorName: "GREEN" };
-        let previousPrediction = null;
-        let signalTimerStarted = false;
-        let winCount = 0;
-        let lossCount = 0;
+                const utter = new SpeechSynthesisUtterance(text);
+                if (selectedVoice) utter.voice = selectedVoice;
+                utter.lang = "bn-BD";
+                utter.pitch = 1.78;
+                utter.rate = 0.94;
+                utter.volume = 1;
 
-        updateVoiceButtonUI();
-        updateSubtitleLabel();
+                let done = false;
+                const finish = () => {
+                    if (done) return;
+                    done = true;
+                    clearTimeout(guard);
+                    speaking = false;
+                    setTimeout(drain, 180);
+                };
+
+                const guard = setTimeout(finish, 5500);
+                utter.onend = finish;
+                utter.onerror = finish;
+
+                try {
+                    window.speechSynthesis.speak(utter);
+                } catch (_) {
+                    finish();
+                }
+            }
+
+            function say(text) {
+                if (!AppState.voiceEnabled || !("speechSynthesis" in window) || !text) return;
+                const clean = String(text).trim();
+                if (!clean || queue[queue.length - 1] === clean) return;
+                queue.push(clean);
+                drain();
+            }
+
+            function syncButton() {
+                const btn = document.getElementById("voice-toggle-btn");
+                if (!btn) return;
+                btn.textContent = AppState.voiceEnabled ? "👩 VOICE" : "🔇 MUTE";
+                btn.classList.toggle("is-muted", !AppState.voiceEnabled);
+            }
+
+            function toggle() {
+                AppState.voiceEnabled = !AppState.voiceEnabled;
+                localStorage.setItem("tuhin_female_voice_enabled", String(AppState.voiceEnabled));
+                syncButton();
+                if (!AppState.voiceEnabled) {
+                    queue.length = 0;
+                    speaking = false;
+                    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+                } else {
+                    say("সবাই এখানে একটা বিগ ট্রেড করো!");
+                }
+            }
+
+            if ("speechSynthesis" in window) {
+                window.speechSynthesis.onvoiceschanged = () => {
+                    selectedVoice = pickVoice();
+                };
+            }
+
+            return { say, toggle, syncButton };
+        })();
+
+        /* ২. আইকন লিংক মডিউল */
+        const IconLinkModule = (() => {
+            function getActiveUrl() {
+                return CONFIG.platforms[AppState.platform]?.url || CONFIG.platforms.DKWIN.url;
+            }
+
+            function openCurrentPlatform() {
+                const url = getActiveUrl();
+                document.getElementById("game-iframe").src = url;
+                window.open(url, "_blank", "noopener,noreferrer");
+                VoiceModule.say("আইকন লিংক ওপেন করা হয়েছে।");
+            }
+
+            function onSingleTap() {
+                if (AppState.unlocked) {
+                    UIModule.showPopup();
+                    SignalModule.start();
+                    VoiceModule.say("ভিআইপি প্যানেল চালু হয়েছে।");
+                } else {
+                    document.getElementById("error-msg").style.display = "none";
+                    document.getElementById("auth-overlay").style.display = "block";
+                }
+            }
+
+            return { openCurrentPlatform, onSingleTap };
+        })();
+
+        /* ৩. প্ল্যাটফর্ম ও ইউআই মডিউল */
+        const PlatformModule = (() => {
+            function refreshSubtitle() {
+                const pName = CONFIG.platforms[AppState.platform]?.name || "DK WIN";
+                const mLabel = CONFIG.markets[AppState.market]?.label || "30S";
+                document.getElementById("mode-subtitle").innerText = `${pName} • ${mLabel}`;
+            }
+
+            function switchTo(key) {
+                if (!CONFIG.platforms[key]) return;
+                AppState.platform = key;
+                document.getElementById("btn-dkwin").classList.toggle("active", key === "DKWIN");
+                document.getElementById("btn-bdwin").classList.toggle("active", key === "BDWIN");
+                document.getElementById("game-iframe").src = CONFIG.platforms[key].url;
+                refreshSubtitle();
+                AppState.cachedPeriod = "";
+                AppState.lastAnnouncedPeriod = "";
+                AppState.prevPrediction = null;
+                SignalModule.tick();
+                VoiceModule.say(`${CONFIG.platforms[key].bn} পেজে সুইচ করা হয়েছে।`);
+            }
+
+            return { refreshSubtitle, switchTo };
+        })();
+
+        const UIModule = (() => {
+            function showPopup() {
+                document.getElementById("main-content").style.display = "block";
+                document.getElementById("floating-icon-btn").style.display = "none";
+            }
+
+            function hidePopup() {
+                document.getElementById("main-content").style.display = "none";
+                document.getElementById("floating-icon-btn").style.display = "flex";
+                VoiceModule.say("প্যানেল হাইড করা হলো।");
+            }
+
+            function bindDrag(targetEl, handleEl, onSingleTap, onDoubleTap) {
+                let down = false, moved = false, sx = 0, sy = 0, oLeft = 0, oTop = 0, lastTap = 0;
+
+                function start(x, y) {
+                    const rect = targetEl.getBoundingClientRect();
+                    oLeft = rect.left;
+                    oTop = rect.top;
+                    sx = x;
+                    sy = y;
+                    down = true;
+                    moved = false;
+                    targetEl.style.left = `${oLeft}px`;
+                    targetEl.style.top = `${oTop}px`;
+                    targetEl.style.right = "auto";
+                    targetEl.style.bottom = "auto";
+                    targetEl.style.transform = "none";
+                }
+
+                function move(x, y) {
+                    if (!down) return;
+                    const dx = x - sx, dy = y - sy;
+                    if (Math.hypot(dx, dy) > 6) moved = true;
+                    const maxL = Math.max(4, window.innerWidth - targetEl.offsetWidth - 4);
+                    const maxT = Math.max(4, window.innerHeight - targetEl.offsetHeight - 4);
+                    targetEl.style.left = `${Math.max(4, Math.min(maxL, oLeft + dx))}px`;
+                    targetEl.style.top = `${Math.max(4, Math.min(maxT, oTop + dy))}px`;
+                }
+
+                function end() {
+                    if (!down) return;
+                    down = false;
+                    if (moved) return;
+                    const now = Date.now();
+                    if (typeof onDoubleTap === "function" && now - lastTap < 320) {
+                        lastTap = 0;
+                        onDoubleTap();
+                    } else {
+                        lastTap = now;
+                        if (typeof onSingleTap === "function") onSingleTap();
+                    }
+                }
+
+                handleEl.addEventListener("touchstart", (e) => {
+                    if (e.target.closest("button") || e.target.closest("a") || e.target.closest("input")) return;
+                    if (e.touches.length === 1) start(e.touches[0].clientX, e.touches[0].clientY);
+                }, { passive: true });
+
+                handleEl.addEventListener("touchmove", (e) => {
+                    if (!down || e.touches.length !== 1) return;
+                    e.preventDefault();
+                    move(e.touches[0].clientX, e.touches[0].clientY);
+                }, { passive: false });
+
+                handleEl.addEventListener("touchend", end);
+                handleEl.addEventListener("touchcancel", end);
+
+                handleEl.addEventListener("mousedown", (e) => {
+                    if (e.button !== 0 || e.target.closest("button") || e.target.closest("a") || e.target.closest("input")) return;
+                    start(e.clientX, e.clientY);
+                    function mm(ev) { move(ev.clientX, ev.clientY); }
+                    function mu() {
+                        document.removeEventListener("mousemove", mm);
+                        document.removeEventListener("mouseup", mu);
+                        end();
+                    }
+                    document.addEventListener("mousemove", mm);
+                    document.addEventListener("mouseup", mu);
+                });
+            }
+
+            return { showPopup, hidePopup, bindDrag };
+        })();
+
+        /* ৪. অথ মডিউল */
+        const AuthModule = (() => {
+            function verify() {
+                const val = document.getElementById("pass-input").value.trim();
+                const rem = document.getElementById("remember-pass").checked;
+                if (val === CONFIG.accessPass) {
+                    AppState.unlocked = true;
+                    if (rem) localStorage.setItem("tuhin_vip_hack_unlocked", "true");
+                    document.getElementById("error-msg").style.display = "none";
+                    document.getElementById("auth-overlay").style.display = "none";
+                    UIModule.showPopup();
+                    SignalModule.start();
+                    VoiceModule.say("স্বাগতম! প্যানেল আনলক হয়েছে।");
+                } else {
+                    document.getElementById("error-msg").style.display = "block";
+                    document.getElementById("pass-input").value = "";
+                }
+            }
+            return { verify };
+        })();
+
+        /* ৫. সিগন্যাল ও পিরিয়ড মডিউল */
+        const SignalModule = (() => {
+            function mixHash(seed) {
+                let x = seed >>> 0;
+                x ^= x >>> 16;
+                x = Math.imul(x, 0x7feb352d) >>> 0;
+                x ^= x >>> 15;
+                x = Math.imul(x, 0x846ca68b) >>> 0;
+                x ^= x >>> 16;
+                return x >>> 0;
+            }
+
+            function effectiveSalt(cfg) {
+                return (cfg.salt ^ (CONFIG.platforms[AppState.platform]?.saltMix || 0)) >>> 0;
+            }
+
+            function colorMeta(num) {
+                if (num === 0) return { orbClass: "orb-violet", ballClass: "b-violet-red", colorName: "VIOLET+RED" };
+                if (num === 5) return { orbClass: "orb-violet", ballClass: "b-violet-green", colorName: "VIOLET+GRN" };
+                if ([1, 3, 7, 9].includes(num)) return { orbClass: "orb-green", ballClass: "b-green", colorName: "GREEN" };
+                return { orbClass: "orb-red", ballClass: "b-red", colorName: "RED" };
+            }
+
+            function rawNum(slotNum, cfg, dateSeed) {
+                const salt = effectiveSalt(cfg);
+                const h1 = mixHash((dateSeed ^ Math.imul(slotNum, salt)) >>> 0);
+                const h2 = mixHash(h1 ^ (slotNum * 2654435761));
+                const type = (h1 % 100) >= 50 ? "BIG" : "SMALL";
+                const pool = type === "BIG" ? [5, 6, 7, 8, 9] : [0, 1, 2, 3, 4];
+                return pool[h2 % pool.length];
+            }
+
+            function evaluate(slotNum, cfg, dateSeed) {
+                const salt = effectiveSalt(cfg);
+                const h1 = mixHash((dateSeed ^ Math.imul(slotNum, salt)) >>> 0);
+                const h2 = mixHash(h1 ^ (slotNum * 2654435761));
+
+                let streakType = null, streak = 0, bigCount = 0;
+                for (let lb = 1; lb <= 5; lb++) {
+                    const idx = Math.max(1, slotNum - lb);
+                    const isBig = (mixHash((dateSeed ^ Math.imul(idx, salt)) >>> 0) % 100) >= 49;
+                    if (isBig) bigCount++;
+                    if (lb === 1) {
+                        streakType = isBig ? "BIG" : "SMALL";
+                        streak = 1;
+                    } else if (((isBig ? "BIG" : "SMALL") === streakType) && streak === lb - 1) {
+                        streak++;
+                    }
+                }
+
+                let score = h1 % 100;
+                if (streakType === "BIG" && streak >= 3) score -= 18;
+                else if (streakType === "SMALL" && streak >= 3) score += 18;
+                if (bigCount >= 4) score -= 10;
+                if (bigCount <= 1) score += 10;
+
+                const type = score >= 50 ? "BIG" : "SMALL";
+                const pool = type === "BIG" ? [5, 6, 7, 8, 9] : [0, 1, 2, 3, 4];
+                const pick = h2 % pool.length;
+                let num = pool[pick];
+                if (slotNum > 1 && num === rawNum(slotNum - 1, cfg, dateSeed)) {
+                    num = pool[(pick + 1) % pool.length];
+                }
+
+                const confidence = Math.min(94, Math.max(76, 78 + Math.floor(Math.abs(score - 50) * 0.65) + (h2 % 6)));
+                return { type, num, confidence, ...colorMeta(num) };
+            }
+
+            function checkPrevWin(slotNum, cfg, dateSeed, prev) {
+                const h = mixHash((dateSeed ^ Math.imul(slotNum, effectiveSalt(cfg)) ^ 0x517CC1B7) >>> 0);
+                return (prev.type === "BIG") === ((h % 100) >= 50);
+            }
+
+            function renderHistory(cfg, periodIndexToday, dateSeed) {
+                const wrap = document.getElementById("recent-wheels");
+                wrap.innerHTML = "";
+                for (let i = 9; i >= 0; i--) {
+                    const sig = evaluate(Math.max(1, periodIndexToday - i), cfg, dateSeed);
+                    const ball = document.createElement("div");
+                    ball.className = `mini-ball text-3d ${sig.ballClass}`;
+                    ball.textContent = String(sig.num);
+                    wrap.appendChild(ball);
+                }
+            }
+
+            function recordWin() {
+                AppState.wins++;
+                document.getElementById("wl-status").textContent = `W: ${AppState.wins} | L: ${AppState.losses}`;
+                document.getElementById("ai-call-banner").textContent = "👩 অভিনন্দন! এই ট্রেড উইন হয়েছে!";
+                VoiceModule.say("অভিনন্দন! এই ট্রেড উইন হয়েছে!");
+            }
+
+            function recordLoss() {
+                AppState.losses++;
+                document.getElementById("wl-status").textContent = `W: ${AppState.wins} | L: ${AppState.losses}`;
+                document.getElementById("ai-call-banner").textContent = "👩 দুঃখিত, এই ট্রেড লস হয়েছে!";
+                VoiceModule.say("দুঃখিত, এই ট্রেড লস হয়েছে!");
+            }
+
+            function copyPeriod() {
+                const txt = document.getElementById("period-num").innerText.trim();
+                if (!txt || txt === "Loading...") return;
+                navigator.clipboard.writeText(txt).then(() => {
+                    const toast = document.getElementById("copy-toast");
+                    toast.style.display = "block";
+                    setTimeout(() => { toast.style.display = "none"; }, 1200);
+                    VoiceModule.say("পিরিয়ড নম্বর কপি হয়েছে।");
+                }).catch(() => {});
+            }
+
+            function tick() {
+                if (!AppState.unlocked) return;
+                const cfg = CONFIG.markets[AppState.market] || CONFIG.markets["30S"];
+                const now = new Date();
+                const sec = now.getUTCHours() * 3600 + now.getUTCMinutes() * 60 + now.getUTCSeconds();
+                const periodIndexToday = Math.floor(sec / cfg.duration) + 1;
+                const elapsed = sec % cfg.duration;
+                const timeLeft = cfg.duration - elapsed;
+
+                const dateStr = `${now.getUTCFullYear()}${String(now.getUTCMonth() + 1).padStart(2, "0")}${String(now.getUTCDate()).padStart(2, "0")}`;
+                const dateSeed = parseInt(dateStr, 10) || 20261122;
+                const fullPeriod = `${dateStr}1000${String(cfg.offset + periodIndexToday).padStart(5, "0")}`;
+
+                document.getElementById("period-num").innerText = fullPeriod;
+                document.getElementById("timer-display").innerText = `${String(timeLeft).padStart(2, "0")}s`;
+
+                let changed = false;
+                let outcomeMsg = "";
+
+                if (fullPeriod !== AppState.cachedPeriod) {
+                    if (AppState.cachedPeriod && AppState.prevPrediction && periodIndexToday > 1) {
+                        const won = checkPrevWin(periodIndexToday - 1, cfg, dateSeed, AppState.prevPrediction);
+                        if (won) {
+                            AppState.wins++;
+                            outcomeMsg = "অভিনন্দন! আগের ট্রেড উইন হয়েছে!";
+                        } else {
+                            AppState.losses++;
+                            outcomeMsg = "দুঃখিত, আগের ট্রেড লস হয়েছে!";
+                        }
+                        document.getElementById("wl-status").textContent = `W: ${AppState.wins} | L: ${AppState.losses}`;
+                    }
+                    AppState.cachedPeriod = fullPeriod;
+                    AppState.prediction = evaluate(periodIndexToday, cfg, dateSeed);
+                    AppState.prevPrediction = { ...AppState.prediction };
+                    changed = true;
+                }
+
+                const orb = document.getElementById("main-orb");
+                const orbText = document.getElementById("main-orb-text");
+                const bigPanel = document.getElementById("big-panel");
+                const smallPanel = document.getElementById("small-panel");
+                const bigTag = document.getElementById("big-tag");
+                const smallTag = document.getElementById("small-tag");
+
+                if (elapsed <= 2) {
+                    orbText.innerText = "...";
+                    orb.className = "num-orb orb-violet text-3d";
+                    document.getElementById("color-label").innerText = "SCANNING";
+                    document.getElementById("conf-label").innerText = "SYNC...";
+                    document.getElementById("ai-call-banner").textContent = outcomeMsg ? `👩 ${outcomeMsg}` : "👩 সিগন্যাল স্ক্যান হচ্ছে...";
+                    bigPanel.classList.remove("is-active");
+                    smallPanel.classList.remove("is-active");
+                    bigTag.innerText = "WAIT";
+                    smallTag.innerText = "WAIT";
+                    bigTag.className = "rgb-tag text-3d";
+                    smallTag.className = "rgb-tag text-3d";
+                } else {
+                    const p = AppState.prediction;
+                    const callLine = p.type === "BIG" ? "সবাই এখানে একটা বিগ ট্রেড করো!" : "সবাই এখানে একটা স্মল ট্রেড করো!";
+                    orbText.innerText = String(p.num);
+                    orb.className = `num-orb ${p.orbClass} text-3d`;
+                    document.getElementById("color-label").innerText = p.colorName;
+                    document.getElementById("conf-label").innerText = `CONF ${p.confidence}%`;
+                    document.getElementById("ai-call-banner").textContent = `👩 ${callLine}`;
+
+                    const isBig = p.type === "BIG";
+                    bigPanel.classList.toggle("is-active", isBig);
+                    smallPanel.classList.toggle("is-active", !isBig);
+                    bigTag.innerText = isBig ? "ACTIVE" : "SKIP";
+                    smallTag.innerText = !isBig ? "ACTIVE" : "SKIP";
+                    bigTag.className = `rgb-tag text-3d ${isBig ? "active" : ""}`;
+                    smallTag.className = `rgb-tag text-3d ${!isBig ? "active" : ""}`;
+                }
+
+                if (changed && AppState.lastAnnouncedPeriod !== fullPeriod) {
+                    AppState.lastAnnouncedPeriod = fullPeriod;
+                    const p = AppState.prediction;
+                    const callLine = p.type === "BIG" ? "সবাই এখানে একটা বিগ ট্রেড করো!" : "সবাই এখানে একটা স্মল ট্রেড করো!";
+                    const numBn = CONFIG.banglaDigits[p.num] ?? p.num;
+                    if (outcomeMsg) VoiceModule.say(outcomeMsg);
+                    VoiceModule.say(`${callLine} নম্বর ${numBn}।`);
+                }
+
+                renderHistory(cfg, periodIndexToday, dateSeed);
+            }
+
+            function start() {
+                tick();
+                if (!AppState.timerStarted) {
+                    AppState.timerStarted = true;
+                    setInterval(tick, 1000);
+                }
+            }
+
+            return { tick, start, recordWin, recordLoss, copyPeriod };
+        })();
+
+        /* ইনিশিয়ালাইজেশন */
+        VoiceModule.syncButton();
+        PlatformModule.refreshSubtitle();
 
         document.getElementById("pass-input").addEventListener("keydown", (e) => {
-            if (e.key === "Enter") checkPassword();
+            if (e.key === "Enter") AuthModule.verify();
         });
 
         document.querySelectorAll(".time-tab-btn").forEach((btn) => {
             btn.addEventListener("click", () => {
                 document.querySelectorAll(".time-tab-btn").forEach((b) => b.classList.remove("active"));
                 btn.classList.add("active");
-                currentMarket = btn.dataset.market;
-                updateSubtitleLabel();
-                cachedPeriod = "";
-                lastEvaluatedPeriod = "";
-                previousPrediction = null;
-                updateSignalLogic();
-                speakFemale(`${MARKETS[currentMarket].bnName} মার্কেট চালু হয়েছে।`);
+                AppState.market = btn.dataset.market;
+                PlatformModule.refreshSubtitle();
+                AppState.cachedPeriod = "";
+                AppState.lastAnnouncedPeriod = "";
+                AppState.prevPrediction = null;
+                SignalModule.tick();
+                VoiceModule.say(`${CONFIG.markets[AppState.market].bnName} মার্কেট চালু হয়েছে।`);
             });
         });
 
-        function updateSubtitleLabel() {
-            const pName = PLATFORMS[currentPlatform]?.name || "DK WIN";
-            const mLabel = MARKETS[currentMarket]?.label || "30S";
-            document.getElementById("mode-subtitle").innerText = `${pName} • ${mLabel}`;
-        }
-
-        function switchPlatform(platformKey) {
-            if (!PLATFORMS[platformKey]) return;
-            currentPlatform = platformKey;
-
-            document.getElementById("btn-dkwin").classList.toggle("active", platformKey === "DKWIN");
-            document.getElementById("btn-bdwin").classList.toggle("active", platformKey === "BDWIN");
-
-            document.getElementById("game-iframe").src = PLATFORMS[platformKey].url;
-            updateSubtitleLabel();
-
-            cachedPeriod = "";
-            lastEvaluatedPeriod = "";
-            previousPrediction = null;
-            updateSignalLogic();
-
-            speakFemale(`${PLATFORMS[platformKey].bn} পেজে সুইচ করা হয়েছে।`);
-        }
-
-        function updateVoiceButtonUI() {
-            const btn = document.getElementById("voice-toggle-btn");
-            if (!btn) return;
-            if (voiceEnabled) {
-                btn.textContent = "👩 VOICE";
-                btn.classList.remove("is-muted");
-            } else {
-                btn.textContent = "🔇 MUTE";
-                btn.classList.add("is-muted");
-            }
-        }
-
-        function onMenuVoiceClick() {
-            voiceEnabled = !voiceEnabled;
-            localStorage.setItem("tuhin_female_voice_enabled", String(voiceEnabled));
-            updateVoiceButtonUI();
-
-            if (!voiceEnabled) {
-                if ("speechSynthesis" in window) {
-                    window.speechSynthesis.cancel();
-                }
-            } else {
-                speakFemale("সবাই এখানে একটা বিগ ট্রেড করো!");
-            }
-        }
-
-        function onMenuHideClick() {
-            document.getElementById('main-content').style.display = 'none';
-            document.getElementById('floating-icon-btn').style.display = 'flex';
-            speakFemale("প্যানেল হাইড করা হলো।");
-        }
-
-        function pickFemaleVoice() {
-            if (!("speechSynthesis" in window)) return null;
-            const voices = window.speechSynthesis.getVoices() || [];
-            const malePattern = /\bmale\b|\bman\b|\bboy\b|rishi|prabhat|amit|arjun|david|mark|alex|daniel|george|ryan|thomas|eric|brian/i;
-            const femalePattern = /female|woman|girl|lady|tanisha|bashkar|nabila|priya|lekha|aditi|raveena|sangeeta|kalpana|zira|samantha|victoria|moira|fiona|veena|aria|jenny|google.*(female|hindi|bn)|microsoft.*(tanisha|aria|jenny|zira)/i;
-
-            const nonMale = voices.filter((v) => !malePattern.test(v.name));
-            const bnFemale = nonMale.find((v) => (/bn/i.test(v.lang) || /bangla|bengali/i.test(v.name)) && femalePattern.test(v.name));
-            if (bnFemale) return bnFemale;
-
-            const anyFemale = nonMale.find((v) => femalePattern.test(v.name));
-            if (anyFemale) return anyFemale;
-
-            const bnVoice = nonMale.find((v) => /bn/i.test(v.lang) || /bangla|bengali/i.test(v.name));
-            if (bnVoice) return bnVoice;
-
-            return nonMale[0] || null;
-        }
-
-        function speakFemale(text, onDone) {
-            if (!voiceEnabled || !("speechSynthesis" in window) || !text) {
-                if (typeof onDone === "function") onDone();
-                return;
-            }
-            try {
-                window.speechSynthesis.cancel();
-                const utter = new SpeechSynthesisUtterance(text);
-                const chosen = pickFemaleVoice();
-                if (chosen) utter.voice = chosen;
-                utter.lang = "bn-BD";
-                utter.pitch = 1.45;
-                utter.rate = 0.98;
-                utter.volume = 1;
-                if (typeof onDone === "function") {
-                    utter.onend = onDone;
-                    utter.onerror = onDone;
-                }
-                window.speechSynthesis.speak(utter);
-            } catch (_) {
-                if (typeof onDone === "function") onDone();
-            }
-        }
-
-        function getTradeCallSentence(pred) {
-            return pred.type === "BIG"
-                ? "সবাই এখানে একটা বিগ ট্রেড করো!"
-                : "সবাই এখানে একটা স্মল ট্রেড করো!";
-        }
-
-        function triggerWinResult() {
-            winCount++;
-            document.getElementById("wl-status").textContent = `W: ${winCount} | L: ${lossCount}`;
-            document.getElementById("ai-call-banner").textContent = "👩 অভিনন্দন! এই ট্রেড উইন হয়েছে!";
-            speakFemale("অভিনন্দন! এই ট্রেড উইন হয়েছে!");
-        }
-
-        function triggerLossResult() {
-            lossCount++;
-            document.getElementById("wl-status").textContent = `W: ${winCount} | L: ${lossCount}`;
-            document.getElementById("ai-call-banner").textContent = "👩 দুঃখিত, এই ট্রেড লস হয়েছে!";
-            speakFemale("দুঃখিত, এই ট্রেড লস হয়েছে!");
-        }
-
-        function getEffectiveSalt(cfg) {
-            const pSalt = PLATFORMS[currentPlatform]?.saltMix || 0;
-            return (cfg.salt ^ pSalt) >>> 0;
-        }
-
-        function checkPreviousTradeOutcome(slotNum, cfg, dateSeed, prevPred) {
-            const salt = getEffectiveSalt(cfg);
-            const outcomeHash = mixHash((dateSeed ^ Math.imul(slotNum, salt) ^ 0x517CC1B7) >>> 0);
-            const actualIsBig = (outcomeHash % 100) >= 50;
-            return (prevPred.type === "BIG") === actualIsBig;
-        }
-
-        function announcePeriodUpdateBangla(pred, prevOutcomeText) {
-            const callText = getTradeCallSentence(pred);
-            const numBn = BANGLA_DIGITS[pred.num] ?? pred.num;
-            document.getElementById("ai-call-banner").textContent = `👩 ${callText}`;
-
-            if (!voiceEnabled) return;
-
-            if (prevOutcomeText) {
-                speakFemale(prevOutcomeText, () => {
-                    setTimeout(() => {
-                        speakFemale(`${callText} নম্বর ${numBn}।`);
-                    }, 350);
-                });
-            } else {
-                speakFemale(`${callText} নম্বর ${numBn}।`);
-            }
-        }
-
-        function handleIconClick() {
-            if (isUnlocked) {
-                document.getElementById('main-content').style.display = 'block';
-                document.getElementById('floating-icon-btn').style.display = 'none';
-                startPeriodGenerator();
-                speakFemale("ভিআইপি প্যানেল চালু হয়েছে।");
-            } else {
-                document.getElementById('error-msg').style.display = 'none';
-                document.getElementById('auth-overlay').style.display = 'block';
-            }
-        }
-
-        function checkPassword() {
-            const pass = document.getElementById('pass-input').value.trim();
-            const rememberMe = document.getElementById('remember-pass').checked;
-
-            if (pass === ACCESS_PASS) {
-                isUnlocked = true;
-                if (rememberMe) {
-                    localStorage.setItem("tuhin_vip_hack_unlocked", "true");
-                }
-                document.getElementById('error-msg').style.display = 'none';
-                document.getElementById('auth-overlay').style.display = 'none';
-                document.getElementById('main-content').style.display = 'block';
-                document.getElementById('floating-icon-btn').style.display = 'none';
-                startPeriodGenerator();
-                speakFemale("স্বাগতম! প্যানেল আনলক হয়েছে।");
-            } else {
-                document.getElementById('error-msg').style.display = 'block';
-                document.getElementById('pass-input').value = "";
-            }
-        }
-
-        function startPeriodGenerator() {
-            updateSignalLogic();
-            if (!signalTimerStarted) {
-                signalTimerStarted = true;
-                setInterval(updateSignalLogic, 1000);
-            }
-        }
-
-        function copyPeriodNumber() {
-            const periodText = document.getElementById('period-num').innerText.trim();
-            if (periodText && periodText !== "Loading...") {
-                navigator.clipboard.writeText(periodText).then(() => {
-                    const toast = document.getElementById('copy-toast');
-                    toast.style.display = 'block';
-                    setTimeout(() => { toast.style.display = 'none'; }, 1200);
-                    speakFemale("পিরিয়ড নম্বর কপি হয়েছে।");
-                }).catch(() => {});
-            }
-        }
-
-        function getSyncedMarketClock(marketKey, cfg, now) {
-            const secInDay = now.getUTCHours() * 3600 + now.getUTCMinutes() * 60 + now.getUTCSeconds();
-            const slot = Math.floor(secInDay / cfg.duration);
-            const rem = secInDay % cfg.duration;
-            const timeLeft = cfg.duration - rem;
-            const elapsed = rem;
-            const periodIndexToday = slot + 1;
-            return { elapsed, timeLeft, periodIndexToday };
-        }
-
-        function mixHash(seed) {
-            let x = seed >>> 0;
-            x ^= x >>> 16;
-            x = Math.imul(x, 0x7feb352d) >>> 0;
-            x ^= x >>> 15;
-            x = Math.imul(x, 0x846ca68b) >>> 0;
-            x ^= x >>> 16;
-            return x >>> 0;
-        }
-
-        function getColorMeta(num) {
-            if (num === 0) return { orbClass: "orb-violet", ballClass: "b-violet-red", colorName: "VIOLET+RED" };
-            if (num === 5) return { orbClass: "orb-violet", ballClass: "b-violet-green", colorName: "VIOLET+GRN" };
-            if ([1, 3, 7, 9].includes(num)) return { orbClass: "orb-green", ballClass: "b-green", colorName: "GREEN" };
-            return { orbClass: "orb-red", ballClass: "b-red", colorName: "RED" };
-        }
-
-        function evaluateSlot(slotNum, cfg, dateSeed) {
-            const salt = getEffectiveSalt(cfg);
-            const baseSeed = (dateSeed ^ Math.imul(slotNum, salt)) >>> 0;
-            const h1 = mixHash(baseSeed);
-            const h2 = mixHash(h1 ^ (slotNum * 2654435761));
-
-            let prevStreakType = null;
-            let streakCount = 0;
-            let bigCount = 0;
-
-            for (let lookback = 1; lookback <= 5; lookback++) {
-                const prevIdx = Math.max(1, slotNum - lookback);
-                const pHash = mixHash((dateSeed ^ Math.imul(prevIdx, salt)) >>> 0);
-                const pIsBig = (pHash % 100) >= 49;
-                if (pIsBig) bigCount++;
-                if (lookback === 1) {
-                    prevStreakType = pIsBig ? "BIG" : "SMALL";
-                    streakCount = 1;
-                } else if (((pIsBig ? "BIG" : "SMALL") === prevStreakType) && streakCount === lookback - 1) {
-                    streakCount++;
-                }
-            }
-
-            let bigScore = h1 % 100;
-            if (prevStreakType === "BIG" && streakCount >= 3) bigScore -= 18;
-            else if (prevStreakType === "SMALL" && streakCount >= 3) bigScore += 18;
-
-            if (bigCount >= 4) bigScore -= 10;
-            if (bigCount <= 1) bigScore += 10;
-
-            const type = bigScore >= 50 ? "BIG" : "SMALL";
-            const pool = type === "BIG" ? [5, 6, 7, 8, 9] : [0, 1, 2, 3, 4];
-            let pickIdx = h2 % pool.length;
-            let num = pool[pickIdx];
-
-            if (slotNum > 1) {
-                const prevNum = evaluateSlotRawNum(slotNum - 1, cfg, dateSeed);
-                if (num === prevNum) num = pool[(pickIdx + 1) % pool.length];
-            }
-
-            const delta = Math.abs(bigScore - 50);
-            const confidence = Math.min(94, Math.max(76, 78 + Math.floor(delta * 0.65) + (h2 % 6)));
-            return { type, num, confidence, ...getColorMeta(num) };
-        }
-
-        function evaluateSlotRawNum(slotNum, cfg, dateSeed) {
-            const salt = getEffectiveSalt(cfg);
-            const h1 = mixHash((dateSeed ^ Math.imul(slotNum, salt)) >>> 0);
-            const h2 = mixHash(h1 ^ (slotNum * 2654435761));
-            const type = (h1 % 100) >= 50 ? "BIG" : "SMALL";
-            const pool = type === "BIG" ? [5, 6, 7, 8, 9] : [0, 1, 2, 3, 4];
-            return pool[h2 % pool.length];
-        }
-
-        function renderRecentWheels(cfg, periodIndexToday, dateSeed) {
-            const container = document.getElementById('recent-wheels');
-            container.innerHTML = "";
-            for (let i = 9; i >= 0; i--) {
-                const idx = Math.max(1, periodIndexToday - i);
-                const sig = evaluateSlot(idx, cfg, dateSeed);
-                const el = document.createElement('div');
-                el.className = `mini-ball text-3d ${sig.ballClass}`;
-                el.textContent = String(sig.num);
-                container.appendChild(el);
-            }
-        }
-
-        function updateSignalLogic() {
-            if (!isUnlocked) return;
-
-            const cfg = MARKETS[currentMarket] || MARKETS["30S"];
-            const now = new Date();
-            const { elapsed, timeLeft, periodIndexToday } = getSyncedMarketClock(currentMarket, cfg, now);
-
-            const dateStr = `${now.getUTCFullYear()}${String(now.getUTCMonth() + 1).padStart(2, '0')}${String(now.getUTCDate()).padStart(2, '0')}`;
-            const dateSeed = parseInt(dateStr, 10) || 20261122;
-            const formattedIndex = String(cfg.offset + periodIndexToday).padStart(5, '0');
-            const fullPeriod = `${dateStr}1000${formattedIndex}`;
-
-            document.getElementById('period-num').innerText = fullPeriod;
-            document.getElementById('timer-display').innerText = `${String(timeLeft).padStart(2, '0')}s`;
-
-            let periodJustChanged = false;
-            let outcomeSentence = "";
-
-            if (fullPeriod !== cachedPeriod) {
-                if (cachedPeriod && previousPrediction && periodIndexToday > 1) {
-                    const isWin = checkPreviousTradeOutcome(periodIndexToday - 1, cfg, dateSeed, previousPrediction);
-                    if (isWin) {
-                        winCount++;
-                        outcomeSentence = "অভিনন্দন! আগের ট্রেড উইন হয়েছে!";
-                    } else {
-                        lossCount++;
-                        outcomeSentence = "দুঃখিত, আগের ট্রেড লস হয়েছে!";
-                    }
-                    document.getElementById("wl-status").textContent = `W: ${winCount} | L: ${lossCount}`;
-                }
-
-                cachedPeriod = fullPeriod;
-                cachedPrediction = evaluateSlot(periodIndexToday, cfg, dateSeed);
-                previousPrediction = { ...cachedPrediction };
-                periodJustChanged = true;
-            }
-
-            const orb = document.getElementById('main-orb');
-            const orbText = document.getElementById('main-orb-text');
-            const smallPanel = document.getElementById('small-panel');
-            const bigPanel = document.getElementById('big-panel');
-            const smallTag = document.getElementById('small-tag');
-            const bigTag = document.getElementById('big-tag');
-            const confLabel = document.getElementById('conf-label');
-
-            if (elapsed <= 2) {
-                orbText.innerText = "...";
-                orb.className = "num-orb orb-violet text-3d";
-                document.getElementById('color-label').innerText = "SCANNING";
-                confLabel.innerText = "SYNC...";
-                document.getElementById("ai-call-banner").textContent = outcomeSentence
-                    ? `👩 ${outcomeSentence}`
-                    : "👩 সিগন্যাল স্ক্যান হচ্ছে...";
-                smallPanel.classList.remove('is-active');
-                bigPanel.classList.remove('is-active');
-                smallTag.innerText = "WAIT";
-                bigTag.innerText = "WAIT";
-                smallTag.className = "rgb-tag text-3d";
-                bigTag.className = "rgb-tag text-3d";
-            } else {
-                orbText.innerText = String(cachedPrediction.num);
-                orb.className = `num-orb ${cachedPrediction.orbClass} text-3d`;
-                document.getElementById('color-label').innerText = cachedPrediction.colorName;
-                confLabel.innerText = `CONF ${cachedPrediction.confidence}%`;
-                document.getElementById("ai-call-banner").textContent = `👩 ${getTradeCallSentence(cachedPrediction)}`;
-
-                if (cachedPrediction.type === "BIG") {
-                    bigPanel.classList.add('is-active');
-                    smallPanel.classList.remove('is-active');
-                    bigTag.innerText = "ACTIVE";
-                    bigTag.className = "rgb-tag text-3d active";
-                    smallTag.innerText = "SKIP";
-                    smallTag.className = "rgb-tag text-3d";
-                } else {
-                    smallPanel.classList.add('is-active');
-                    bigPanel.classList.remove('is-active');
-                    smallTag.innerText = "ACTIVE";
-                    smallTag.className = "rgb-tag text-3d active";
-                    bigTag.innerText = "SKIP";
-                    bigTag.className = "rgb-tag text-3d";
-                }
-            }
-
-            if (periodJustChanged && lastEvaluatedPeriod !== fullPeriod) {
-                lastEvaluatedPeriod = fullPeriod;
-                announcePeriodUpdateBangla(cachedPrediction, outcomeSentence);
-            }
-
-            renderRecentWheels(cfg, periodIndexToday, dateSeed);
-        }
-
-        if ("speechSynthesis" in window) {
-            window.speechSynthesis.onvoiceschanged = () => {
-                pickFemaleVoice();
-            };
-        }
-
-        makeDraggable(document.getElementById("floating-icon-btn"), document.getElementById("floating-icon-btn"), handleIconClick);
-        makeDraggable(document.getElementById("main-content"), document.getElementById("main-content-header"), null);
-
-        function makeDraggable(targetEl, handleEl, onTap) {
-            let isDown = false, moved = false, startX = 0, startY = 0, origLeft = 0, origTop = 0;
-
-            function onStart(x, y) {
-                const rect = targetEl.getBoundingClientRect();
-                origLeft = rect.left;
-                origTop = rect.top;
-                startX = x;
-                startY = y;
-                isDown = true;
-                moved = false;
-                targetEl.style.left = `${origLeft}px`;
-                targetEl.style.top = `${origTop}px`;
-                targetEl.style.right = "auto";
-                targetEl.style.bottom = "auto";
-                targetEl.style.transform = "none";
-            }
-
-            function onMove(x, y) {
-                if (!isDown) return;
-                const dx = x - startX, dy = y - startY;
-                if (Math.hypot(dx, dy) > 6) moved = true;
-                const maxLeft = Math.max(4, window.innerWidth - targetEl.offsetWidth - 4);
-                const maxTop = Math.max(4, window.innerHeight - targetEl.offsetHeight - 4);
-                targetEl.style.left = `${Math.max(4, Math.min(maxLeft, origLeft + dx))}px`;
-                targetEl.style.top = `${Math.max(4, Math.min(maxTop, origTop + dy))}px`;
-            }
-
-            function onEnd() {
-                if (!isDown) return;
-                isDown = false;
-                if (!moved && typeof onTap === "function") onTap();
-            }
-
-            handleEl.addEventListener("touchstart", (e) => {
-                if (e.target.closest("button") || e.target.closest("a") || e.target.closest("input")) return;
-                if (e.touches.length === 1) onStart(e.touches[0].clientX, e.touches[0].clientY);
-            }, { passive: true });
-
-            handleEl.addEventListener("touchmove", (e) => {
-                if (!isDown || e.touches.length !== 1) return;
-                e.preventDefault();
-                onMove(e.touches[0].clientX, e.touches[0].clientY);
-            }, { passive: false });
-
-            handleEl.addEventListener("touchend", onEnd);
-            handleEl.addEventListener("touchcancel", onEnd);
-
-            handleEl.addEventListener("mousedown", (e) => {
-                if (e.button !== 0 || e.target.closest("button") || e.target.closest("a") || e.target.closest("input")) return;
-                onStart(e.clientX, e.clientY);
-                function mm(ev) { onMove(ev.clientX, ev.clientY); }
-                function mu() {
-                    document.removeEventListener("mousemove", mm);
-                    document.removeEventListener("mouseup", mu);
-                    onEnd();
-                }
-                document.addEventListener("mousemove", mm);
-                document.addEventListener("mouseup", mu);
-            });
-        }
+        UIModule.bindDrag(
+            document.getElementById("floating-icon-btn"),
+            document.getElementById("floating-icon-btn"),
+            IconLinkModule.onSingleTap,
+            IconLinkModule.openCurrentPlatform
+        );
+        UIModule.bindDrag(
+            document.getElementById("main-content"),
+            document.getElementById("main-content-header"),
+            null,
+            null
+        );
     </script>
 </body>
 </html>
